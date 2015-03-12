@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Predefined Counter Styles</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+	<link rel="stylesheet" href="local.css" type="text/css" />
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "WD",
+          noRecTrack: 			true, 
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "predefined-counter-styles",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          // subtitle   :  "an excellent document",
+
+          // if you wish the publication date to be other than today, set this
+          publishDate:  "2015-02-03",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+           previousPublishDate:  "2014-08-24",
+           previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://www.w3.org/International/docs/counter-styles/",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          //extraCSS:             [
+		  //"http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css",
+		  //"http://www.w3.org/International/docs/counter-styles/local.css"],
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Richard Ishida", url: "",
+                company: "W3C", companyURL: "" },
+          ],
+
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          //authors:  [
+           //   { name: "Ian Hickson", url: "",
+           //    company: "", companyURL: "" },
+           //  { name: "Tantek Çelı̇k", url: "",
+           //    company: "", companyURL: "" },
+           //  { name: "Tab Atkins", url: ""},
+          //],
+          
+          // name of the WG
+          wg:           "Internationalization Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/International/core/",
+          
+          // name (without the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "www-international",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/32113/status",
+      };
+    </script>
+  </head>
+  <body>
+  <p id="sotd">This document describes numbering systems used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
+    <section id='abstract'>This document describes numbering systems used by various cultures around the world and can be used as a reference for those wishing to create user-defined counter styles for CSS.
+  </section>
+    
+<section id="intro">
+<h2>Introduction</h2>
+
+<section id="purpose">
+<h3>Purpose of the document</h3>
+<p>	The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification defines a mechanism for authors to define almost any counter style they would want.  To avoid you having to figure out how to produce the list style you want, this document predefines a large set of counter styles covering many  approaches from around the world.</p>
+<p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please write to www-international@w3.org.
+</section>
+
+<section id="howto">
+<h3>How to use this information</h3>
+<p>This document contains ready-made templates  defining counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
+<p>In this document the counter-style templates are grouped by script (writing system). Inside a group, styles are ordered alphabetically by name.</p>
+<p>Find the counter style you wish to use, and simply copy-paste the relevant code from this document to your style sheet. Then associate the counter-style with your markup.</p>
+<p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
+<p>
+<div class="example">
+<pre>
+@counter-style arabic-indic {
+    system: numeric;
+    symbols: '\660' '\661' '\662' '\663' '\664' '\665' '\666' '\667' '\668' '\669';
+    /* symbols: '٠' '١' '٢' '٣' '٤' '٥' '٦' '٧' '٨' '٩'; */
+    }
+
+ol { list-style-type: arabic-indic; }</pre>
+</div>
+
+<p>For clarity, in the source code, the list of counters is provided using character escapes, but, if you prefer, you can delete that line and uncomment the line below it to use actual characters instead.
+<p>The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of  counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.</section>
+</section>
+
+
+
+<section id="arabic-styles">
+<h2>Arabic</h2>
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="arabic-indic"><a href="#arabic-indic">arabic-indic</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\660' '\661' '\662' '\663' '\664' '\665' '\666' '\667' '\668' '\669';<br/>
+/* symbols: '&#1632;' '&#1633;' '&#1634;' '&#1635;' '&#1636;' '&#1637;' '&#1638;' '&#1639;' '&#1640;' '&#1641;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="persian"><a href="#persian">persian</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\6F0' '\6F1' '\6F2' '\6F3' '\6F4' '\6F5' '\6F6' '\6F7' '\6F8' '\6F9';<br/>
+/* symbols: '&#1776;' '&#1777;' '&#1778;' '&#1779;' '&#1780;' '&#1781;' '&#1782;' '&#1783;' '&#1784;' '&#1785;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="persian-abjad"><a href="#persian-abjad">persian-abjad</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\6CC' '\6A9' '\644' '\645' '\646' '\633' '\639' '\641' '\635' '\642' '\631' '\634' '\62A' '\62B' '\62E' '\630' '\636' '\638' '\63A';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1740;' '&#1705;' '&#1604;' '&#1605;' '&#1606;' '&#1587;' '&#1593;' '&#1601;' '&#1589;' '&#1602;' '&#1585;' '&#1588;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1590;' '&#1592;' '&#1594;' */;<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="persian-alphabetic"><a href="#persian-alphabetic">persian-alphabetic</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '\630' '\631' '\632' '\698' '\633' '\634' '\635' '\636' '\637' '\638' '\639' '\63A' '\641' '\642' '\6A9' '\6AF' '\644' '\645' '\646' '\648' '\647\200D' '\6CC';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1662;' '&#1578;' '&#1579;' '&#1580;' '&#1670;' '&#1581;' '&#1582;' '&#1583;' '&#1584;' '&#1585;' '&#1586;' '&#1688;' '&#1587;' '&#1588;' '&#1589;' '&#1590;' '&#1591;' '&#1592;' '&#1593;' '&#1594;' '&#1601;' '&#1602;' '&#1705;' '&#1711;' '&#1604;' '&#1605;' '&#1606;' '&#1608;' '&#1607;&#8205;' '&#1740;' */;<br/>
+}
+</bdo></code></div>
+
+<p class=note>The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+</section>
+
+
+<section id="armenian-styles">
+<h2>Armenian</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="armenian"><a href="#armenian">armenian</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 9999;<br/>
+additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550', 4000 '\54F', 3000 '\54E', 2000 '\54D', 1000 '\54C', 900 '\54B', 800 '\54A', 700 '\549', 600 '\548', 500 '\547', 400 '\546', 300 '\545', 200 '\544', 100 '\543', 90 '\542', 80 '\541', 70 '\540', 60 '\53F', 50 '\53E', 40 '\53D', 30 '\53C', 20 '\53B', 10 '\53A', 9 '\539', 8 '\538', 7 '\537', 6 '\536', 5 '\535', 4 '\534', 3 '\533', 2 '\532', 1 '\531';<br/>
+/* additive-symbols: 9000 '&#1364;', 8000 '&#1363;', 7000 '&#1362;', 6000 '&#1361;', 5000 '&#1360;', 4000 '&#1359;', 3000 '&#1358;', 2000 '&#1357;', 1000 '&#1356;', 900 '&#1355;', 800 '&#1354;', 700 '&#1353;', 600 '&#1352;', 500 '&#1351;', 400 '&#1350;', 300 '&#1349;', 200 '&#1348;', 100 '&#1347;', 90 '&#1346;', 80 '&#1345;', 70 '&#1344;', 60 '&#1343;', ;50 '&#1342;', 40 '&#1341;', 30 '&#1340;', 20 '&#1339;', 10 '&#1338;', 9 '&#1337;', 8 '&#1336;', 7 '&#1335;', 6 '&#1334;', 5 '&#1333;', 4 '&#1332;', 3 '&#1331;', 2 '&#1330;', 1 '&#1329;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-armenian"><a href="#lower-armenian">lower-armenian</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 9999;<br/>
+additive-symbols: 9000 '\584', 8000 '\583', 7000 '\582', 6000 '\581', 5000 '\580', 4000 '\57F', 3000 '\57E', 2000 '\57D', 1000 '\57C', 900 '\57B', 800 '\57A', 700 '\579', 600 '\578', 500 '\577', 400 '\576', 300 '\575', 200 '\574', 100 '\573', 90 '\572', 80 '\571', 70 '\570', 60 '\56F', 50 '\56E', 40 '\56D', 30 '\56C', 20 '\56B', 10 '\56A', 9 '\569', 8 '\568', 7 '\567', 6 '\566', 5 '\565', 4 '\564', 3 '\563', 2 '\562', 1 '\561';<br/>
+/* additive-symbols: 9000 '&#1412;', 8000 '&#1411;', 7000 '&#1410;', 6000 '&#1409;', 5000 '&#1408;', 4000 '&#1407;', 3000 '&#1406;', 2000 '&#1405;', 1000 '&#1404;', 900 '&#1403;', 800 '&#1402;', 700 '&#1401;', 600 '&#1400;', 500 '&#1399;', 400 '&#1398;', 300 '&#1397;', 200 '&#1396;', 100 '&#1395;', 90 '&#1394;', 80 '&#1393;', 70 '&#1392;', 60 '&#1391;', 50 '&#1390;', 40 '&#1389;', 30 '&#1388;', 20 '&#1387;', 10 '&#1386;', 9 '&#1385;', 8 '&#1384;', 7 '&#1383;', 6 '&#1382;', 5 '&#1381;', 4 '&#1380;', 3 '&#1379;', 2 '&#1378;', 1 '&#1377;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-armenian"><a href="#upper-armenian">upper-armenian</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 9999;<br/>
+additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550', 4000 '\54F', 3000 '\54E', 2000 '\54D', 1000 '\54C', 900 '\54B', 800 '\54A', 700 '\549', 600 '\548', 500 '\547', 400 '\546', 300 '\545', 200 '\544', 100 '\543', 90 '\542', 80 '\541', 70 '\540', 60 '\53F', 50 '\53E', 40 '\53D', 30 '\53C', 20 '\53B', 10 '\53A', 9 '\539', 8 '\538', 7 '\537', 6 '\536', 5 '\535', 4 '\534', 3 '\533', 2 '\532', 1 '\531';<br/>
+/* additive-symbols: 9000 '&#1364;', 8000 '&#1363;', 7000 '&#1362;', 6000 '&#1361;', 5000 '&#1360;', 4000 '&#1359;', 3000 '&#1358;', 2000 '&#1357;', 1000 '&#1356;', 900 '&#1355;', 800 '&#1354;', 700 '&#1353;', 600 '&#1352;', 500 '&#1351;', 400 '&#1350;', 300 '&#1349;', 200 '&#1348;', 100 '&#1347;', 90 '&#1346;', 80 '&#1345;', 70 '&#1344;', 60 '&#1343;', 50 '&#1342;', 40 '&#1341;', 30 '&#1340;', 20 '&#1339;', 10 '&#1338;', 9 '&#1337;', 8 '&#1336;', 7 '&#1335;', 6 '&#1334;', 5 '&#1333;', 4 '&#1332;', 3 '&#1331;', 2 '&#1330;', 1 '&#1329;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>All styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+
+
+<section id="bengali-styles">
+  <h2>Bengali</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="bengali"><a href="#bengali">bengali</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';<br/>
+/* symbols: '&#2534;' '&#2535;' '&#2536;' '&#2537;' '&#2538;' '&#2539;' '&#2540;' '&#2541;' '&#2542;' '&#2543;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined  in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+<section id="cyrillic-styles">
+  <h2>Cyrillic</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-belorussian"><a href="#lower-belorussian">lower-belorussian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\435' '\451' '\436' '\437' '\456' '\439' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\45E' '\444' '\445' '\446' '\447' '\448' '\44B' '\44C' '\44D' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1077;' '&#1105;' '&#1078;' '&#1079;' '&#1110;' '&#1081;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1118;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1099;' '&#1100;' '&#1101;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-bulgarian"><a href="#lower-bulgarian">lower-bulgarian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\435' '\436' '\437' '\438' '\439' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\444' '\445' '\446' '\447' '\448' '\449' '\44A' '\44C' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1077;' '&#1078;' '&#1079;' '&#1080;' '&#1081;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1097;' '&#1098;' '&#1100;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-macedonian"><a href="#lower-macedonian">lower-macedonian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\453' '\435' '\436' '\437' '\455' '\438' '\458' '\43A' '\43B' '\459' '\43C' '\43D' '\45A' '\43E' '\43F' '\440' '\441' '\442' '\45C' '\443' '\444' '\445' '\446' '\447' '\45F' '\448';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1107;' '&#1077;' '&#1078;' '&#1079;' '&#1109;' '&#1080;' '&#1112;' '&#1082;' '&#1083;' '&#1113;' '&#1084;' '&#1085;' '&#1114;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1116;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1119;' '&#1096;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-russian"><a href="#lower-russian">lower-russian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\435' '\436' '\437' '\438' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\444' '\445' '\446' '\447' '\448' '\449' '\44D' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1077;' '&#1078;' '&#1079;' '&#1080;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1097;' '&#1101;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-russian-full"><a href="#lower-russian-full">lower-russian-full</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\435' '\451' '\436' '\437' '\438' '\439' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\444' '\445' '\446' '\447' '\448' '\449' '\44A' '\44B' '\44C' '\44D' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1077;' '&#1105;' '&#1078;' '&#1079;' '&#1080;' '&#1081;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1097;' '&#1098;' '&#1099;' '&#1100;' '&#1101;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-serbo-croatian"><a href="#lower-serbo-croatian">lower-serbo-croatian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\452' '\435' '\436' '\437' '\438' '\458' '\43A' '\43B' '\459' '\43C' '\43D' '\45A' '\43E' '\43F' '\440' '\441' '\442' '\45B' '\443' '\444' '\445' '\446' '\447' '\45F' '\448';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1106;' '&#1077;' '&#1078;' '&#1079;' '&#1080;' '&#1112;' '&#1082;' '&#1083;' '&#1113;' '&#1084;' '&#1085;' '&#1114;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1115;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1119;' '&#1096;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-ukrainian"><a href="#lower-ukrainian">lower-ukrainian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\434' '\435' '\454' '\436' '\437' '\438' '\456' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\444' '\445' '\446' '\447' '\448' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1076;' '&#1077;' '&#1108;' '&#1078;' '&#1079;' '&#1080;' '&#1110;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-ukrainian-full"><a href="#lower-ukrainian-full">lower-ukrainian-full</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\430' '\431' '\432' '\433' '\491' '\434' '\435' '\454' '\436' '\437' '\438' '\456' '\457' '\439' '\43A' '\43B' '\43C' '\43D' '\43E' '\43F' '\440' '\441' '\442' '\443' '\444' '\445' '\446' '\447' '\448' '\449' '\44C' '\44E' '\44F';<br/>
+/* symbols: '&#1072;' '&#1073;' '&#1074;' '&#1075;' '&#1169;' '&#1076;' '&#1077;' '&#1108;' '&#1078;' '&#1079;' '&#1080;' '&#1110;' '&#1111;' '&#1081;' '&#1082;' '&#1083;' '&#1084;' '&#1085;' '&#1086;' '&#1087;' '&#1088;' '&#1089;' '&#1090;' '&#1091;' '&#1092;' '&#1093;' '&#1094;' '&#1095;' '&#1096;' '&#1097;' '&#1100;' '&#1102;' '&#1103;'; */<br/>
+suffix: ') ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-belorussian"><a href="#upper-belorussian">upper-belorussian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\415' '\401' '\416' '\417' '\406' '\419' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\40E' '\424' '\425' '\426' '\427' '\428' '\42B' '\42C' '\42D' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1045;' '&#1025;' '&#1046;' '&#1047;' '&#1030;' '&#1049;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1038;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1067;' '&#1068;' '&#1069;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-bulgarian"><a href="#upper-bulgarian">upper-bulgarian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\415' '\416' '\417' '\418' '\419' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\424' '\425' '\426' '\427' '\428' '\429' '\42A' '\42C' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1045;' '&#1046;' '&#1047;' '&#1048;' '&#1049;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1065;' '&#1066;' '&#1068;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-macedonian"><a href="#upper-macedonian">upper-macedonian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\403' '\415' '\416' '\417' '\405' '\418' '\408' '\41A' '\41B' '\409' '\41C' '\41D' '\40A' '\41E' '\41F' '\420' '\421' '\422' '\40C' '\423' '\424' '\425' '\426' '\427' '\40F' '\428';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1027;' '&#1045;' '&#1046;' '&#1047;' '&#1029;' '&#1048;' '&#1032;' '&#1050;' '&#1051;' '&#1033;' '&#1052;' '&#1053;' '&#1034;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1036;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1039;' '&#1064;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-russian"><a href="#upper-russian">upper-russian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\415' '\416' '\417' '\418' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\424' '\425' '\426' '\427' '\428' '\429' '\42D' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1045;' '&#1046;' '&#1047;' '&#1048;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1065;' '&#1069;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-russian-full"><a href="#upper-russian-full">upper-russian-full</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\415' '\401' '\416' '\417' '\418' '\419' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\424' '\425' '\426' '\427' '\428' '\429' '\42A' '\42B' '\42C' '\42D' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1045;' '&#1025;' '&#1046;' '&#1047;' '&#1048;' '&#1049;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1065;' '&#1066;' '&#1067;' '&#1068;' '&#1069;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-serbo-croatian"><a href="#upper-serbo-croatian">upper-serbo-croatian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\402' '\415' '\416' '\417' '\418' '\408' '\41A' '\41B' '\409' '\41C' '\41D' '\40A' '\41E' '\41F' '\420' '\421' '\422' '\40B' '\423' '\424' '\425' '\426' '\427' '\40F' '\428';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1026;' '&#1045;' '&#1046;' '&#1047;' '&#1048;' '&#1032;' '&#1050;' '&#1051;' '&#1033;' '&#1052;' '&#1053;' '&#1034;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1035;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1039;' '&#1064;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-ukrainian"><a href="#upper-ukrainian">upper-ukrainian</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\414' '\415' '\404' '\416' '\417' '\418' '\406' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\424' '\425' '\426' '\427' '\428' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1044;' '&#1045;' '&#1028;' '&#1046;' '&#1047;' '&#1048;' '&#1030;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-ukrainian-full"><a href="#upper-ukrainian-full">upper-ukrainian-full</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\410' '\411' '\412' '\413' '\490' '\414' '\415' '\404' '\416' '\417' '\418' '\406' '\407' '\419' '\41A' '\41B' '\41C' '\41D' '\41E' '\41F' '\420' '\421' '\422' '\423' '\424' '\425' '\426' '\427' '\428' '\429' '\42C' '\42E' '\42F';<br/>
+/* symbols: '&#1040;' '&#1041;' '&#1042;' '&#1043;' '&#1168;' '&#1044;' '&#1045;' '&#1028;' '&#1046;' '&#1047;' '&#1048;' '&#1030;' '&#1031;' '&#1049;' '&#1050;' '&#1051;' '&#1052;' '&#1053;' '&#1054;' '&#1055;' '&#1056;' '&#1057;' '&#1058;' '&#1059;' '&#1060;' '&#1061;' '&#1062;' '&#1063;' '&#1064;' '&#1065;' '&#1068;' '&#1070;' '&#1071;'; */<br/>
+}
+</bdo></code></div>
+
+</section>
+
+
+
+
+<section id="devanagari-styles">
+<h2>Devanagari</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="devanagari"><a href="#devanagari">devanagari</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\966' '\967' '\968' '\969' '\96A' '\96B' '\96C' '\96D' '\96E' '\96F';<br/>
+/* symbols: '&#2406;' '&#2407;' '&#2408;' '&#2409;' '&#2410;' '&#2411;' '&#2412;' '&#2413;' '&#2414;' '&#2415;'; */<br/>
+}
+</bdo></code></div>
+<div class="counterstyle">
+  <code><bdo dir="ltr">
+@counter-style <dfn id="hindi"><a href="#hindi">hindi</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939';<br/>
+/* symbols: '&#2325;' '&#2326;' '&#2327;' '&#2328;' '&#2329;' '&#2330;' '&#2331;' '&#2332;' '&#2333;' '&#2334;' '&#2335;' '&#2336;' '&#2337;' '&#2338;' '&#2339;' '&#2340;' '&#2341;' '&#2342;' '&#2343;' '&#2344;' '&#2346;' '&#2347;' '&#2348;' '&#2349;' '&#2350;' '&#2351;' '&#2352;' '&#2354;' '&#2357;' '&#2358;' '&#2359;' '&#2360;' '&#2361;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>The <code class="kw" translate="no">devanagari</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification</p>
+</section>
+
+
+
+<section id="ethiopic-styles">
+<h2>Ethiopic</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="afar"><a href="#afar">afar</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1228' '\1230' '\1260' '\1270' '\1290' '\12A0' '\12A8' '\12C8' '\12D0' '\12E8' '\12F0' '\12F8' '\1308' '\1338' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4648;' '&#4656;' '&#4704;' '&#4720;' '&#4752;' '&#4768;' '&#4776;' '&#4808;' '&#4816;' '&#4840;' '&#4848;' '&#4856;' '&#4872;' '&#4920;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="agaw"><a href="#agaw">agaw</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1228' '\1230' '\1238' '\1240' '\1250' '\1260' '\1268' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308' '\1318' '\1320' '\1328' '\1330' '\1338' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4688;' '&#4704;' '&#4712;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4888;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="ari"><a href="#ari">ari</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1260' '\1268' '\1270' '\1278' '\1290' '\1300' '\1308' '\1328' '\1340' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4704;' '&#4712;' '&#4720;' '&#4728;' '&#4752;' '&#4864;' '&#4872;' '&#4904;' '&#4928;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="blin"><a href="#blin">blin</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1230' '\1238' '\1228' '\1240' '\1250' '\1260' '\1270' '\1290' '\1300' '\1308' '\1318' '\1320' '\1328' '\1348' '\1278' '\1298' '\1338' '\1330' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4656;' '&#4664;' '&#4648;' '&#4672;' '&#4688;' '&#4704;' '&#4720;' '&#4752;' '&#4864;' '&#4872;' '&#4888;' '&#4896;' '&#4904;' '&#4936;' '&#4728;' '&#4760;' '&#4920;' '&#4912;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="dizi"><a href="#dizi">dizi</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308' '\1320' '\1328' '\1338' '\1340' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4920;' '&#4928;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="gedeo"><a href="#gedeo">gedeo</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="gumuz"><a href="#gumuz">gumuz</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1210' '\1208' '\1210' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1268' '\1270' '\1278' '\1290' '\1298' '\1308' '\1328' '\1330' '\1340' '\1350';<br/>
+/* symbols: '&#4608;' '&#4624;' '&#4616;' '&#4624;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4712;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4872;' '&#4904;' '&#4912;' '&#4928;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="hadiyya"><a href="#hadiyya">hadiyya</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="harari"><a href="#harari">harari</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1210' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308' '\1320' '\1328' '\1348';<br/>
+/* symbols: '&#4624;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}<br/>
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kaffa"><a href="#kaffa">kaffa</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1220' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1280' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4640;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4736;' '&#4752;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kebena"><a href="#kebena">kebena</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kembata"><a href="#kembata">kembata</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1268' '\1270' '\1278' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4712;' '&#4720;' '&#4728;' '&#4752;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="konso"><a href="#konso">konso</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\1300' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kunama"><a href="#kunama">kunama</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1260' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="meen"><a href="#meen">meen</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1280' '\1290' '\1298' '\1300' '\1308' '\1320' '\1328' '\1330' '\1350' '\1340';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4736;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4944;' '&#4928;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="oromo"><a href="#oromo">oromo</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\12A0' '\12A8' '\12C8' '\12E8' '\12F0' '\12F8' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4768;' '&#4776;' '&#4808;' '&#4840;' '&#4848;' '&#4856;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="saho"><a href="#saho">saho</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1228' '\1230' '\1240' '\1260' '\1270' '\1290' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4648;' '&#4656;' '&#4672;' '&#4704;' '&#4720;' '&#4752;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="sidama"><a href="#sidama">sidama</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\12A0' '\12A8' '\12C8' '\12E8' '\12F0' '\12F8' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4768;' '&#4776;' '&#4808;' '&#4840;' '&#4848;' '&#4856;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="silti"><a href="#silti">silti</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308' '\1320' '\1328' '\1330' '\1348';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4936;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="tigre"><a href="#tigre">tigre</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1210' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\12A0' '\12A8' '\12C8' '\12D0' '\12D8' '\12E8' '\12F0' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4624;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4768;' '&#4776;' '&#4808;' '&#4816;' '&#4824;' '&#4840;' '&#4848;' '&#4864;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="wolaita"><a href="#wolaita">wolaita</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1298' '\1230' '\1308' '\1320' '\1328' '\1330' '\1338' '\1340' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4656;' '&#4872;' '&#4896;' '&#4904;' '&#4912;' '&#4920;' '&#4928;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="yemsa"><a href="#yemsa">yemsa</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1268' '\1270' '\1278' '\1290' '\1298' '\1300' '\1308' '\1318' '\1320' '\1328' '\1330' '\1348' '\1350';<br/>
+/* symbols: '&#4608;' '&#4616;' '&#4632;' '&#4648;' '&#4656;' '&#4664;' '&#4672;' '&#4704;' '&#4712;' '&#4720;' '&#4728;' '&#4752;' '&#4760;' '&#4864;' '&#4872;' '&#4888;' '&#4896;' '&#4904;' '&#4912;' '&#4936;' '&#4944;'; */<br/>
+suffix: '\1366 '; /* ፦ */<br/>
+}
+</bdo></code></div>
+
+<p class="note"> See also the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification for the more complex, predefined <code class="kw" translate="no">ethiopic-numeric</code> style.</p>
+</section>
+
+
+
+<section id="georgian-styles">
+<h2>Georgian</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="georgian"><a href="#georgian">georgian</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 19999;<br/>
+additive-symbols: 10000 '\10F5', 9000 '\10F0', 8000 '\10EF', 7000 '\10F4', 6000 '\10EE', 5000 '\10ED', 4000 '\10EC', 3000 '\10EB', 2000 '\10EA', 1000 '\10E9', 900 '\10E8', 800 '\10E7', 700 '\10E6', 600 '\10E5', 500 '\10E4', 400 '\10F3', 300 '\10E2', 200 '\10E1', 100 '\10E0', 90 '\10DF', 80 '\10DE', 70 '\10DD', 60 '\10F2', 50 '\10DC', 40 '\10DB', 30 '\10DA', 20 '\10D9', 10 '\10D8', 9 '\10D7', 8 '\10F1', 7 '\10D6', 6 '\10D5', 5 '\10D4', 4 '\10D3', 3 '\10D2', 2 '\10D1', 1 '\10D0';<br/>
+/* additive-symbols: 10000 '&#4341;', 9000 '&#4336;', 8000 '&#4335;', 7000 '&#4340;', 6000 '&#4334;', 5000 '&#4333;', 4000 '&#4332;', 3000 '&#4331;', 2000 '&#4330;', 1000 '&#4329;', 900 '&#4328;', 800 '&#4327;', 700 '&#4326;', 600 '&#4325;', 500 '&#4324;', 400 '&#4339;', 300 '&#4322;', 200 '&#4321;', 100 '&#4320;', 90 '&#4319;', 80 '&#4318;', 70 '&#4317;', 60 '&#4338;', 50 '&#4316;', 40 '&#4315;', 30 '&#4314;', 20 '&#4313;', 10 '&#4312;', 9 '&#4311;', 8 '&#4337;', 7 '&#4310;', 6 '&#4309;', 5 '&#4308;', 4 '&#4307;', 3 '&#4306;', 2 '&#4305;', 1 '&#4304;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+
+
+
+<section id="greek-styles">
+<h2>Greek</h2>
+
+<div class="counterstyle"> <code>
+  <bdo dir="ltr">@counter-style <dfn id="greek-lower-modern"><a href="#greek-lower-modern">greek-lower-modern</a></dfn> {<br/>
+    system: additive;<br/>
+    range: 1 999;<br/>
+    additive-symbols: 900 \3E1, 800 \3C9, 700 \3C8, 600 \3C7, 500 \3C6, 400 \3C5, 300 \3C4, 200 \3C3, 100 \3C1, 90 \3DF, 80 \3C0, 70 \3BF, 60 \3BE, 50 \3BD, 40 \3BC, 30 \3BB, 20 \3BA, 10 \3B9, 9 \3B8, 8 \3B7, 7 \3B6, 6 \3C3\3C4, 5 \3B5, 4 \3B4, 3 \3B3, 2 \3B2, 1 \3B1;<br/>
+    /* additive-symbols: 900 ϡ, 800 ω, 700 ψ, 600 χ, 500 φ, 400 υ, 300 τ, 200 σ, 100 ρ, 90 ϟ, 80 π, 70 ο, 60 ξ, 50 ν, 40 μ, 30 λ, 20 κ, 10 ι, 9 θ, 8 η, 7 ζ, 6 στ, 5 ε, 4 δ, 3 γ, 2 β, 1 α; */<br/>
+    } </bdo>
+</code></div>
+
+<div class="counterstyle"> <code>
+  <bdo dir="ltr">@counter-style <dfn id="greek-upper-modern"><a href="#greek-upper-modern">greek-upper-modern</a></dfn> {<br/>
+    system: additive;<br/>
+    range: 1 999;<br/>
+    additive-symbols: 900 \3E0, 800 \3A8, 700 \3A7, 600 \3A6, 500 \3A5, 400 \3A4, 300 \3A3, 200 \3A2, 100 \3A1, 90 \3DE, 80 \3A0, 70 \39F, 60 \39E, 50 \39D, 40 \39C, 30 \39B, 20 \39A, 10 \399, 9 \398, 8 \397, 7 \396, 6 \3A3\3A4, 5 \395, 4 \394, 3 \393, 2 \392, 1 \391;<br/>
+    /* additive-symbols: 900 Ϡ, 800 Ω, 700 Ψ, 600 Χ, 500 Φ, 400 Υ, 300 Τ, 200 Σ, 100 Ρ, 90 Ϟ, 80 Π, 70 Ο, 60 Ξ, 50 Ν, 40 Μ, 30 Λ, 20 Κ, 10 Ι, 9 Θ, 8 Η, 7 Ζ, 6 ΣΤ, 5 Ε, 4 Δ, 3 Γ, 2 Β, 1 Α; */<br/>
+    } </bdo>
+</code></div>
+
+<div class="counterstyle"> <code>
+  <bdo dir="ltr">@counter-style <dfn id="greek-lower-ancient"><a href="#greek-lower-ancient">greek-lower-ancient</a></dfn> {<br/>
+    system: additive;<br/>
+    range: 1 999;<br/>
+    additive-symbols: 900 \3E1, 800 \3C9, 700 \3C8, 600 \3C7, 500 \3C6, 400 \3C5, 300 \3C4, 200 \3C3, 100 \3C1, 90 \3DF, 80 \3C0, 70 \3BF, 60 \3BE, 50 \3BD, 40 \3BC, 30 \3BB, 20 \3BA, 10 \3B9, 9 \3B8, 8 \3B7, 7 \3B6, 6 \3DB, 5 \3B5, 4 \3B4, 3 \3B3, 2 \3B2, 1 \3B1;<br/>
+    /* additive-symbols: 900 ϡ, 800 ω, 700 ψ, 600 χ, 500 φ, 400 υ, 300 τ, 200 σ, 100 ρ, 90 ϟ, 80 π, 70 ο, 60 ξ, 50 ν, 40 μ, 30 λ, 20 κ, 10 ι, 9 θ, 8 η, 7 ζ, 6 ϛ, 5 ε, 4 δ, 3 γ, 2 β, 1 α; */<br/>
+    } </bdo>
+</code></div>
+
+<div class="counterstyle"> <code>
+  <bdo dir="ltr">@counter-style <dfn id="greek-upper-ancient"><a href="#greek-upper-ancient">greek-upper-ancient</a></dfn> {<br/>
+    system: additive;<br/>
+    range: 1 999;<br/>
+    additive-symbols: 900 \3E0, 800 \3A8, 700 \3A7, 600 \3A6, 500 \3A5, 400 \3A4, 300 \3A3, 200 \3A2, 100 \3A1, 90 \3DE, 80 \3A0, 70 \39F, 60 \39E, 50 \39D, 40 \39C, 30 \39B, 20 \39A, 10 \399, 9 \398, 8 \397, 7 \396, 6 \3DA, 5 \395, 4 \394, 3 \393, 2 \392, 1 \391;<br/>
+    /* additive-symbols: 900 Ϡ, 800 Ω, 700 Ψ, 600 Χ, 500 Φ, 400 Υ, 300 Τ, 200 Σ, 100 Ρ, 90 Ϟ, 80 Π, 70 Ο, 60 Ξ, 50 Ν, 40 Μ, 30 Λ, 20 Κ, 10 Ι, 9 Θ, 8 Η, 7 Ζ, 6 Ϛ, 5 Ε, 4 Δ, 3 Γ, 2 Β, 1 Α; */<br/>
+    } </bdo>
+</code></div>
+<div class="counterstyle">
+  <code><bdo dir="ltr">
+@counter-style <dfn id="lower-greek"><a href="#lower-greek">lower-greek</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\3B1' '\3B2' '\3B3' '\3B4' '\3B5' '\3B6' '\3B7' '\3B8' '\3B9' '\3BA' '\3BB' '\3BC' '\3BD' '\3BE' '\3BF' '\3C0' '\3C1' '\3C3' '\3C4' '\3C5' '\3C6' '\3C7' '\3C8' '\3C9';<br/>
+/* symbols: '&#945;' '&#946;' '&#947;' '&#948;' '&#949;' '&#950;' '&#951;' '&#952;' '&#953;' '&#954;' '&#955;' '&#956;' '&#957;' '&#958;' '&#959;' '&#960;' '&#961;' '&#963;' '&#964;' '&#965;' '&#966;' '&#967;' '&#968;' '&#969;'; */<br/>
+/* This style is only defined because CSS2.1 has it.  It doesn't appear to actually be used in Greek texts. */<br/>
+}
+</bdo></code></div>
+
+<p class=note>The <code class="kw" translate="no">lower-greek</code> style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification, however the <code class="kw" translate="no">greek-lower-modern</code> style is more commonly used in Greece. CSS2.1 included the <code class="kw" translate="no">lower-greek</code> keyword, and at the time of writing, all major browsers support the <code class="kw" translate="no">lower-greek</code> counter style but not the <code class="kw" translate="no">greek-lower-modern</code> style.</p>
+</section>
+
+
+
+<section id="gujarati-styles">
+  <h2>Gujarati</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="gujarati"><a href="#gujarati">gujarati</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\AE6' '\AE7' '\AE8' '\AE9' '\AEA' '\AEB' '\AEC' '\AED' '\AEE' '\AEF';<br/>
+/* symbols: '&#2790;' '&#2791;' '&#2792;' '&#2793;' '&#2794;' '&#2795;' '&#2796;' '&#2797;' '&#2798;' '&#2799;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+
+
+
+<section id="gurmukhi-styles">
+<h2>Gurmukhi</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="gurmukhi"><a href="#gurmukhi">gurmukhi</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\A66' '\A67' '\A68' '\A69' '\A6A' '\A6B' '\A6C' '\A6D' '\A6E' '\A6F';<br/>
+/* symbols: '&#2662;' '&#2663;' '&#2664;' '&#2665;' '&#2666;' '&#2667;' '&#2668;' '&#2669;' '&#2670;' '&#2671;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+
+
+
+<section id="hebrew-styles">
+<h2>Hebrew</h2>
+<div class="counterstyle"> <code>
+  <bdo dir="ltr"> @counter-style <dfn id="hebrew-extended"><a href="#hebrew-extended">hebrew</a></dfn> {<br/>
+    system: additive;<br/>
+    range: 1 10999;<br/>
+    additive-symbols: 10000 \5D9\5F3, 9000 \5D8\5F3, 8000 \5D7\5F3, 7000 \5D6\5F3, 6000 \5D5\5F3, 5000 \5D4\5F3, 4000 \5D3\5F3, 3000 \5D2\5F3, 2000 \5D1\5F3, 1000 \5D0\5F3, 400 \5EA, 300 \5E9, 200 \5E8, 100 \5E7, 90 \5E6, 80 \5E4, 70 \5E2, 60 \5E1, 50 \5E0, 40 \5DE, 30 \5DC, 20 \5DB, 19 \5D9\5D8, 18 \5D9\5D7, 17 \5D9\5D6, 16 \5D8\5D6, 15 \5D8\5D5, 10 \5D9, 9 \5D8, 8 \5D7, 7 \5D6, 6 \5D5, 5 \5D4, 4 \5D3, 3 \5D2, 2 \5D1, 1 \5D0;<br/>
+    /* additive-symbols: 10000 י׳, 9000 ט׳, 8000 ח׳, 7000 ז׳, 6000 ו׳, 5000 ה׳, 4000 ד׳, 3000 ג׳, 2000 ב׳, 1000 א׳, 400 ת, 300 ש, 200 ר, 100 ק, 90 צ, 80 פ, 70 ע, 60 ס, 50 נ, 40 מ, 30 ל, 20 כ, 19 יט, 18 יח, 17 יז, 16 טז, 15 טו, 10 י, 9 ט, 8 ח, 7 ז, 6 ו, 5 ה, 4 ד, 3 ג, 2 ב, 1 א; */<br/>
+    /* This system manually specifies the values for 19-15 to force the correct display of 15 and 16, which are commonly rewritten to avoid a close resemblance to the Tetragrammaton. */<br>
+/* This system theoretically extends to at least 999999, but specifying it above 10999 with the @counter-style rule is difficult. */    <br/>
+    } </bdo>
+</code></div>
+<p class=note>This style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+
+</section>
+
+
+
+<section id="chinese-styles">
+  <h2> Han Ideographic (Chinese/Japanese/Korean)</h2>
+      
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="cjk-decimal"><a href="#cjk-decimal">cjk-decimal</a></dfn> {<br/>
+system: numeric;<br>
+range: 0 infinite;
+<br/>
+symbols: '\3007' '\4E00' '\4E8C' '\4E09' '\56DB' '\4E94' '\516D' '\4E03' '\516B' '\4E5D';<br/>
+/* symbols: 〇 一 二 三 四 五 六 七 八 九; */<br/>
+suffix: '\3001';<br/>
+/* suffix: "、" */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="cjk-earthly-branch"><a href="#cjk-earthly-branch">cjk-earthly-branch</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\5B50' '\4E11' '\5BC5' '\536F' '\8FB0' '\5DF3' '\5348' '\672A' '\7533' '\9149' '\620C' '\4EA5';<br/>
+/* symbols: '&#23376;' '&#19985;' '&#23493;' '&#21359;' '&#36784;' '&#24051;' '&#21320;' '&#26410;' '&#30003;' '&#37193;' '&#25100;' '&#20133;'; */<br/>
+suffix: '\3001';<br/>
+/* suffix: '&#12289;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="cjk-heavenly-stem"><a href="#cjk-heavenly-stem">cjk-heavenly-stem</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\7532' '\4E59' '\4E19' '\4E01' '\620A' '\5DF1' '\5E9A' '\8F9B' '\58EC' '\7678';<br/>
+/* symbols: '&#30002;' '&#20057;' '&#19993;' '&#19969;' '&#25098;' '&#24049;' '&#24218;' '&#36763;' '&#22764;' '&#30328;'; */<br/>
+suffix: '\3001';<br/>
+/* suffix: '&#12289;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="japanese-informal"><a href="#japanese-informal">japanese-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+system: additive;<br/>
+range: -9999 9999;<br/>
+additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \3007;<br/>
+/* additive-symbols: 9000 九千, 8000 八千, 7000 七千, 6000 六千, 5000 五千, 4000 四千, 3000 三千, 2000 二千, 1000 千, 900 九百, 800 八百, 700 七百, 600 六百, 500 五百, 400 四百, 300 三百, 200 二百, 100 百, 90 九十, 80 八十, 70 七十, 60 六十, 50 五十, 40 四十, 30 三十, 20 二十, 10 十, 9 九, 8 八, 7 七, 6 六, 5 五, 4 四, 3 三, 2 二, 1 一, 0 〇; */<br/>
+suffix: '\3001';<br/>
+/* suffix: '、'; */<br/>
+negative: "\30DE\30A4\30CA\30B9";<br/>
+/* negative: マイナス; */<br/>
+fallback: cjk-decimal;<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="japanese-formal"><a href="#japanese-formal">japanese-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+system: additive;<br/>
+range: -9999 9999;<br/>
+additive-symbols: 9000 \4E5D\9621, 8000 \516B\9621, 7000 \4E03\9621, 6000 \516D\9621, 5000 \4F0D\9621, 4000 \56DB\9621, 3000 \53C2\9621, 2000 \5F10\9621, 1000 \58F1\9621, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4F0D\767E, 400 \56DB\767E, 300 \53C2\767E, 200 \5F10\767E, 100 \58F1\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4F0D\62FE, 40 \56DB\62FE, 30 \53C2\62FE, 20 \5F10\62FE, 10 \58F1\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4F0D, 4 \56DB, 3 \53C2, 2 \5F10, 1 \58F1, 0 \96F6;<br/>
+/* additive-symbols: 9000 九阡, 8000 八阡, 7000 七阡, 6000 六阡, 5000 伍阡, 4000 四阡, 3000 参阡, 2000 弐阡, 1000 壱阡, 900 九百, 800 八百, 700 七百, 600 六百, 500 伍百, 400 四百, 300 参百, 200 弐百, 100 壱百, 90 九拾, 80 八拾, 70 七拾, 60 六拾, 50 伍拾, 40 四拾, 30 参拾, 20 弐拾, 10 壱拾, 9 九, 8 八, 7 七, 6 六, 5 伍, 4 四, 3 参, 2 弐, 1 壱, 0 零; */<br/>
+suffix: '\3001';<br/>
+/* suffix: 、; */<br/>
+negative: "\30DE\30A4\30CA\30B9";<br/>
+/* negative: マイナス; */<br/>
+fallback: cjk-decimal;<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="korean-hanja-informal"><a href="#korean-hanja-informal">korean-hanja-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+system: additive;<br/>
+range: -9999 9999;<br/>
+additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \96F6;<br/>
+/* additive-symbols: 9000 九千, 8000 八千, 7000 七千, 6000 六千, 5000 五千, 4000 四千, 3000 三千, 2000 二千, 1000 千, 900 九百, 800 八百, 700 七百, 600 六百, 500 五百, 400 四百, 300 三百, 200 二百, 100 百, 90 九十, 80 八十, 70 七十, 60 六十, 50 五十, 40 四十, 30 三十, 20 二十, 10 十, 9 九, 8 八, 7 七, 6 六, 5 五, 4 四, 3 三, 2 二, 1 一, 0 零; */<br/>
+suffix:', ';<br/>
+negative: "\B9C8\C774\B108\C2A4  ";<br/>
+/* 마이너스 (followed by a space) */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="korean-hanja-formal"><a href="#korean-hanja-formal">korean-hanja-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+system: additive;<br/>
+range: -9999 9999;<br/>
+additive-symbols: 9000 \4E5D\4EDF, 8000 \516B\4EDF, 7000 \4E03\4EDF, 6000 \516D\4EDF, 5000 \4E94\4EDF, 4000 \56DB\4EDF, 3000 \53C3\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \53C3\767E, 200 \8CB3\767E, 100 \58F9\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4E94\62FE, 40 \56DB\62FE, 30 \53C3\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \53C3, 2 \8CB3, 1 \58F9, 0 \96F6;<br/>
+/* additive-symbols: 9000 九仟, 8000 八仟, 7000 七仟, 6000 六仟, 5000 五仟, 4000 四仟, 3000 參仟, 2000 貳仟, 1000 壹仟, 900 九百, 800 八百, 700 七百, 600 六百, 500 五百, 400 四百, 300 參百, 200 貳百, 100 壹百, 90 九拾, 80 八拾, 70 七拾, 60 六拾, 50 五拾, 40 四拾, 30 參拾, 20 貳拾, 10 壹拾, 9 九, 8 八, 7 七, 6 六, 5 五, 4 四, 3 參, 2 貳, 1 壹, 0 零; */<br/>
+suffix:', ';<br/>
+negative: "\B9C8\C774\B108\C2A4  ";<br/>
+/* 마이너스 (followed by a space) */<br/>
+} 
+</bdo></code></div>
+<div class="counterstyle"> <code>
+  <bdo dir="ltr"> @counter-style <dfn id="circled-ideograph"><a href="#circled-ideograph">circled-ideograph</a></dfn> {<br/>
+    system: fixed;<br/>
+    symbols: '\3280' '\3281' '\3282' '\3283' '\3284' '\3285' '\3286' '\3287' '\3288' '\3289';<br/>
+    /* symbols: '&#x3280;' '&#x3281;' '&#x3282;' '&#x3283;' '&#x3284;' '&#x3285;' '&#x3286;' '&#x3287;' '&#x3288;' '&#x3289;'; */<br/>
+    suffix: ' ';
+    } </bdo>
+</code></div>
+<div class="counterstyle"> <code>
+  <bdo dir="ltr"> @counter-style <dfn id="parenthesized-ideograph"><a href="#parenthesized-ideograph">parenthesized-ideograph</a></dfn> {<br/>
+    system: fixed;<br/>
+    symbols: '\3220' '\3221' '\3222' '\3223' '\3224' '\3225' '\3226' '\3227' '\3228' '\3229';<br/>
+    /* symbols: '&#x3220;' '&#x3221;' '&#x3222;' '&#x3223;' '&#x3224;' '&#x3225;' '&#x3226;' '&#x3227;' '&#x3228;' '&#x3229;'; */<br/>
+    suffix: ' ';
+    } </bdo>
+</code></div>
+<p class=note>The <code class="kw" translate="no">cjk-decimal</code>, <code class="kw" translate="no">cjk-earthly-branch</code>, <code class="kw" translate="no">cjk-heavenly-stem</code>, <code class="kw" translate="no">japanese-formal</code>, <code class="kw" translate="no">japanese-informal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class=note>Also, see the<code> </code>specification for the following more complex predefined Chinese styles: <code class="kw" translate="no">simp-chinese-informal</code>, <code class="kw" translate="no">simp-chinese-formal</code>, <code class="kw" translate="no">trad-chinese-informal</code>, <code class="kw" translate="no">trad-chinese-formal</code>, which are not defined here.</p>
+</section>
+
+
+<section id="kana-styles">
+<h2>Japanese (Hiragana/Katakana)</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="hiragana"><a href="#hiragana">hiragana</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\3042' '\3044' '\3046' '\3048' '\304A' '\304B' '\304D' '\304F' '\3051' '\3053' '\3055' '\3057' '\3059' '\305B' '\305D' '\305F' '\3061' '\3064' '\3066' '\3068' '\306A' '\306B' '\306C' '\306D' '\306E' '\306F' '\3072' '\3075' '\3078' '\307B' '\307E' '\307F' '\3080' '\3081' '\3082' '\3084' '\3086' '\3088' '\3089' '\308A' '\308B' '\308C' '\308D' '\308F' '\3090' '\3091' '\3092' '\3093';<br/>
+/* symbols: あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ ま み む め も や ゆ よ ら り る れ ろ わ ゐ ゑ を ん; */<br/>
+suffix: '、';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="hiragana-iroha"><a href="#hiragana-iroha">hiragana-iroha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\3044' '\308D' '\306F' '\306B' '\307B' '\3078' '\3068' '\3061' '\308A' '\306C' '\308B' '\3092' '\308F' '\304B' '\3088' '\305F' '\308C' '\305D' '\3064' '\306D' '\306A' '\3089' '\3080' '\3046' '\3090' '\306E' '\304A' '\304F' '\3084' '\307E' '\3051' '\3075' '\3053' '\3048' '\3066' '\3042' '\3055' '\304D' '\3086' '\3081' '\307F' '\3057' '\3091' '\3072' '\3082' '\305B' '\3059';<br/>
+/* symbols: い ろ は に ほ へ と ち り ぬ る を わ か よ た れ そ つ ね な ら む う ゐ の お く や ま け ふ こ え て あ さ き ゆ め み し ゑ ひ も せ す; */<br/>
+suffix: '、';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="katakana"><a href="#katakana">katakana</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\30A2' '\30A4' '\30A6' '\30A8' '\30AA' '\30AB' '\30AD' '\30AF' '\30B1' '\30B3' '\30B5' '\30B7' '\30B9' '\30BB' '\30BD' '\30BF' '\30C1' '\30C4' '\30C6' '\30C8' '\30CA' '\30CB' '\30CC' '\30CD' '\30CE' '\30CF' '\30D2' '\30D5' '\30D8' '\30DB' '\30DE' '\30DF' '\30E0' '\30E1' '\30E2' '\30E4' '\30E6' '\30E8' '\30E9' '\30EA' '\30EB' '\30EC' '\30ED' '\30EF' '\30F0' '\30F1' '\30F2' '\30F3';<br/>
+/* symbols: ア イ ウ エ オ カ キ ク ケ コ サ シ ス セ ソ タ チ ツ テ ト ナ ニ ヌ ネ ノ ハ ヒ フ ヘ ホ マ ミ ム メ モ ヤ ユ ヨ ラ リ ル レ ロ ワ ヰ ヱ ヲ ン; */<br/>
+suffix: '、';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="katakana-iroha"><a href="#katakana-iroha">katakana-iroha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\30A4' '\30ED' '\30CF' '\30CB' '\30DB' '\30D8' '\30C8' '\30C1' '\30EA' '\30CC' '\30EB' '\30F2' '\30EF' '\30AB' '\30E8' '\30BF' '\30EC' '\30BD' '\30C4' '\30CD' '\30CA' '\30E9' '\30E0' '\30A6' '\30F0' '\30CE' '\30AA' '\30AF' '\30E4' '\30DE' '\30B1' '\30D5' '\30B3' '\30A8' '\30C6' '\30A2' '\30B5' '\30AD' '\30E6' '\30E1' '\30DF' '\30B7' '\30F1' '\30D2' '\30E2' '\30BB' '\30B9';<br/>
+/* symbols: イ ロ ハ ニ ホ ヘ ト チ リ ヌ ル ヲ ワ カ ヨ タ レ ソ ツ ネ ナ ラ ム ウ ヰ ノ オ ク ヤ マ ケ フ コ エ テ ア サ キ ユ メ ミ シ ヱ ヒ モ セ ス; */<br/>
+suffix: '、';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle"> 
+<code><bdo dir="ltr"> @counter-style <dfn id="circled-katakana"><a href="#circled-katakana">circled-katakana</a></dfn> {<br/>
+    system: fixed;<br/>
+    symbols: '\32D0' '\32D1' '\32D2' '\32D3' '\32D4' '\32D5' '\32D6' '\32D7' '\32D8' '\32D9' '\32DA' '\32DB' '\32DC' '\32DD' '\32DE' '\32DF' '\32E0' '\32E1' '\32E2' '\32E3' '\32E4' '\32E5' '\32E6' '\32E7' '\32E8' '\32E9' '\32EA' '\32EB' '\32EC' '\32ED' '\32EE' '\32EF' '\32F0' '\32F1' '\32F2' '\32F3' '\32F4' '\32F5' '\32F6' '\32F7' '\32F8' '\32F9' '\32FA' '\32FB' '\32FC' '\32FD' '\32FE';<br/>
+   /* symbols: ㋐ ㋑ ㋒ ㋓ ㋔ ㋕ ㋖ ㋗ ㋘ ㋙ ㋚ ㋛ ㋜ ㋝ ㋞ ㋟ ㋠ ㋡ ㋢ ㋣ ㋤ ㋥ ㋦ ㋧ ㋨ ㋩ ㋪ ㋫ ㋬ ㋭ ㋮ ㋯ ㋰ ㋱ ㋲ ㋳ ㋴ ㋵ ㋶ ㋷ ㋸ ㋹ ㋺ ㋻ ㋼ ㋽ ㋾; */<br/>
+    suffix: ' ';<br/>
+    } </bdo>
+</code></div>
+
+<p class=note>All styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">See also the <a href="#chinese-styles">Ideographic</a> section for kanji styles.</p>
+</section>
+
+
+
+<section id="kannada-styles">
+<h2>Kannada</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kannada"><a href="#kannada">kannada</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\CE6' '\CE7' '\CE8' '\CE9' '\CEA' '\CEB' '\CEC' '\CED' '\CEE' '\CEF';<br/>
+/* symbols: '&#3302;' '&#3303;' '&#3304;' '&#3305;' '&#3306;' '&#3307;' '&#3308;' '&#3309;' '&#3310;' '&#3311;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="khmer-styles">
+<h2>Khmer</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="cambodian"><a href="#cambodian">cambodian</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';<br/>
+/* symbols: '&#6112;' '&#6113;' '&#6114;' '&#6115;' '&#6116;' '&#6117;' '&#6118;' '&#6119;' '&#6120;' '&#6121;'; */<br/>
+}
+</bdo></code></div>
+
+
+<div class="counterstyle">
+  <code><bdo dir="ltr">
+@counter-style <dfn id="khmer"><a href="#khmer">khmer</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';<br/>
+/* symbols: '&#6112;' '&#6113;' '&#6114;' '&#6115;' '&#6116;' '&#6117;' '&#6118;' '&#6119;' '&#6120;' '&#6121;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="khmer-consonant"><a href="#khmer-consonant">khmer-consonant</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\1780' '\1781' '\1782' '\1783' '\1784' '\1785' '\1786' '\1787' '\1788' '\1789' '\178A' '\178B' '\178C' '\178D' '\178E' '\178F' '\1790' '\1791' '\1792' '\1793' '\1794' '\1795' '\1796' '\1797' '\1798' '\1799' '\179A' '\179B' '\179C' '\179F' '\17A0' '\17A1' '\17A2';<br/>
+/* symbols: '&#6016;' '&#6017;' '&#6018;' '&#6019;' '&#6020;' '&#6021;' '&#6022;' '&#6023;' '&#6024;' '&#6025;' '&#6026;' '&#6027;' '&#6028;' '&#6029;' '&#6030;' '&#6031;' '&#6032;' '&#6033;' '&#6034;' '&#6035;' '&#6036;' '&#6037;' '&#6038;' '&#6039;' '&#6040;' '&#6041;' '&#6042;' '&#6043;' '&#6044;' '&#6047;' '&#6048;' '&#6049;' '&#6050;'; */<br/>
+}
+</bdo></code></div>
+
+<p class=note>The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are exactly the same. Both are listed separately here because both names are supported in some browsers, and it makes it easier to cut and paste if two clean instances are provided.</p>
+<p class=note>The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="korean-styles">
+<h2>Korean (Hangul)</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="circled-korean-consonant"><a href="#circled-korean-consonant">circled-korean-consonant</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\3260' '\3261' '\3262' '\3263' '\3264' '\3265' '\3266' '\3267' '\3268' '\3269' '\326A' '\326B' '\326C' '\326D';<br/>
+/* symbols: '&#12896;' '&#12897;' '&#12898;' '&#12899;' '&#12900;' '&#12901;' '&#12902;' '&#12903;' '&#12904;' '&#12905;' '&#12906;' '&#12907;' '&#12908;' '&#12909;'; */<br/>
+suffix: ' ';
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="circled-korean-syllable"><a href="#circled-korean-syllable">circled-korean-syllable</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\326E' '\326F' '\3270' '\3271' '\3272' '\3273' '\3274' '\3275' '\3276' '\3277' '\3278' '\3279' '\327A' '\327B';<br/>
+/* symbols: '&#12910;' '&#12911;' '&#12912;' '&#12913;' '&#12914;' '&#12915;' '&#12916;' '&#12917;' '&#12918;' '&#12919;' '&#12920;' '&#12921;' '&#12922;' '&#12923;'; */<br/>
+suffix: ' ';
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="korean-consonant"><a href="#korean-consonant">korean-consonant</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';<br/>
+/* symbols: '&#12593;' '&#12596;' '&#12599;' '&#12601;' '&#12609;' '&#12610;' '&#12613;' '&#12615;' '&#12616;' '&#12618;' '&#12619;' '&#12620;' '&#12621;' '&#12622;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="korean-hangul-formal"><a href="#korean-hangul-formal">korean-hangul-formal</a></dfn> {<br/>
+system: additive;<br/>
+range: -9999 9999;<br/>
+additive-symbols: 9000 '\AD6C\CC9C', 8000 '\D314\CC9C', 7000 '\CE60\CC9C', 6000 '\C721\CC9C', 5000 '\C624\CC9C', 4000 '\C0AC\CC9C', 3000 '\C0BC\CC9C', 2000 '\C774\CC9C', 1000 '\C77C\CC9C', 900 '\AD6C\BC31', 800 '\D314\BC31', 700 '\CE60\BC31', 600 '\C721\BC31', 500 '\C624\BC31', 400 '\C0AC\BC31', 300 '\C0BC\BC31', 200 '\C774\BC31', 100 '\C77C\BC31', 90 '\AD6C\C2ED', 80 '\D314\C2ED', 70 '\CE60\C2ED', 60 '\C721\C2ED', 50 '\C624\C2ED', 40 '\C0AC\C2ED', 30 '\C0BC\C2ED', 20 '\C774\C2ED', 10 '\C77C\C2ED', 9 '\AD6C', 8 '\D314', 7 '\CE60', 6 '\C721', 5 '\C624', 4 '\C0AC', 3 '\C0BC', 2 '\C774', 1 '\C77C', 0 '\C601';<br/>
+/* additive-symbols: 9000 구천, 8000 팔천, 7000 칠천, 6000 육천, 5000 오천, 4000 사천, 3000 삼천, 2000 이천, 1000 일천, 900 구백, 800 팔백, 700 칠백, 600 육백, 500 오백, 400 사백, 300 삼백, 200 이백, 100 일백, 90 구십, 80 팔십, 70 칠십, 60 육십, 50 오십, 40 사십, 30 삼십, 20 이십, 10 일십, 9 구, 8 팔, 7 칠, 6 육, 5 오, 4 사, 3 삼, 2 이, 1 일, 0 영 */<br/>
+suffix:', ';<br/>
+negative: "\B9C8\C774\B108\C2A4  ";<br/>
+/* 마이너스 (followed by a space) */<br/>
+}
+</bdo></code>
+</div>
+<div class="counterstyle">
+  <code><bdo dir="ltr">
+@counter-style <dfn id="korean-syllable"><a href="#korean-syllable">korean-syllable</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';<br/>
+/* symbols: '&#44032;' '&#45208;' '&#45796;' '&#46972;' '&#47560;' '&#48148;' '&#49324;' '&#50500;' '&#51088;' '&#52264;' '&#52852;' '&#53440;' '&#54028;' '&#54616;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="parenthesized-hangul-consonant"><a href="#parenthesized-hangul-consonant">parenthesized-hangul-consonant</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\3200' '\3201' '\3202' '\3203' '\3204' '\3205' '\3206' '\3207' '\3208' '\3209' '\320A' '\320B' '\320C' '\320D';<br/>
+/* symbols: '&#12800;' '&#12801;' '&#12802;' '&#12803;' '&#12804;' '&#12805;' '&#12806;' '&#12807;' '&#12808;' '&#12809;' '&#12810;' '&#12811;' '&#12812;' '&#12813;'; */<br/>
+suffix: ' ';
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="parenthesized-hangul-syllable"><a href="#parenthesized-hangul-syllable">parenthesized-hangul-syllable</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\320E' '\320F' '\3210' '\3211' '\3212' '\3213' '\3214' '\3215' '\3216' '\3217' '\3218' '\3219' '\321A';<br/>
+/* symbols: '&#12814;' '&#12815;' '&#12816;' '&#12817;' '&#12818;' '&#12819;' '&#12820;' '&#12821;' '&#12822;' '&#12823;' '&#12824;' '&#12825;' '&#12826;'; */<br/>
+suffix: ' ';
+}
+</bdo></code>
+<p>See also the <a href="#chinese-styles">Ideographic</a> section for hanja styles.</p>
+</div>
+<p class=note>The <code class="kw" translate="no">korean-hangul-formal</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="lao-styles">
+<h2>Lao</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lao"><a href="#lao">lao</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\ED0' '\ED1' '\ED2' '\ED3' '\ED4' '\ED5' '\ED6' '\ED7' '\ED8' '\ED9';<br/>
+/* symbols: '&#3792;' '&#3793;' '&#3794;' '&#3795;' '&#3796;' '&#3797;' '&#3798;' '&#3799;' '&#3800;' '&#3801;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="latin-styles">
+<h2>Latin</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="fullwidth-lower-alpha"><a href="#fullwidth-lower-alpha">fullwidth-lower-alpha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\FF41' '\FF42' '\FF43' '\FF44' '\FF45' '\FF46' '\FF47' '\FF48' '\FF49' '\FF4A' '\FF4B' '\FF4C' '\FF4D' '\FF4E' '\FF4F' '\FF50' '\FF51' '\FF52' '\FF53' '\FF54' '\FF55' '\FF56' '\FF57' '\FF58' '\FF59' '\FF5A';<br/>
+/* symbols: '&#65345;' '&#65346;' '&#65347;' '&#65348;' '&#65349;' '&#65350;' '&#65351;' '&#65352;' '&#65353;' '&#65354;' '&#65355;' '&#65356;' '&#65357;' '&#65358;' '&#65359;' '&#65360;' '&#65361;' '&#65362;' '&#65363;' '&#65364;' '&#65365;' '&#65366;' '&#65367;' '&#65368;' '&#65369;' '&#65370;'; */<br/>
+suffix: '&#65294;';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="fullwidth-upper-alpha"><a href="#fullwidth-upper-alpha">fullwidth-upper-alpha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\FF21' '\FF22' '\FF23' '\FF24' '\FF25' '\FF26' '\FF27' '\FF28' '\FF29' '\FF2A' '\FF2B' '\FF2C' '\FF2D' '\FF2E' '\FF2F' '\FF30' '\FF31' '\FF32' '\FF33' '\FF34' '\FF35' '\FF36' '\FF37' '\FF38' '\FF39' '\FF3A';<br/>
+/* symbols: '&#65313;' '&#65314;' '&#65315;' '&#65316;' '&#65317;' '&#65318;' '&#65319;' '&#65320;' '&#65321;' '&#65322;' '&#65323;' '&#65324;' '&#65325;' '&#65326;' '&#65327;' '&#65328;' '&#65329;' '&#65330;' '&#65331;' '&#65332;' '&#65333;' '&#65334;' '&#65335;' '&#65336;' '&#65337;' '&#65338;'; */<br/>
+suffix: '&#65294;';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-alpha"><a href="#lower-alpha">lower-alpha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';<br/>
+/* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-alpha-symbolic"><a href="#lower-alpha-symbolic">lower-alpha-symbolic</a></dfn> {<br/>
+system: symbolic;<br/>
+symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';<br/>
+/* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-oromo-qubee"><a href="#lower-oromo-qubee">lower-oromo-qubee</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\61' '\61\61' '\62' '\63' '\64' '\65' '\65\65' '\66' '\67' '\68' '\69' '\69\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\6F\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\75\75' '\76' '\77' '\78' '\79' '\7A' '\63\68' '\64\68' '\6B\68' '\6E\79' '\70\68' '\73\68';<br/>
+/* symbols: 'a' 'aa' 'b' 'c' 'd' 'e' 'ee' 'f' 'g' 'h' 'i' 'ii' 'j' 'k' 'l' 'm' 'n' 'o' 'oo' 'p' 'q' 'r' 's' 't' 'u' 'uu' 'v' 'w' 'x' 'y' 'z' 'ch' 'dh' 'kh' 'ny' 'ph' 'sh'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-alpha"><a href="#upper-alpha">upper-alpha</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';<br/>
+/* symbols: 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-alpha-symbolic"><a href="#upper-alpha-symbolic">upper-alpha-symbolic</a></dfn> {<br/>
+system: symbolic;<br/>
+symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';<br/>
+/* symbols: 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-oromo-qubee"><a href="#upper-oromo-qubee">upper-oromo-qubee</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\41' '\41\41' '\42' '\43' '\44' '\45' '\45\45' '\46' '\47' '\48' '\49' '\49\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\4F\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\55\55' '\56' '\57' '\58' '\59' '\5A' '\43\48' '\44\48' '\4B\48' '\4E\59' '\50\48' '\53\48';<br/>
+/* symbols: 'A' 'AA' 'B' 'C' 'D' 'E' 'EE' 'F' 'G' 'H' 'I' 'II' 'J' 'K' 'L' 'M' 'N' 'O' 'OO' 'P' 'Q' 'R' 'S' 'T' 'U' 'UU' 'V' 'W' 'X' 'Y' 'Z' 'CH' 'DH' 'KH' 'NY' 'PH' 'SH'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="parenthesized-lower-latin"><a href="#parenthesized-lower-latin">parenthesized-lower-latin</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\249C' '\249D' '\249E' '\249F' '\24A0' '\24A1' '\24A2' '\24A3' '\24A4' '\24A5' '\24A6' '\24A7' '\24A8' '\24A9' '\24AA' '\24AB' '\24AC' '\24AD' '\24AE' '\24AF' '\24B0' '\24B1' '\24B2' '\24B3' '\24B4' '\24B5';<br/>
+/* symbols: '&#9372;' '&#9373;' '&#9374;' '&#9375;' '&#9376;' '&#9377;' '&#9378;' '&#9379;' '&#9380;' '&#9381;' '&#9382;' '&#9383;' '&#9384;' '&#9385;' '&#9386;' '&#9387;' '&#9388;' '&#9389;' '&#9390;' '&#9391;' '&#9392;' '&#9393;' '&#9394;' '&#9395;' '&#9396;' '&#9397;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<p class=note>The <code class="kw" translate="no">lower-alpha</code> and <code class="kw" translate="no">upper-alpha</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">See also the section <a href="#digit-styles">European Digits &amp; Roman</a></p>
+</section>
+
+
+
+<section id="lepcha-styles">
+<h2>Lepcha</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lepcha"><a href="#lepcha">lepcha</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\1C40' '\1C41' '\1C42' '\1C43' '\1C44' '\1C45' '\1C46' '\1C47' '\1C48' '\1C49';<br/>
+/* symbols: '&#7232;' '&#7233;' '&#7234;' '&#7235;' '&#7236;' '&#7237;' '&#7238;' '&#7239;' '&#7240;' '&#7241;'; */<br/>
+}
+</bdo></code></div>
+
+</section>
+
+
+
+<section id="malayalam-styles">
+<h2>Malayalam</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="malayalam"><a href="#malayalam">malayalam</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\D66' '\D67' '\D68' '\D69' '\D6A' '\D6B' '\D6C' '\D6D' '\D6E' '\D6F';<br/>
+/* symbols: '&#3430;' '&#3431;' '&#3432;' '&#3433;' '&#3434;' '&#3435;' '&#3436;' '&#3437;' '&#3438;' '&#3439;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="mongolian-styles">
+<h2>Mongolian</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="mongolian"><a href="#mongolian">mongolian</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818' '\1819';<br/>
+/* symbols: '&#6160;' '&#6161;' '&#6162;' '&#6163;' '&#6164;' '&#6165;' '&#6166;' '&#6167;' '&#6168;' '&#6169;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="myanmar-styles">
+<h2>Myanmar (Burmese)</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="myanmar"><a href="#myanmar">myanmar</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\1040' '\1041' '\1042' '\1043' '\1044' '\1045' '\1046' '\1047' '\1048' '\1049';<br/>
+/* symbols: '&#4160;' '&#4161;' '&#4162;' '&#4163;' '&#4164;' '&#4165;' '&#4166;' '&#4167;' '&#4168;' '&#4169;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="shan"><a href="#shan">shan</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\1090' '\1091' '\1092' '\1093' '\1094' '\1095' '\1096' '\1097' '\1098' '\1099';<br/>
+/* symbols: '&#4240;' '&#4241;' '&#4242;' '&#4243;' '&#4244;' '&#4245;' '&#4246;' '&#4247;' '&#4248;' '&#4249;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>The <code class="kw" translate="no">myanmar</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="oriya-styles">
+<h2>Oriya</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="oriya"><a href="#oriya">oriya</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\B66' '\B67' '\B68' '\B69' '\B6A' '\B6B' '\B6C' '\B6D' '\B6E' '\B6F';<br/>
+/* symbols: '&#2918;' '&#2919;' '&#2920;' '&#2921;' '&#2922;' '&#2923;' '&#2924;' '&#2925;' '&#2926;' '&#2927;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="tamil-styles">
+<h2>Tamil</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="ancient-tamil"><a href="#ancient-tamil">ancient-tamil</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 9999;<br/>
+additive-symbols: 9000 '\BEF\BF2', 8000 '\BEE\BF2', 7000 '\BED\BF2', 6000 '\BEC\BF2', 5000 '\BEB\BF2', 4000 '\BEA\BF2', 3000 '\BE9\BF2', 2000 '\BE8\BF2', 1000 '\BF2', 900 '\BEF\BF1', 800 '\BEE\BF1', 700 '\BED\BF1', 600 '\BEC\BF1', 500 '\BEB\BF1', 400 '\BEA\BF1', 300 '\BE9\BF1', 200 '\BE8\BF1', 100 '\BF1', 90 '\BEF\BF0', 80 '\BEE\BF0', 70 '\BED\BF0', 60 '\BEC\BF0', 50 '\BEB\BF0', 40 '\BEA\BF0', 30 '\BE9\BF0', 20 '\BE8\BF0', 10 '\BF0', 9 '\BEF', 8 '\BEE', 7 '\BED', 6 '\BEC', 5 '\BEB', 4 '\BEA', 3 '\BE9', 2 '\BE8', 1 '\BE7';<br/>
+/* additive-symbols: 9000 '&#3055;&#3058;', 8000 '&#3054;&#3058;', 7000 '&#3053;&#3058;', 6000 '&#3052;&#3058;', 5000 '&#3051;&#3058;', 4000 '&#3050;&#3058;', 3000 '&#3049;&#3058;', 2000 '&#3048;&#3058;', 1000 '&#3058;', 900 '&#3055;&#3057;', 800 '&#3054;&#3057;', 700 '&#3053;&#3057;', 600 '&#3052;&#3057;', 500 '&#3051;&#3057;', 400 '&#3050;&#3057;', 300 '&#3049;&#3057;', 200 '&#3048;&#3057;', 100 '&#3057;', 90 '&#3055;&#3056;', 80 '&#3054;&#3056;', 70 '&#3053;&#3056;', 60 '&#3052;&#3056;', 50 '&#3051;&#3056;', 40 '&#3050;&#3056;', 30 '&#3049;&#3056;', 20 '&#3048;&#3056;', 10 '&#3056;', 9 '&#3055;', 8 '&#3054;', 7 '&#3053;', 6 '&#3052;', 5 '&#3051;', 4 '&#3050;', 3 '&#3049;', 2 '&#3048;', 1 '&#3047;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="tamil"><a href="#tamil">tamil</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';<br/>
+/* symbols: '&#3046;' '&#3047;' '&#3048;' '&#3049;' '&#3050;' '&#3051;' '&#3052;' '&#3053;' '&#3054;' '&#3055;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>The <code class="kw" translate="no">tamil</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="telugu-styles">
+<h2>Telugu</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="telugu"><a href="#telugu">telugu</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\C66' '\C67' '\C68' '\C69' '\C6A' '\C6B' '\C6C' '\C6D' '\C6E' '\C6F';<br/>
+/* symbols: '&#3174;' '&#3175;' '&#3176;' '&#3177;' '&#3178;' '&#3179;' '&#3180;' '&#3181;' '&#3182;' '&#3183;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="thai-styles">
+<h2>Thai</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="thai"><a href="#thai">thai</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\E50' '\E51' '\E52' '\E53' '\E54' '\E55' '\E56' '\E57' '\E58' '\E59';<br/>
+/* symbols: '&#3664;' '&#3665;' '&#3666;' '&#3667;' '&#3668;' '&#3669;' '&#3670;' '&#3671;' '&#3672;' '&#3673;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="thai-alphabetic"><a href="#thai-alphabetic">thai-alphabetic</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\E01' '\E02' '\E04' '\E07' '\E08' '\E09' '\E0A' '\E0B' '\E0C' '\E0D' '\E0E' '\E0F' '\E10' '\E11' '\E12' '\E13' '\E14' '\E15' '\E16' '\E17' '\E18' '\E19' '\E1A' '\E1B' '\E1C' '\E1D' '\E1E' '\E1F' '\E20' '\E21' '\E22' '\E23' '\E25' '\E27' '\E28' '\E29' '\E2A' '\E2B' '\E2C' '\E2D' '\E2E';<br/>
+/* symbols: '&#3585;' '&#3586;' '&#3588;' '&#3591;' '&#3592;' '&#3593;' '&#3594;' '&#3595;' '&#3596;' '&#3597;' '&#3598;' '&#3599;' '&#3600;' '&#3601;' '&#3602;' '&#3603;' '&#3604;' '&#3605;' '&#3606;' '&#3607;' '&#3608;' '&#3609;' '&#3610;' '&#3611;' '&#3612;' '&#3613;' '&#3614;' '&#3615;' '&#3616;' '&#3617;' '&#3618;' '&#3619;' '&#3621;' '&#3623;' '&#3624;' '&#3625;' '&#3626;' '&#3627;' '&#3628;' '&#3629;' '&#3630;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>The <code class="kw" translate="no">thai</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+<section id="tibetan-styles">
+<h2>Tibetan</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="tibetan"><a href="#tibetan">tibetan</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';<br/>
+/* symbols: '&#3872;' '&#3873;' '&#3874;' '&#3875;' '&#3876;' '&#3877;' '&#3878;' '&#3879;' '&#3880;' '&#3881;'; */<br/>
+}
+</bdo></code></div>
+<p class=note>This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+
+
+
+
+<section id="digit-styles">
+<h2>European Digits &amp; Roman</h2>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="binary"><a href="#binary">binary</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31';<br/>
+/* symbols: '0' '1'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="circled-decimal"><a href="#circled-decimal">circled-decimal</a></dfn> {<br/>
+system: fixed 0;<br/>
+symbols: '\24EA' '\2460' '\2461' '\2462' '\2463' '\2464' '\2465' '\2466' '\2467' '\2468' '\2469' '\246A' '\246B' '\246C' '\246D' '\246E' '\246F' '\2470' '\2471' '\2472' '\2473' '\3251' '\3252' '\3253' '\3254' '\3255' '\3256' '\3257' '\3258' '\3259' '\325a' '\325b' '\325c' '\325d' '\325e' '\325f' '\32b1' '\32b2' '\32b3' '\32b4' '\32b5' '\32b6' '\32b7' '\32b8' '\32b9' '\32ba' '\32bb' '\32bc' '\32bd' '\32be' '\32bf';<br/>
+/* symbols: '&#9450;' '&#9312;' '&#9313;' '&#9314;' '&#9315;' '&#9316;' '&#9317;' '&#9318;' '&#9319;' '&#9320;' '&#9321;' '&#9322;' '&#9323;' '&#9324;' '&#9325;' '&#9326;' '&#9327;' '&#9328;' '&#9329;' '&#9330;' '&#9331;' '&#12881;' '&#12882;' '&#12883;' '&#12884;' '&#12885;' '&#12886;' '&#12887;' '&#12888;' '&#12889;' '&#12890;' '&#12891;' '&#12892;' '&#12893;' '&#12894;' '&#12895;' '&#12977;' '&#12978;' '&#12979;' '&#12980;' '&#12981;' '&#12982;' '&#12983;' '&#12984;' '&#12985;' '&#12986;' '&#12987;' '&#12988;' '&#12989;' '&#12990;' '&#12991;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="circled-lower-latin"><a href="#circled-lower-latin">circled-lower-latin</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\24D0' '\24D1' '\24D2' '\24D3' '\24D4' '\24D5' '\24D6' '\24D7' '\24D8' '\24D9' '\24DA' '\24DB' '\24DC' '\24DD' '\24DE' '\24DF' '\24E0' '\24E1' '\24E2' '\24E3' '\24E4' '\24E5' '\24E6' '\24E7' '\24E8' '\24E9';<br/>
+/* symbols: '&#9424;' '&#9425;' '&#9426;' '&#9427;' '&#9428;' '&#9429;' '&#9430;' '&#9431;' '&#9432;' '&#9433;' '&#9434;' '&#9435;' '&#9436;' '&#9437;' '&#9438;' '&#9439;' '&#9440;' '&#9441;' '&#9442;' '&#9443;' '&#9444;' '&#9445;' '&#9446;' '&#9447;' '&#9448;' '&#9449;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="circled-upper-latin"><a href="#circled-upper-latin">circled-upper-latin</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';<br/>
+/* symbols: '&#9398;' '&#9399;' '&#9400;' '&#9401;' '&#9402;' '&#9403;' '&#9404;' '&#9405;' '&#9406;' '&#9407;' '&#9408;' '&#9409;' '&#9410;' '&#9411;' '&#9412;' '&#9413;' '&#9414;' '&#9415;' '&#9416;' '&#9417;' '&#9418;' '&#9419;' '&#9420;' '&#9421;' '&#9422;' '&#9423;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="decimal"><a href="#decimal">decimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39';<br/>
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="decimal-leading-zero"><a href="#decimal-leading-zero">decimal-leading-zero</a></dfn> {<br/>
+system: fixed -9;<br/>
+symbols: '\2D\30\39' '\2D\30\38' '\2D\30\37' '\2D\30\36' '\2D\30\35' '\2D\30\34' '\2D\30\33' '\2D\30\32' '\2D\30\31' '\30\30' '\30\31' '\30\32' '\30\33' '\30\34' '\30\35' '\30\36' '\30\37' '\30\38' '\30\39';<br/>
+/* symbols: '-09' '-08' '-07' '-06' '-05' '-04' '-03' '-02' '-01' '00' '01' '02' '03' '04' '05' '06' '07' '08' '09'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="dotted-decimal"><a href="#dotted-decimal">dotted-decimal</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\2488' '\2489' '\248A' '\248B' '\248C' '\248D' '\248E' '\248F' '\2490' '\2491' '\2492' '\2493' '\2494' '\2495' '\2496' '\2497' '\2498' '\2499' '\249A' '\249B';<br/>
+/* symbols: '&#9352;' '&#9353;' '&#9354;' '&#9355;' '&#9356;' '&#9357;' '&#9358;' '&#9359;' '&#9360;' '&#9361;' '&#9362;' '&#9363;' '&#9364;' '&#9365;' '&#9366;' '&#9367;' '&#9368;' '&#9369;' '&#9370;' '&#9371;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="double-circled-decimal"><a href="#double-circled-decimal">double-circled-decimal</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\24F5' '\24F6' '\24F7' '\24F8' '\24F9' '\24FA' '\24FB' '\24FC' '\24FD' '\24FE';<br/>
+/* symbols: '&#9461;' '&#9462;' '&#9463;' '&#9464;' '&#9465;' '&#9466;' '&#9467;' '&#9468;' '&#9469;' '&#9470;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="filled-circled-decimal"><a href="#filled-circled-decimal">filled-circled-decimal</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\2776' '\2777' '\2778' '\2779' '\277a' '\277b' '\277c' '\277d' '\277e' '\277f' '\24EB' '\24EC' '\24ED' '\24EE' '\24EF' '\24F0' '\24F1' '\24F2' '\24F3' '\24F4';<br/>
+/* symbols: '&#10102;' '&#10103;' '&#10104;' '&#10105;' '&#10106;' '&#10107;' '&#10108;' '&#10109;' '&#10110;' '&#10111;' '&#9451;' '&#9452;' '&#9453;' '&#9454;' '&#9455;' '&#9456;' '&#9457;' '&#9458;' '&#9459;' '&#9460;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="fullwidth-decimal"><a href="#fullwidth-decimal">fullwidth-decimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\FF10' '\FF11' '\FF12' '\FF13' '\FF14' '\FF15' '\FF16' '\FF17' '\FF18' '\FF19';<br/>
+/* symbols: '&#65296;' '&#65297;' '&#65298;' '&#65299;' '&#65300;' '&#65301;' '&#65302;' '&#65303;' '&#65304;' '&#65305;'; */<br/>
+suffix: '\FF0E';<br/>
+/* symbols: '&#65294;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="fullwidth-lower-roman"><a href="#fullwidth-lower-roman">fullwidth-lower-roman</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\2170' '\2171' '\2172' '\2173' '\2174' '\2175' '\2176' '\2177' '\2178' '\2179' '\217A' '\217B';<br/>
+/* symbols: '&#8560;' '&#8561;' '&#8562;' '&#8563;' '&#8564;' '&#8565;' '&#8566;' '&#8567;' '&#8568;' '&#8569;' '&#8570;' '&#8571;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="fullwidth-upper-roman"><a href="#fullwidth-upper-roman">fullwidth-upper-roman</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\2160' '\2161' '\2162' '\2163' '\2164' '\2165' '\2166' '\2167' '\2168' '\2169' '\216A' '\216B';<br/>
+/* symbols: '&#8544;' '&#8545;' '&#8546;' '&#8547;' '&#8548;' '&#8549;' '&#8550;' '&#8551;' '&#8552;' '&#8553;' '&#8554;' '&#8555;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-hexadecimal"><a href="#lower-hexadecimal">lower-hexadecimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\61' '\62' '\63' '\64' '\65' '\66';<br/>
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'a' 'b' 'c' 'd' 'e' 'f'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-roman"><a href="#lower-roman">lower-roman</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 3999;<br/>
+additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 90 '\78\63', 50 '\6C', 40 '\78\6C', 10 '\78', 9 '\69\78', 5 '\76', 4 '\69\76', 1 '\69';<br/>
+/* additive-symbols: 1000 'm', 900 'cm', 500 'd', 400 'cd', 100 'c', 90 'xc', 50 'l', 40 'xl', 10 'x', 9 'ix', 5 'v', 4 'iv', 1 'i'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="new-base-60"><a href="#new-base-60">new-base-60</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\4A' '\4B' '\4C' '\4D' '\4E' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A' '\5F' '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';<br/>
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'J' 'K' 'L' 'M' 'N' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '_' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="octal"><a href="#octal">octal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37';<br/>
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="parenthesized-decimal"><a href="#parenthesized-decimal">parenthesized-decimal</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\2474' '\2475' '\2476' '\2477' '\2478' '\2479' '\247A' '\247B' '\247C' '\247D' '\247E' '\247F' '\2480' '\2481' '\2482' '\2483' '\2484' '\2485' '\2486' '\2487';<br/>
+/* symbols: '&#9332;' '&#9333;' '&#9334;' '&#9335;' '&#9336;' '&#9337;' '&#9338;' '&#9339;' '&#9340;' '&#9341;' '&#9342;' '&#9343;' '&#9344;' '&#9345;' '&#9346;' '&#9347;' '&#9348;' '&#9349;' '&#9350;' '&#9351;'; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="simple-lower-roman"><a href="#simple-lower-roman">simple-lower-roman</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 4999;<br/>
+additive-symbols: 1000 '\6D', 500 '\64', 100 '\63', 50 '\6C', 10 '\78', 5 '\76', 1 '\69';<br/>
+/* additive-symbols: 1000 'm', 500 'd', 100 'c', 50 'l', 10 'x', 5 'v', 1 'i'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="simple-upper-roman"><a href="#simple-upper-roman">simple-upper-roman</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 4999;<br/>
+additive-symbols: 1000 '\4D', 500 '\44', 100 '\43', 50 '\4C', 10 '\58', 5 '\56', 1 '\49';<br/>
+/* additive-symbols: 1000 'M', 500 'D', 100 'C', 50 'L', 10 'X', 5 'V', 1 'I'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="super-decimal"><a href="#super-decimal">super-decimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\2070' '\B9' '\B2' '\B3' '\2074' '\2075' '\2076' '\2077' '\2078' '\2079';<br/>
+/* symbols: '&#8304;' '&#185;' '&#178;' '&#179;' '&#8308;' '&#8309;' '&#8310;' '&#8311;' '&#8312;' '&#8313;'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-hexadecimal"><a href="#upper-hexadecimal">upper-hexadecimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46';<br/>
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F'; */<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="upper-roman"><a href="#upper-roman">upper-roman</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 3999;<br/>
+additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 90 '\58\43', 50 '\4C', 40 '\58\4C', 10 '\58', 9 '\49\58', 5 '\56', 4 '\49\56', 1 '\49';<br/>
+/* additive-symbols: 1000 'M', 900 'CM', 500 'D', 400 'CD', 100 'C', 90 'XC', 50 'L', 40 'XL', 10 'X', 9 'IX', 5 'V', 4 'IV', 1 'I'; */<br/>
+}
+</bdo></code></div>
+<p class=note>The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+</section>
+
+
+
+
+
+
+<section class="appendix" id="app-b">
+  <h2>References</h2>
+<dl>
+  <dt id="css3list" title="CSS3LIST">[COUNTERS]</dt>
+  <dd>Tab Atkins Jr.. <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>.   3 February 2015. W3C Candidate Recommendation. URL: <a href="http://www.w3.org/TR/css-counter-styles-3/">http://www.w3.org/TR/css-counter-styles-3/</a></dd>
+  </dl>
+  </section>
+
+<section class="appendix" id="app-c">
+  <h2> Revision Log</h2>
+  <ol>
+    <li>Replaced <code class="kw" translate="no">greek</code> with <code class="kw" translate="no">lower-greek-modern</code>, and added <code class="kw" translate="no">upper-greek-modern</code>, <code class="kw" translate="no">lower-greek-ancient</code>, and <code class="kw" translate="no">upper-greek-ancient</code>.</li>
+  </ol>
+</section>
+
+
+<section class='appendix'>
+<h2>Acknowledgements</h2>
+<p>Ian Hickson and Tantek Çelı̇k provided the majority of early contributions to this content. Additional significant contributions were made by Tab Atkins.</p>
+<p>Additional thanks to Mati Allouche, George Schizas.</p>
+</section>
+  </body>
+</html>
