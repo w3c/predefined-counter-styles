@@ -84,8 +84,8 @@
     </script>
   </head>
   <body>
-  <p id="sotd">This document describes numbering systems used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
-    <section id='abstract'>This document describes numbering systems used by various cultures around the world and can be used as a reference for those wishing to create user-defined counter styles for CSS.
+  <p id="sotd">This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
+    <section id='abstract'>This document provides code snippets for user-defined counter styles used by various cultures around the world, and can be used as a reference for those wishing to create their own counter styles for CSS style sheets.
   </section>
     
 <section id="intro">
@@ -93,13 +93,13 @@
 
 <section id="purpose">
 <h3>Purpose of the document</h3>
-<p>	The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification defines a mechanism for authors to define almost any counter style they would want.  To avoid you having to figure out how to produce the list style you want, this document predefines a large set of counter styles covering many  approaches from around the world.</p>
+<p>	Browsers that implement the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles.  As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets for a large set of  styles, covering more than 25 writing systems around the world, that people have already worked out. If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet, or you can modify the style as needed.</p>
 <p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please write to www-international@w3.org.
 </section>
 
 <section id="howto">
 <h3>How to use this information</h3>
-<p>This document contains ready-made templates  defining counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
+<p>This document contains ready-made code snippets for user-defined counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
 <p>In this document the counter-style templates are grouped by script (writing system). Inside a group, styles are ordered alphabetically by name.</p>
 <p>Find the counter style you wish to use, and simply copy-paste the relevant code from this document to your style sheet. Then associate the counter-style with your markup.</p>
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
@@ -116,7 +116,7 @@ ol { list-style-type: arabic-indic; }</pre>
 </div>
 
 <p>For clarity, in the source code, the list of counters is provided using character escapes, but, if you prefer, you can delete that line and uncomment the line below it to use actual characters instead.
-<p>The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of  counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.</section>
+<p>The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.</section>
 </section>
 
 
