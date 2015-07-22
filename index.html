@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Custom Counter Styles for International Content</title>
+    <title>Custom Counter Styles</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
 	<link rel="stylesheet" href="local.css" type="text/css" />
     <!-- 
@@ -14,64 +14,26 @@
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:           "ED",
+          //publishDate:  "2015-07-23",
+          previousPublishDate:  "2015-02-03",
+          previousMaturity:  "WD",
+
           noRecTrack: 			true, 
-          // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "predefined-counter-styles",
+          copyrightStart: "2014",
 
-          // if your specification has a subtitle that goes below the main
-          // formal title, define it here
-          // subtitle   :  "an excellent document",
-
-          // if you wish the publication date to be other than today, set this
-          //publishDate:  "2015-02-03",
-
-          // if the specification's copyright date is a range of years, specify
-          // the start date here:
-          // copyrightStart: "2005"
-
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-           previousPublishDate:  "2015-02-03",
-           previousMaturity:  "WD",
-
-          // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "http://w3c.github.io/predefined-counter-styles/",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
 
-          // if you want to have extra CSS, append them to this list
-          // it is recommended that the respec.css stylesheet be kept
-          //extraCSS:             [
-		  //"http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css",
-		  //"http://www.w3.org/International/docs/counter-styles/local.css"],
-
-          // editors, add as many as you like
-          // only "name" is required
           editors:  [
               { name: "Richard Ishida", url: "",
                 company: "W3C", companyURL: "" },
           ],
 
-          // authors, add as many as you like. 
-          // This is optional, uncomment if you have authors as well as editors.
-          // only "name" is required. Same format as editors.
-
-          //authors:  [
-           //   { name: "Ian Hickson", url: "",
-           //    company: "", companyURL: "" },
-           //  { name: "Tantek Çelı̇k", url: "",
-           //    company: "", companyURL: "" },
-           //  { name: "Tab Atkins", url: ""},
-          //],
-          
-          // name of the WG
           wg:           "Internationalization Working Group",
-          
-          // URI of the public WG page
           wgURI:        "http://www.w3.org/International/core/",
-          
-          // name (without the @w3c.org) of the public mailing to which comments are due
           wgPublicList: "www-international",
           
           // URI of the patent status for this WG, for Rec-track documents
@@ -80,11 +42,31 @@
           // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
           // Team Contact.
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/32113/status",
+
+		  bugTracker: { new: "https://github.com/w3c/predefined-counter-styles/issues", open: "https://github.com/w3c/predefined-counter-styles/issues" } ,
+		otherLinks: [
+			{
+			key: "Github",
+			data: [
+				{
+			  	value: "repository",
+			  	href: "https://github.com/w3c/predefined-counter-styles"
+		 		}
+				]
+			}
+			],
       };
     </script>
   </head>
   <body>
-  <p id="sotd">This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
+  <div id="sotd">
+  <p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
+  <div class="note">
+    <p style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
+    <p>If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/predefined-counter-styles/issues" style="font-size: 120%;">github issues</a> against the <a href="http://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/" style="font-size: 120%">latest dated version in /TR</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
+    <p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
+  </div>
+  </div>
     <section id='abstract'>This document provides code snippets for user-defined counter styles used by various cultures around the world, and can be used as a reference for those wishing to create their own user-defined counter styles for CSS style sheets.
   </section>
     
@@ -94,7 +76,7 @@
 <p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 <p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.
 <p>The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.
-
+  
 <section id="howto">
 <h3>How to use this information</h3>
 <p>This document contains ready-made code snippets for user-defined counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
@@ -1584,6 +1566,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <h2> Revision Log</h2>
   <ol>
     <li>Replaced <code class="kw" translate="no">greek</code> with <code class="kw" translate="no">lower-greek-modern</code>, and added <code class="kw" translate="no">upper-greek-modern</code>, <code class="kw" translate="no">lower-greek-ancient</code>, and <code class="kw" translate="no">upper-greek-ancient</code>.</li>
+    <li>Changed the title from <cite>Predefined Counter Styles</cite> to <cite>Custom Counter Styles</cite>, to avoid confusion with the predefined counter styles in the CSS spec.</li>
   </ol>
 </section>
 
