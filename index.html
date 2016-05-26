@@ -3,14 +3,14 @@
   <head>
     <title>Custom Counter Styles</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-	<link rel="canonical" href="http://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
+	<link rel="canonical" href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
 	<link rel="stylesheet" href="local.css" type="text/css" />
     <!-- 
       === NOTA BENE ===
       For the three scripts below, if your spec resides on dev.w3 you can check them
       out in the same tree and use relative links so that they'll work offline,
      -->
-    <script src="http://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
     <script class="remove">
       var respecConfig = {
           useExperimentalStyles: true,
@@ -24,7 +24,7 @@
           shortName:            "predefined-counter-styles",
           copyrightStart: "2014",
 
-          edDraftURI:           "http://w3c.github.io/predefined-counter-styles/",
+          edDraftURI:           "https://w3c.github.io/predefined-counter-styles/",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
@@ -35,7 +35,7 @@
           ],
 
           wg:           "Internationalization Working Group",
-          wgURI:        "http://www.w3.org/International/core/",
+          wgURI:        "https://www.w3.org/International/core/",
           wgPublicList: "www-international",
           
           // URI of the patent status for this WG, for Rec-track documents
@@ -43,7 +43,7 @@
           // This is important for Rec-track documents, do not copy a patent URI from a random
           // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
           // Team Contact.
-          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/32113/status",
+          wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/32113/status",
 
 		  bugTracker: { new: "https://github.com/w3c/predefined-counter-styles/issues", open: "https://github.com/w3c/predefined-counter-styles/issues" } ,
 		otherLinks: [
@@ -65,7 +65,7 @@
   <p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group.  The Working Group expects this document to become a Working Group Note.</p>
   <div class="note">
     <p style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
-    <p>If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/predefined-counter-styles/issues" style="font-size: 120%;">github issues</a> against the <a href="http://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/" style="font-size: 120%">latest dated version in /TR</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
+    <p>If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/predefined-counter-styles/issues" style="font-size: 120%;">github issues</a> . Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
     <p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
   </div>
   </div>
@@ -74,14 +74,14 @@
     
 <section id="intro">
 <h2>Introduction</h2>
-<p>	Browsers that implement the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-marker and generated-content counters.  </p>
+<p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-marker and generated-content counters.  </p>
 <p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 <p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.
-<p>The <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.
+<p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.
   
 <section id="howto">
 <h3>How to use this information</h3>
-<p>This document contains ready-made code snippets for user-defined counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
+<p>This document contains ready-made code snippets for user-defined counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
 <p>In this document the counter-style templates are grouped by script (writing system). Inside a group, styles are ordered alphabetically by name.</p>
 <p>Find the counter style you wish to use, and simply copy-paste the relevant code from this document to your style sheet. Then associate the counter-style with your markup.</p>
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
@@ -141,7 +141,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
 }
 </bdo></code></div>
 
-<p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 </section>
 
 
@@ -177,7 +177,7 @@ additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550
 /* additive-symbols: 9000 '&#1364;', 8000 '&#1363;', 7000 '&#1362;', 6000 '&#1361;', 5000 '&#1360;', 4000 '&#1359;', 3000 '&#1358;', 2000 '&#1357;', 1000 '&#1356;', 900 '&#1355;', 800 '&#1354;', 700 '&#1353;', 600 '&#1352;', 500 '&#1351;', 400 '&#1350;', 300 '&#1349;', 200 '&#1348;', 100 '&#1347;', 90 '&#1346;', 80 '&#1345;', 70 '&#1344;', 60 '&#1343;', 50 '&#1342;', 40 '&#1341;', 30 '&#1340;', 20 '&#1339;', 10 '&#1338;', 9 '&#1337;', 8 '&#1336;', 7 '&#1335;', 6 '&#1334;', 5 '&#1333;', 4 '&#1332;', 3 '&#1331;', 2 '&#1330;', 1 '&#1329;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">All styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">All styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 
@@ -193,7 +193,7 @@ symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';<
 /* symbols: '&#2534;' '&#2535;' '&#2536;' '&#2537;' '&#2538;' '&#2539;' '&#2540;' '&#2541;' '&#2542;' '&#2543;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined  in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">This style is defined  in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 <section id="cyrillic-styles">
@@ -375,7 +375,7 @@ symbols: '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '
 /* symbols: '&#2325;' '&#2326;' '&#2327;' '&#2328;' '&#2329;' '&#2330;' '&#2331;' '&#2332;' '&#2333;' '&#2334;' '&#2335;' '&#2336;' '&#2337;' '&#2338;' '&#2339;' '&#2340;' '&#2341;' '&#2342;' '&#2343;' '&#2344;' '&#2346;' '&#2347;' '&#2348;' '&#2349;' '&#2350;' '&#2351;' '&#2352;' '&#2354;' '&#2357;' '&#2358;' '&#2359;' '&#2360;' '&#2361;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">devanagari</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification</p>
+<p class="note">The <code class="kw" translate="no">devanagari</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification</p>
 </section>
 
 
@@ -603,7 +603,7 @@ suffix: '\1366 '; /* ፦ */<br/>
 }
 </bdo></code></div>
 
-<p class="note"> See also the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification for the more complex, predefined <code class="kw" translate="no">ethiopic-numeric</code> style.</p>
+<p class="note"> See also the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification for the more complex, predefined <code class="kw" translate="no">ethiopic-numeric</code> style.</p>
 </section>
 
 
@@ -620,7 +620,7 @@ additive-symbols: 10000 '\10F5', 9000 '\10F0', 8000 '\10EF', 7000 '\10F4', 6000 
 /* additive-symbols: 10000 '&#4341;', 9000 '&#4336;', 8000 '&#4335;', 7000 '&#4340;', 6000 '&#4334;', 5000 '&#4333;', 4000 '&#4332;', 3000 '&#4331;', 2000 '&#4330;', 1000 '&#4329;', 900 '&#4328;', 800 '&#4327;', 700 '&#4326;', 600 '&#4325;', 500 '&#4324;', 400 '&#4339;', 300 '&#4322;', 200 '&#4321;', 100 '&#4320;', 90 '&#4319;', 80 '&#4318;', 70 '&#4317;', 60 '&#4338;', 50 '&#4316;', 40 '&#4315;', 30 '&#4314;', 20 '&#4313;', 10 '&#4312;', 9 '&#4311;', 8 '&#4337;', 7 '&#4310;', 6 '&#4309;', 5 '&#4308;', 4 '&#4307;', 3 '&#4306;', 2 '&#4305;', 1 '&#4304;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">This style is  defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 
@@ -674,7 +674,7 @@ symbols: '\3B1' '\3B2' '\3B3' '\3B4' '\3B5' '\3B6' '\3B7' '\3B8' '\3B9' '\3BA' '
 }
 </bdo></code></div>
 
-<p class="note">The <code class="kw" translate="no">lower-greek</code> style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification, however the <code class="kw" translate="no">greek-lower-modern</code> style is more commonly used in Greece. CSS2.1 included the <code class="kw" translate="no">lower-greek</code> keyword, and at the time of writing, all major browsers support the <code class="kw" translate="no">lower-greek</code> counter style but not the <code class="kw" translate="no">greek-lower-modern</code> style.</p>
+<p class="note">The <code class="kw" translate="no">lower-greek</code> style is  defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification, however the <code class="kw" translate="no">greek-lower-modern</code> style is more commonly used in Greece. CSS2.1 included the <code class="kw" translate="no">lower-greek</code> keyword, and at the time of writing, all major browsers support the <code class="kw" translate="no">lower-greek</code> counter style but not the <code class="kw" translate="no">greek-lower-modern</code> style.</p>
 </section>
 
 
@@ -690,7 +690,7 @@ symbols: '\AE6' '\AE7' '\AE8' '\AE9' '\AEA' '\AEB' '\AEC' '\AED' '\AEE' '\AEF';<
 /* symbols: '&#2790;' '&#2791;' '&#2792;' '&#2793;' '&#2794;' '&#2795;' '&#2796;' '&#2797;' '&#2798;' '&#2799;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 
@@ -707,7 +707,7 @@ symbols: '\A66' '\A67' '\A68' '\A69' '\A6A' '\A6B' '\A6C' '\A6D' '\A6E' '\A6F';<
 /* symbols: '&#2662;' '&#2663;' '&#2664;' '&#2665;' '&#2666;' '&#2667;' '&#2668;' '&#2669;' '&#2670;' '&#2671;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 
@@ -724,7 +724,7 @@ symbols: '\A66' '\A67' '\A68' '\A69' '\A6A' '\A6B' '\A6C' '\A6D' '\A6E' '\A6F';<
     } </bdo>
 </code></div>
 <p class="note">This system manually specifies the values for 19-15 to force the correct display of 15 and 16, which are commonly rewritten to avoid a close resemblance to the Tetragrammaton. Predefined implementations may, and some do, choose to implement this manually to a higher range. (Users can define it how they like, of course.)</p>
-<p class="note">This style is  defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">This style is  defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 
 </section>
 
@@ -770,7 +770,7 @@ suffix: '\3001';<br/>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
-@counter-style <dfn id="japanese-informal"><a href="#japanese-informal">japanese-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+@counter-style <dfn id="japanese-informal"><a href="#japanese-informal">japanese-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
 system: additive;<br/>
 range: -9999 9999;<br/>
 additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \3007;<br/>
@@ -785,7 +785,7 @@ fallback: cjk-decimal;<br/>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
-@counter-style <dfn id="japanese-formal"><a href="#japanese-formal">japanese-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+@counter-style <dfn id="japanese-formal"><a href="#japanese-formal">japanese-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
 system: additive;<br/>
 range: -9999 9999;<br/>
 additive-symbols: 9000 \4E5D\9621, 8000 \516B\9621, 7000 \4E03\9621, 6000 \516D\9621, 5000 \4F0D\9621, 4000 \56DB\9621, 3000 \53C2\9621, 2000 \5F10\9621, 1000 \58F1\9621, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4F0D\767E, 400 \56DB\767E, 300 \53C2\767E, 200 \5F10\767E, 100 \58F1\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4F0D\62FE, 40 \56DB\62FE, 30 \53C2\62FE, 20 \5F10\62FE, 10 \58F1\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4F0D, 4 \56DB, 3 \53C2, 2 \5F10, 1 \58F1, 0 \96F6;<br/>
@@ -800,7 +800,7 @@ fallback: cjk-decimal;<br/>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
-@counter-style <dfn id="korean-hanja-informal"><a href="#korean-hanja-informal">korean-hanja-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+@counter-style <dfn id="korean-hanja-informal"><a href="#korean-hanja-informal">korean-hanja-informal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
 system: additive;<br/>
 range: -9999 9999;<br/>
 additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \96F6;<br/>
@@ -813,7 +813,7 @@ negative: "\B9C8\C774\B108\C2A4  ";<br/>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
-@counter-style <dfn id="korean-hanja-formal"><a href="#korean-hanja-formal">korean-hanja-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="http://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
+@counter-style <dfn id="korean-hanja-formal"><a href="#korean-hanja-formal">korean-hanja-formal</a></dfn> {<br/> /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */<br/>
 system: additive;<br/>
 range: -9999 9999;<br/>
 additive-symbols: 9000 \4E5D\4EDF, 8000 \516B\4EDF, 7000 \4E03\4EDF, 6000 \516D\4EDF, 5000 \4E94\4EDF, 4000 \56DB\4EDF, 3000 \53C3\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \53C3\767E, 200 \8CB3\767E, 100 \58F9\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4E94\62FE, 40 \56DB\62FE, 30 \53C3\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \53C3, 2 \8CB3, 1 \58F9, 0 \96F6;<br/>
@@ -839,7 +839,7 @@ negative: "\B9C8\C774\B108\C2A4  ";<br/>
     suffix: ' ';
     } </bdo>
 </code></div>
-<p class="note">The <code class="kw" translate="no">cjk-decimal</code>, <code class="kw" translate="no">cjk-earthly-branch</code>, <code class="kw" translate="no">cjk-heavenly-stem</code>, <code class="kw" translate="no">japanese-formal</code>, <code class="kw" translate="no">japanese-informal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+<p class="note">The <code class="kw" translate="no">cjk-decimal</code>, <code class="kw" translate="no">cjk-earthly-branch</code>, <code class="kw" translate="no">cjk-heavenly-stem</code>, <code class="kw" translate="no">japanese-formal</code>, <code class="kw" translate="no">japanese-informal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 <p class="note">Also, see the<code> </code>specification for the following more complex predefined Chinese styles: <code class="kw" translate="no">simp-chinese-informal</code>, <code class="kw" translate="no">simp-chinese-formal</code>, <code class="kw" translate="no">trad-chinese-informal</code>, <code class="kw" translate="no">trad-chinese-formal</code>, which are not defined here.</p>
 </section>
 
@@ -896,7 +896,7 @@ suffix: '、';<br/>
     } </bdo>
 </code></div>
 
-<p class="note">All styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">All styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 <p class="note">See also the <a href="#chinese-styles">Ideographic</a> section for kanji styles.</p>
 </section>
 
@@ -913,7 +913,7 @@ symbols: '\CE6' '\CE7' '\CE8' '\CE9' '\CEA' '\CEB' '\CEC' '\CED' '\CEE' '\CEF';<
 /* symbols: '&#3302;' '&#3303;' '&#3304;' '&#3305;' '&#3306;' '&#3307;' '&#3308;' '&#3309;' '&#3310;' '&#3311;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -951,7 +951,7 @@ symbols: '\1780' '\1781' '\1782' '\1783' '\1784' '\1785' '\1786' '\1787' '\1788'
 </bdo></code></div>
 
 <p class="note">The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are exactly the same. Both are listed separately here because both names are supported in some browsers, and it makes it easier to cut and paste if two clean instances are provided.</p>
-<p class="note">The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1032,7 +1032,7 @@ suffix: ' ';
 </bdo></code>
 <p>See also the <a href="#chinese-styles">Ideographic</a> section for hanja styles.</p>
 </div>
-<p class="note">The <code class="kw" translate="no">korean-hangul-formal</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">korean-hangul-formal</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1049,7 +1049,7 @@ symbols: '\ED0' '\ED1' '\ED2' '\ED3' '\ED4' '\ED5' '\ED6' '\ED7' '\ED8' '\ED9';<
 /* symbols: '&#3792;' '&#3793;' '&#3794;' '&#3795;' '&#3796;' '&#3797;' '&#3798;' '&#3799;' '&#3800;' '&#3801;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1142,7 +1142,7 @@ suffix: ' ';<br/>
 }
 </bdo></code></div>
 
-<p class="note">The <code class="kw" translate="no">lower-alpha</code> and <code class="kw" translate="no">upper-alpha</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">lower-alpha</code> and <code class="kw" translate="no">upper-alpha</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 <p class="note">See also the section <a href="#digit-styles">European Digits &amp; Roman</a></p>
 </section>
 
@@ -1175,7 +1175,7 @@ symbols: '\D66' '\D67' '\D68' '\D69' '\D6A' '\D6B' '\D6C' '\D6D' '\D6E' '\D6F';<
 /* symbols: '&#3430;' '&#3431;' '&#3432;' '&#3433;' '&#3434;' '&#3435;' '&#3436;' '&#3437;' '&#3438;' '&#3439;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1192,7 +1192,7 @@ symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818'
 /* symbols: '&#6160;' '&#6161;' '&#6162;' '&#6163;' '&#6164;' '&#6165;' '&#6166;' '&#6167;' '&#6168;' '&#6169;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1218,7 +1218,7 @@ symbols: '\1090' '\1091' '\1092' '\1093' '\1094' '\1095' '\1096' '\1097' '\1098'
 /* symbols: '&#4240;' '&#4241;' '&#4242;' '&#4243;' '&#4244;' '&#4245;' '&#4246;' '&#4247;' '&#4248;' '&#4249;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">myanmar</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">myanmar</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1235,7 +1235,7 @@ symbols: '\B66' '\B67' '\B68' '\B69' '\B6A' '\B6B' '\B6C' '\B6D' '\B6E' '\B6F';<
 /* symbols: '&#2918;' '&#2919;' '&#2920;' '&#2921;' '&#2922;' '&#2923;' '&#2924;' '&#2925;' '&#2926;' '&#2927;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1262,7 +1262,7 @@ symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';<
 /* symbols: '&#3046;' '&#3047;' '&#3048;' '&#3049;' '&#3050;' '&#3051;' '&#3052;' '&#3053;' '&#3054;' '&#3055;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">tamil</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">tamil</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1279,7 +1279,7 @@ symbols: '\C66' '\C67' '\C68' '\C69' '\C6A' '\C6B' '\C6C' '\C6D' '\C6E' '\C6F';<
 /* symbols: '&#3174;' '&#3175;' '&#3176;' '&#3177;' '&#3178;' '&#3179;' '&#3180;' '&#3181;' '&#3182;' '&#3183;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1305,7 +1305,7 @@ symbols: '\E01' '\E02' '\E04' '\E07' '\E08' '\E09' '\E0A' '\E0B' '\E0C' '\E0D' '
 /* symbols: '&#3585;' '&#3586;' '&#3588;' '&#3591;' '&#3592;' '&#3593;' '&#3594;' '&#3595;' '&#3596;' '&#3597;' '&#3598;' '&#3599;' '&#3600;' '&#3601;' '&#3602;' '&#3603;' '&#3604;' '&#3605;' '&#3606;' '&#3607;' '&#3608;' '&#3609;' '&#3610;' '&#3611;' '&#3612;' '&#3613;' '&#3614;' '&#3615;' '&#3616;' '&#3617;' '&#3618;' '&#3619;' '&#3621;' '&#3623;' '&#3624;' '&#3625;' '&#3626;' '&#3627;' '&#3628;' '&#3629;' '&#3630;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">thai</code> style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">thai</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1322,7 +1322,7 @@ symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';<
 /* symbols: '&#3872;' '&#3873;' '&#3874;' '&#3875;' '&#3876;' '&#3877;' '&#3878;' '&#3879;' '&#3880;' '&#3881;'; */<br/>
 }
 </bdo></code></div>
-<p class="note">This style is defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1547,7 +1547,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 /* additive-symbols: 1000 'M', 900 'CM', 500 'D', 400 'CD', 100 'C', 90 'XC', 50 'L', 40 'XL', 10 'X', 9 'IX', 5 'V', 4 'IV', 1 'I'; */<br/>
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
 
 </section>
 
@@ -1560,7 +1560,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <h2>References</h2>
 <dl>
   <dt id="css3list" title="CSS3LIST">[COUNTERS]</dt>
-  <dd>Tab Atkins Jr.. <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>.   3 February 2015. W3C Candidate Recommendation. URL: <a href="http://www.w3.org/TR/css-counter-styles-3/">http://www.w3.org/TR/css-counter-styles-3/</a></dd>
+  <dd>Tab Atkins Jr.. <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>.   3 February 2015. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/css-counter-styles-3/">https://www.w3.org/TR/css-counter-styles-3/</a></dd>
   </dl>
   </section>
 
