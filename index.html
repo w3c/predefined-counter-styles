@@ -1088,6 +1088,16 @@ symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C'
 }
 </bdo></code></div>
 
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="lower-alpha-ancient"><a href="#lower-alpha-ancient">lower-alpha-ancient</a></dfn> {<br/>
+system: alphabetic;<br/>
+symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69'   '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';<br/>
+/* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */<br/>
+}
+</bdo></code></div>
+
 <div class="counterstyle">
 <code><bdo dir="ltr">
 @counter-style <dfn id="lower-alpha-symbolic"><a href="#lower-alpha-symbolic">lower-alpha-symbolic</a></dfn> {<br/>
@@ -1475,6 +1485,19 @@ additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
+@counter-style <dfn id="lower-roman-j"><a href="#lower-roman-j">lower-roman-j</a></dfn> {<br/>
+system: additive;<br/>
+range: 1 3999;<br/>
+additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 90 '\78\63', 50 '\6C', 40 '\78\6C', 10 '\78', 9 '\69\78', 5 '\76', 4 '\69\76', 3 '\69\69\70', 2 '\69\70', 1 '\69';<br/>
+/* additive-symbols: 1000 'm', 900 'cm', 500 'd', 400 'cd', 100 'c', 90 'xc', 50 'l', 40 'xl', 10 'x', 9 'ix', 5 'v', 4 'iv', 3 'iij', 2 'ij', 1 'i'; */<br/>
+}
+</bdo></code></div>
+
+This variant substitutes a <i>j</i> for the final of multiple <i>i</i>, <samp>v, vi, vij, viij, ix</samp>. 
+<!-- Arguably, they could be ligated as either <i>ÿ</i> or <i>ĳ</i>. -->
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
 @counter-style <dfn id="new-base-60"><a href="#new-base-60">new-base-60</a></dfn> {<br/>
 system: numeric;<br/>
 symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\4A' '\4B' '\4C' '\4D' '\4E' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A' '\5F' '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';<br/>
@@ -1530,6 +1553,35 @@ symbols: '\2070' '\B9' '\B2' '\B3' '\2074' '\2075' '\2076' '\2077' '\2078' '\207
 }
 </bdo></code></div>
 
+<div class="counterstyle"><!-- 1 … 10 -->
+<code><bdo dir="ltr">
+@counter-style <dfn id="emoji-numbers"><a href="#emoji-numbers">emoji-numbers</a></dfn> {<br/>
+system: fixed;<br/>
+range: 1 10;<br/>
+symbols: '\31\FE0F\20E3' '\32\FE0F\20E3' '\33\FE0F\20E3' '\34\FE0F\20E3' '\35\FE0F\20E3' '\36\FE0F\20E3' '\37\FE0F\20E3' '\38\FE0F\20E3' '\39\FE0F\20E3' '\1F51F';<br/>
+/* symbols: '1&#xFE0F;&#x20E3;' '2&#xFE0F;&#x20E3;' '&#xFE0F;&#x20E3;' '4&#xFE0F;&#x20E3;' '5&#xFE0F;&#x20E3;' '6&#xFE0F;&#x20E3;' '7&#xFE0F;&#x20E3;' '8&#xFE0F;&#x20E3;' '9&#xFE0F;&#x20E3;' '&#x1F51F;'; */<br/>
+}
+</bdo></code></div>
+<div class="counterstyle"><!-- 0 … 9 -->
+<code><bdo dir="ltr">
+@counter-style <dfn id="emoji-decimal"><a href="#emoji-decimal">emoji-decimal</a></dfn> {<br/>
+system: numeric;<br/>
+symbols: '\30\FE0F\20E3' '\31\FE0F\20E3' '\32\FE0F\20E3' '\33\FE0F\20E3' '\34\FE0F\20E3' '\35\FE0F\20E3' '\36\FE0F\20E3' '\37\FE0F\20E3' '\38\FE0F\20E3' '\39\FE0F\20E3';<br/>
+/* symbols: '0&#xFE0F;&#x20E3;' '1&#xFE0F;&#x20E3;' '2&#xFE0F;&#x20E3;' '&#xFE0F;&#x20E3;' '4&#xFE0F;&#x20E3;' '5&#xFE0F;&#x20E3;' '6&#xFE0F;&#x20E3;' '7&#xFE0F;&#x20E3;' '8&#xFE0F;&#x20E3;' '9&#xFE0F;&#x20E3;'; */<br/>
+}
+</bdo></code></div>
+<div class="counterstyle"><!-- combining suffix -->
+<code><bdo dir="ltr">
+@counter-style <dfn id="keycap-decimal"><a href="#keycap-decimal">keycap-decimal</a></dfn> {<br/>
+system: extends decimal;<br/>
+suffix: "\FE0F\20E3";<br/>
+/* suffix: "&#xFE0F;&#x20E3;"; */<br/>
+}
+</bdo></code></div>
+
+Both styles use standard emoji-style keycap digits with U+FE0F ‘Variation Selector-16’ and U+20E3 ‘Combining Enclosing Keycap’. 
+The suffix variant only works properly for single-digit numbers.
+
 <div class="counterstyle">
 <code><bdo dir="ltr">
 @counter-style <dfn id="upper-hexadecimal"><a href="#upper-hexadecimal">upper-hexadecimal</a></dfn> {<br/>
@@ -1549,6 +1601,15 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 }
 </bdo></code></div>
 <p class="note">The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="element-symbols"><a href="#element-symbols">element-symbols</a></dfn> {<br/>
+system: fixed;<br/>
+range: 1 108;<br/>
+symbols: 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', 'Hf', 'Ta', 'W', 'Re', 'Se', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt';<br/>
+}
+</bdo></code></div>
 
 </section>
 
