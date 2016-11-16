@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Custom Counter Styles</title>
+    <title>Ready-made Counter Styles</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<link rel="canonical" href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
 	<link rel="stylesheet" href="local.css" type="text/css" />
@@ -76,17 +76,9 @@
 <section id="intro">
 <h2>Introduction</h2>
 <p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-marker and generated-content counters.  </p>
-<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
-<p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.
-<p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Although those predefined styles are described in the specification, they may not be supported by all browsers, so it is recommended that you still use the definitions provided here in your style sheet. That way, a browser that supports the general counter-style definition mechanism but doesn't support a particular pre-defined style will still show the counters as you expect.
-  
-<section id="howto">
-<h3>How to use this information</h3>
-<p>This document contains ready-made code snippets for user-defined counter styles that you can just cut and paste into your stylesheet. If you are to see results, the browser needs to support the generic  mechanism for defining counter styles as described in <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. If the browser doesn't support that mechanism, the counters will default to the ordinary numeric numbering.</p>
-<p>In this document the counter-style templates are grouped by script (writing system). Inside a group, styles are ordered alphabetically by name.</p>
-<p>Find the counter style you wish to use, and simply copy-paste the relevant code from this document to your style sheet. Then associate the counter-style with your markup.</p>
+<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. </p>
+<p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
-<p>
 <div class="example">
 <pre>
 @counter-style arabic-indic {
@@ -97,9 +89,22 @@
 
 ol { list-style-type: arabic-indic; }</pre>
 </div>
-
-<p>For clarity, in the source code, the list of counters is provided using character escapes, but, if you prefer, you can delete that line and uncomment the line below it to use actual characters instead.
+<p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note.</p>
 </section>
+
+<section id="tips">
+<h2>Things to remember</h2>
+
+<ol>
+<li>
+<p>At the time of writing, the CSS Counter Styles Level 3 specification is still in the Candidate Recommendation phase, and custom counter styles are not widely supported in browsers. Hopefully this will change soon, although browser implementers implement things sooner if they receive requests from users. See a set of basic tests to find which browsers support this feature. On browsers that don't support custom counter styles, the counter styles will fall back to the default.</p>
+<p>Many of the styles described here are already supported by name in browsers. See <a href="https://www.w3.org/International/tests/repo/results/custom-counter-styles">the tests for a list of what international styles are supported</a> natively by which browsers.</p>
+</li>
+<li>
+  <p>You can call these styles or the ones you invent yourself by whatever name you prefer. For example, if you prefer to call the <code class="kw" translate="no">persian</code> counter style <code class="kw" translate="no">extended-arabic</code>, you can just change the name of the counter style. Bear in mind, however, that a counter style called <code class="kw" translate="no">persian</code> is likely to be more widely supported at the moment than a custom style called <code class="kw" translate="no">extended-arabic</code> (see the tests) because it has native support in most major browsers, so using standard names can sometimes be beneficial.</p></li>
+<li><p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.</p>
+<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here.</p></li>
+</ol>
 </section>
 
 
