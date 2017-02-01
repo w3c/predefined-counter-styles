@@ -4,6 +4,10 @@
     <title>Ready-made Counter Styles</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<link rel="canonical" href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
+    <style>
+	#arabic_comp td { border: 1px solid #ccc; padding: 0 2px; min-width: 10px; text-align: center; }
+	#arabic_comp th { font-weight: normal; }
+	</style>
 	<link rel="stylesheet" href="local.css" type="text/css" />
     <!-- 
       === NOTA BENE ===
@@ -122,6 +126,26 @@ symbols: '\660' '\661' '\662' '\663' '\664' '\665' '\666' '\667' '\668' '\669';<
 </bdo></code></div>
 
 <div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="arabic-abjad"><a href="#arabic-abjad">arabic-abjad</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\64A' '\643' '\644' '\645' '\646' '\633' '\639' '\641' '\635' '\642' '\631' '\634' '\62A' '\62B' '\62E' '\630' '\636' '\638' '\63A';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1610;' '&#1603;' '&#1604;' '&#1605;' '&#1606;' '&#1587;' '&#1593;' '&#1601;' '&#1589;' '&#1602;' '&#1585;' '&#1588;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1590;' '&#1592;' '&#1594;' */;<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="maghrebi-abjad"><a href="#maghrebi-abjad">maghrebi-abjad</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\64A' '\643' '\644' '\645' '\646' '\636' '\639' '\641' '\635' '\642' '\631' '\633' '\62A' '\62B' '\62E' '\630' '\638' '\63A' '\634';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1610;' '&#1603;' '&#1604;' '&#1605;' '&#1606;' '&#1589;' '&#1593;' '&#1601;' '&#1590;' '&#1602;' '&#1585;' '&#1587;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1592;' '&#1594;' '&#1588;' */;<br/>
+}
+</bdo></code></div>
+
+<div class="counterstyle">
 <code><bdo dir="ltr">
 @counter-style <dfn id="persian"><a href="#persian">persian</a></dfn> {<br/>
 system: numeric;<br/>
@@ -145,15 +169,233 @@ symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\6
 system: fixed;<br/>
 symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '\630' '\631' '\632' '\698' '\633' '\634' '\635' '\636' '\637' '\638' '\639' '\63A' '\641' '\642' '\6A9' '\6AF' '\644' '\645' '\646' '\648' '\647\200D' '\6CC';<br/>
 /* symbols: '&#1575;' '&#1576;' '&#1662;' '&#1578;' '&#1579;' '&#1580;' '&#1670;' '&#1581;' '&#1582;' '&#1583;' '&#1584;' '&#1585;' '&#1586;' '&#1688;' '&#1587;' '&#1588;' '&#1589;' '&#1590;' '&#1591;' '&#1592;' '&#1593;' '&#1594;' '&#1601;' '&#1602;' '&#1705;' '&#1711;' '&#1604;' '&#1605;' '&#1606;' '&#1608;' '&#1607;&#8205;' '&#1740;' */;<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1662;' '&#1578;' '&#1579;' '&#1580;' '&#1670;' '&#1581;' '&#1582;' '&#1583;' '&#1584;' '&#1585;' '&#1586;' '&#1688;' '&#1587;' '&#1588;' '&#1589;' '&#1590;' '&#1591;' '&#1592;' '&#1593;' '&#1594;' '&#1601;' '&#1602;' '&#1705;' '&#1711;' '&#1604;' '&#1605;' '&#1606;' '&#1608;' '&#1607;&#8205;' '&#1740;' */;<br/>
 }
 </bdo></code></div>
 
 <p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<div class="note">
+  <table id="arabic_comp">
+    <tbody>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">persian-abjad</code></th>
+        <td>ا</td>
+        <td>ب</td>
+        <td>ج</td>
+        <td>د</td>
+        <td>ه‍</td>
+        <td>و</td>
+        <td>ز</td>
+        <td>ح</td>
+        <td>ط</td>
+        <td>ی</td>
+        <td>ک</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>س</td>
+        <td>ع</td>
+        <td>ف</td>
+        <td>ص</td>
+        <td>ق</td>
+        <td>ر</td>
+        <td>ش</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>خ</td>
+        <td>ذ</td>
+        <td>ض</td>
+        <td>ظ</td>
+        <td>غ</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">arabic-abjad</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ي</td>
+        <td>ك</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">magrebi-abjad</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ص</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ض</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>س</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ظ</td>
+        <td>غ</td>
+        <td>ش</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th scope="row">WP old magrebi</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>ج</td>
+        <td>ح</td>
+        <td>خ</td>
+        <td>د</td>
+        <td>ذ</td>
+        <td>ر</td>
+        <td>ز</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ك</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ه</td>
+        <td>و</td>
+        <td>ي</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th scope="row">WP hijai</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>ك</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">persian-alphabetic</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>پ</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>ج</td>
+        <td>چ</td>
+        <td>ح</td>
+        <td>خ</td>
+        <td>د</td>
+        <td>ذ</td>
+        <td>ر</td>
+        <td>ز</td>
+        <td>ژ</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>ک</td>
+        <td>گ</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>و</td>
+        <td>ه‍</td>
+        <td>ی</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>This table shows the differences between the counter styles listed above for the arabic script. A blank cell uses the same letter as the nearest non-blank cell above it.</p>
+  <p>Also included for comparison are two letter sequences that are not included here as counter styles, but that are mentioned in <a href="https://en.wikipedia.org/wiki/Abjad_numerals">Wikipedia</a> – an old maghrebi sequence and the hijai sequence.</p>
+</div>
 </section>
 
-
 <section id="armenian-styles">
-<h2>Armenian</h2>
+  <h2>Armenian</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
