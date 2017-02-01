@@ -75,8 +75,8 @@
     
 <section id="intro">
 <h2>Introduction</h2>
-<p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-marker and generated-content counters.  </p>
-<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. </p>
+<p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-markers and generated-content counters.  </p>
+<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you yourself will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. </p>
 <p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
 <div class="example">
@@ -90,6 +90,7 @@
 ol { list-style-type: arabic-indic; }</pre>
 </div>
 <p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note.</p>
+<p>We try to only include in this document counter styles that are in regular use in the wild, and we are particularly interested in supporting the needs of people who use non-Latin scripts. You may find more experimental or new templates on other sites, such as that <a href="https://github.com/Crissov/css-counters">provided by Christoph Päper</a>.</p>
 </section>
 
 <section id="tips">
@@ -103,7 +104,7 @@ ol { list-style-type: arabic-indic; }</pre>
 <li>
   <p>You can call these styles or the ones you invent yourself by whatever name you prefer. For example, if you prefer to call the <code class="kw" translate="no">persian</code> counter style <code class="kw" translate="no">extended-arabic</code>, you can just change the name of the counter style. Bear in mind, however, that a counter style called <code class="kw" translate="no">persian</code> is likely to be more widely supported at the moment than a custom style called <code class="kw" translate="no">extended-arabic</code> (see the tests) because it has native support in most major browsers, so using standard names can sometimes be beneficial.</p></li>
 <li><p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.</p>
-<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here.</p></li>
+<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here. You should also provide a counter style definition for a template you'd like to see included.</p></li>
 </ol>
 </section>
 
