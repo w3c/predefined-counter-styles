@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Ready-made Counter Styles</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta charset="utf-8"/>
 	<link rel="canonical" href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
 	<link rel="stylesheet" href="local.css" type="text/css" />
     <!-- 
@@ -16,8 +16,8 @@
           useExperimentalStyles: true,
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:          "ED",
-          //publishDate:  		"2016-06-22",
-          previousPublishDate: "2015-02-03",
+          publishDate:  		"2017-02-01",
+          previousPublishDate: "2015-06-22",
           previousMaturity:  	"WD",
 
           noRecTrack: 			true, 
@@ -75,8 +75,8 @@
     
 <section id="intro">
 <h2>Introduction</h2>
-<p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-marker and generated-content counters.  </p>
-<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you will need to define how it works yourself in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. </p>
+<p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-markers and generated-content counters.  </p>
+<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you yourself will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 25 writing systems around the world. </p>
 <p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
 <div class="example">
@@ -90,6 +90,7 @@
 ol { list-style-type: arabic-indic; }</pre>
 </div>
 <p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note.</p>
+<p>We try to only include in this document counter styles that are in regular use in the wild, and we are particularly interested in supporting the needs of people who use non-Latin scripts. You may find more experimental or new templates on other sites, such as that <a href="https://github.com/Crissov/css-counters">provided by Christoph Päper</a>.</p>
 </section>
 
 <section id="tips">
@@ -97,13 +98,13 @@ ol { list-style-type: arabic-indic; }</pre>
 
 <ol>
 <li>
-<p>At the time of writing, the CSS Counter Styles Level 3 specification is still in the Candidate Recommendation phase, and custom counter styles are not widely supported in browsers. Hopefully this will change soon, although browser implementers implement things sooner if they receive requests from users. See a set of basic tests to find which browsers support this feature. On browsers that don't support custom counter styles, the counter styles will fall back to the default.</p>
+<p>At the time of writing, the CSS Counter Styles Level 3 specification is still in the Candidate Recommendation phase, and custom counter styles are not widely supported in browsers. Hopefully this will change soon, although browser implementers implement things sooner if they receive requests from users. See a <a href="https://www.w3.org/International/tests/repo/results/counter-styles">set of basic tests</a> to find which browsers support this feature. On browsers that don't support custom counter styles, the counter styles will fall back to the default.</p>
 <p>Many of the styles described here are already supported by name in browsers. See <a href="https://www.w3.org/International/tests/repo/results/custom-counter-styles">the tests for a list of what international styles are supported</a> natively by which browsers.</p>
 </li>
 <li>
   <p>You can call these styles or the ones you invent yourself by whatever name you prefer. For example, if you prefer to call the <code class="kw" translate="no">persian</code> counter style <code class="kw" translate="no">extended-arabic</code>, you can just change the name of the counter style. Bear in mind, however, that a counter style called <code class="kw" translate="no">persian</code> is likely to be more widely supported at the moment than a custom style called <code class="kw" translate="no">extended-arabic</code> (see the tests) because it has native support in most major browsers, so using standard names can sometimes be beneficial.</p></li>
 <li><p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a> (preferred) or write to www-international@w3.org.</p>
-<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here.</p></li>
+<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here. You should also provide a counter style definition for a template you'd like to see included.</p></li>
 </ol>
 </section>
 
@@ -121,38 +122,274 @@ symbols: '\660' '\661' '\662' '\663' '\664' '\665' '\666' '\667' '\668' '\669';<
 </bdo></code></div>
 
 <div class="counterstyle">
-<code><bdo dir="ltr">
+<code>
+@counter-style <dfn id="arabic-abjad"><a href="#arabic-abjad">arabic-abjad</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\64A' '\643' '\644' '\645' '\646' '\633' '\639' '\641' '\635' '\642' '\631' '\634' '\62A' '\62B' '\62E' '\630' '\636' '\638' '\63A';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1610;' '&#1603;' '&#1604;' '&#1605;' '&#1606;' '&#1587;' '&#1593;' '&#1601;' '&#1589;' '&#1602;' '&#1585;' '&#1588;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1590;' '&#1592;' '&#1594;' */;<br/>
+}
+</code></div>
+
+<div class="counterstyle">
+<code>
+@counter-style <dfn id="maghrebi-abjad"><a href="#maghrebi-abjad">maghrebi-abjad</a></dfn> {<br/>
+system: fixed;<br/>
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\64A' '\643' '\644' '\645' '\646' '\636' '\639' '\641' '\635' '\642' '\631' '\633' '\62A' '\62B' '\62E' '\630' '\638' '\63A' '\634';<br/>
+/* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1610;' '&#1603;' '&#1604;' '&#1605;' '&#1606;' '&#1589;' '&#1593;' '&#1601;' '&#1590;' '&#1602;' '&#1585;' '&#1587;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1592;' '&#1594;' '&#1588;' */;<br/>
+}
+</code></div>
+
+<div class="counterstyle">
+<code>
 @counter-style <dfn id="persian"><a href="#persian">persian</a></dfn> {<br/>
 system: numeric;<br/>
 symbols: '\6F0' '\6F1' '\6F2' '\6F3' '\6F4' '\6F5' '\6F6' '\6F7' '\6F8' '\6F9';<br/>
 /* symbols: '&#1776;' '&#1777;' '&#1778;' '&#1779;' '&#1780;' '&#1781;' '&#1782;' '&#1783;' '&#1784;' '&#1785;'; */<br/>
 }
-</bdo></code></div>
+</code></div>
 
 <div class="counterstyle">
-<code><bdo dir="ltr">
+<code>
 @counter-style <dfn id="persian-abjad"><a href="#persian-abjad">persian-abjad</a></dfn> {<br/>
 system: fixed;<br/>
 symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\6CC' '\6A9' '\644' '\645' '\646' '\633' '\639' '\641' '\635' '\642' '\631' '\634' '\62A' '\62B' '\62E' '\630' '\636' '\638' '\63A';<br/>
 /* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1740;' '&#1705;' '&#1604;' '&#1605;' '&#1606;' '&#1587;' '&#1593;' '&#1601;' '&#1589;' '&#1602;' '&#1585;' '&#1588;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1590;' '&#1592;' '&#1594;' */;<br/>
 }
-</bdo></code></div>
+</code></div>
 
 <div class="counterstyle">
-<code><bdo dir="ltr">
+<code>
 @counter-style <dfn id="persian-alphabetic"><a href="#persian-alphabetic">persian-alphabetic</a></dfn> {<br/>
 system: fixed;<br/>
 symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '\630' '\631' '\632' '\698' '\633' '\634' '\635' '\636' '\637' '\638' '\639' '\63A' '\641' '\642' '\6A9' '\6AF' '\644' '\645' '\646' '\648' '\647\200D' '\6CC';<br/>
 /* symbols: '&#1575;' '&#1576;' '&#1662;' '&#1578;' '&#1579;' '&#1580;' '&#1670;' '&#1581;' '&#1582;' '&#1583;' '&#1584;' '&#1585;' '&#1586;' '&#1688;' '&#1587;' '&#1588;' '&#1589;' '&#1590;' '&#1591;' '&#1592;' '&#1593;' '&#1594;' '&#1601;' '&#1602;' '&#1705;' '&#1711;' '&#1604;' '&#1605;' '&#1606;' '&#1608;' '&#1607;&#8205;' '&#1740;' */;<br/>
 }
-</bdo></code></div>
+</code></div>
 
 <p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.</p>
+<p class="note">Note that HEH+ZWJ are used together in lists of this kind to distinguish the heh from the number 5. The symbols are listed in logical order where escapes are used and also in the underlying code when they are represented as characters (so the code should copy-paste correctly). When reading the displayed list of symbols as arabic characters, however, you should read them  RTL.  (In previous versions of the document a <code class="kw" translate="no">bdo</code> element was used to display everything LTR, but this interfered with the display of the HEH, which is followed by a ZWJ and should appear to join to the left.)</p>
+<div class="note">
+  <table id="arabic_comp">
+    <tbody>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">persian-abjad</code></th>
+        <td>ا</td>
+        <td>ب</td>
+        <td>ج</td>
+        <td>د</td>
+        <td>ه‍</td>
+        <td>و</td>
+        <td>ز</td>
+        <td>ح</td>
+        <td>ط</td>
+        <td>ی</td>
+        <td>ک</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>س</td>
+        <td>ع</td>
+        <td>ف</td>
+        <td>ص</td>
+        <td>ق</td>
+        <td>ر</td>
+        <td>ش</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>خ</td>
+        <td>ذ</td>
+        <td>ض</td>
+        <td>ظ</td>
+        <td>غ</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">arabic-abjad</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ي</td>
+        <td>ك</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">magrebi-abjad</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ص</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ض</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>س</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ظ</td>
+        <td>غ</td>
+        <td>ش</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <th scope="row">WP old magrebi</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>ج</td>
+        <td>ح</td>
+        <td>خ</td>
+        <td>د</td>
+        <td>ذ</td>
+        <td>ر</td>
+        <td>ز</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ك</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ه</td>
+        <td>و</td>
+        <td>ي</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <th scope="row">WP hijai</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>ك</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <th scope="row"><code class="kw" translate="no">persian-alphabetic</code></th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>پ</td>
+        <td>ت</td>
+        <td>ث</td>
+        <td>ج</td>
+        <td>چ</td>
+        <td>ح</td>
+        <td>خ</td>
+        <td>د</td>
+        <td>ذ</td>
+        <td>ر</td>
+        <td>ز</td>
+        <td>ژ</td>
+        <td>س</td>
+        <td>ش</td>
+        <td>ص</td>
+        <td>ض</td>
+        <td>ط</td>
+        <td>ظ</td>
+        <td>ع</td>
+        <td>غ</td>
+        <td>ف</td>
+        <td>ق</td>
+        <td>ک</td>
+        <td>گ</td>
+        <td>ل</td>
+        <td>م</td>
+        <td>ن</td>
+        <td>و</td>
+        <td>ه‍</td>
+        <td>ی</td>
+        </tr>
+      </tbody>
+    </table>
+  <p>This table shows the differences between the counter styles listed above for the arabic script. A blank cell uses the same letter as the nearest non-blank cell above it.</p>
+  <p>Also included for comparison are two letter sequences that are not included here as counter styles, but that are mentioned in <a href="https://en.wikipedia.org/wiki/Abjad_numerals">Wikipedia</a> – an old maghrebi sequence and the hijai sequence.</p>
+</div>
 </section>
 
-
 <section id="armenian-styles">
-<h2>Armenian</h2>
+  <h2>Armenian</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -1635,7 +1872,11 @@ symbols: 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al',
   <h2> Revision Log</h2>
   <p>The following summarises substantive changes since the previous publication.</p>
   <ol>
-    <li>@@@</li>
+    <li>Fixes for <code class="kw" translate="no">greek-upper-modern</code> and <code class="kw" translate="no">greek-upper-ancient</code></li>
+    <li>Shortened introduction and pulled out key points in Things to Remember section.</li>
+    <li>Added some useful links to the introduction.</li>
+    <li>Added <code class="kw" translate="no">arabic-abjad</code> &amp; <code class="kw" translate="no">maghrebi-abjad</code> styles, with comparison table.</li>
+    <li>Removed bdo from arabic styles to make heh joining look correct.</li>
   </ol>
     <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
