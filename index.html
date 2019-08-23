@@ -1071,6 +1071,34 @@ negative: "\B9C8\C774\B108\C2A4  ";<br/>
     suffix: ' ';
     } </bdo>
 </code></div>
+<div class="counterstyle"> <code>
+  <bdo dir="ltr"> @counter-style <dfn id="cjk-tally-mark"><a href="#cjk-tally-mark">cjk-tally-mark</a></dfn> {<br/>
+    system: additive;<br/>
+    additive-symbols: 5 '\1D376', 4 '\1D375', 3 '\1D374', 2 '\1D373', 1 '\1D372';<br/>
+    /* symbols: 5 &#x1D376;, 4 &#x1D375;, 3 &#x1D374;, 2 &#x1D373;, 1 &#x1D372;; */<br/>
+    suffix: ' ';
+    }<br>
+/* These symbols were introduced in Unicode 11, so not many fonts are likely to support them. One font that does is Symbola.*/
+</bdo>
+</code></div>
+<div class="counterstyle"> <code>
+  <bdo dir="ltr"> @counter-style <dfn id="cjk-stem-branch"><a href="#cjk-stem-branch">cjk-stem-branch</a></dfn> {<br/>
+    system: cyclic;<br/>
+    symbols:  '\7532\5B50' '\4E59\4E11' '\4E19\5BC5' '\4E01\536F' '\620A\8FB0' '\5DF1\5DF3' '\5E9A\5348' '\8F9B\672A' '\58EC\7533' '\7678\9149'<br>
+'\7532\620C' '\4E59\4EA5' '\4E19\5B50' '\4E01\4E11' '\620A\5BC5' '\5DF1\536F' '\5E9A\8FB0' '\8F9B\5DF3' '\58EC\5348' '\7678\672A'<br>
+'\7532\7533' '\4E59\9149' '\4E19\620C' '\4E01\4EA5' '\620A\5B50' '\5DF1\4E11' '\5E9A\5BC5' '\8F9B\536F' '\58EC\8FB0' '\7678\5DF3'<br>
+'\7532\5348' '\4E59\672A' '\4E19\7533' '\4E01\9149' '\620A\620C' '\5DF1\4EA5' '\5E9A\5B50' '\8F9B\4E11' '\58EC\5BC5' '\7678\536F'<br>
+'\7532\8FB0' '\4E59\5DF3' '\4E19\5348' '\4E01\672A' '\620A\7533' '\5DF1\9149' '\5E9A\620C' '\8F9B\4EA5' '\58EC\5B50' '\7678\4E11'<br>
+'\7532\5BC5' '\4E59\536F' '\4E19\8FB0' '\4E01\5DF3' '\620A\5348' '\5DF1\672A' '\5E9A\7533' '\8F9B\9149' '\58EC\620C' '\7678\4EA5';<br>
+/* 甲子 乙丑 丙寅 丁卯 戊辰 己巳 庚午 辛未 壬申 癸酉 */<br>
+/* 甲戌 乙亥 丙子 丁丑 戊寅 己卯 庚辰 辛巳 壬午 癸未 */   <br>
+/* 甲申 乙酉 丙戌 丁亥 戊子 己丑 庚寅 辛卯 壬辰 癸巳 */   <br>
+/* 甲午 乙未 丙申 丁酉 戊戌 己亥 庚子 辛丑 壬寅 癸卯 */   <br>
+/* 甲辰 乙巳 丙午 丁未 戊申 己酉 庚戌 辛亥 壬子 癸丑 */   <br>
+/* 甲寅 乙卯 丙辰 丁巳 戊午 己未 庚申 辛酉 壬戌 癸亥 */<br/>
+    suffix: '、';
+    }</bdo>
+</code></div>
 <p class="note">The <code class="kw" translate="no">cjk-decimal</code>, <code class="kw" translate="no">cjk-earthly-branch</code>, <code class="kw" translate="no">cjk-heavenly-stem</code>, <code class="kw" translate="no">japanese-formal</code>, <code class="kw" translate="no">japanese-informal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 <p class="note">Also, see the<code> </code>specification for the following more complex predefined Chinese styles: <code class="kw" translate="no">simp-chinese-informal</code>, <code class="kw" translate="no">simp-chinese-formal</code>, <code class="kw" translate="no">trad-chinese-informal</code>, <code class="kw" translate="no">trad-chinese-formal</code>, which are not defined here.</p>
 </section>
@@ -1800,12 +1828,8 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <h2> Revision Log</h2>
   <p>The following summarises substantive changes since the previous publication.</p>
   <ol>
-    <li>Fixes for <code class="kw" translate="no">greek-upper-modern</code> and <code class="kw" translate="no">greek-upper-ancient</code></li>
-    <li>Shortened introduction and pulled out key points in Things to Remember section.</li>
-    <li>Added some useful links to the introduction.</li>
-    <li>Added <code class="kw" translate="no">arabic-abjad</code> &amp; <code class="kw" translate="no">maghrebi-abjad</code> styles, with comparison table.</li>
-    <li>Removed bdo from arabic styles to make heh joining look correct.</li>
-  </ol>
+    <li>Added <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code></li>
+</ol>
     <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
 
@@ -1813,7 +1837,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <section class="appendix">
 <h2>Acknowledgements</h2>
 <p>Ian Hickson and Tantek Çelı̇k provided the majority of early contributions to this content. Additional significant contributions were made by Tab Atkins.</p>
-<p>Additional thanks to Mati Allouche, George Schizas.</p>
+<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103.</p>
 </section>
   </body>
 </html>
