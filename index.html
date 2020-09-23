@@ -1588,7 +1588,7 @@ symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';<
 
 
 <section id="digit-styles">
-<h2>European Digits &amp; Roman</h2>
+<h2>European Digits, Roman, etc.</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -1599,6 +1599,17 @@ symbols: '\30' '\31';<br/>
 }
 </bdo></code></div>
 
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="tally-mark"><a href="#tally-mark">tally-mark</a></dfn> {<br/>
+system: additive;<br/>
+additive-symbols: 5 '\1D378', 1 '\1D377';<br/>
+/* symbols: 5 𝍸, 1 𝍷; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+	
 <div class="counterstyle">
 <code><bdo dir="ltr">
 @counter-style <dfn id="circled-decimal"><a href="#circled-decimal">circled-decimal</a></dfn> {<br/>
@@ -1834,7 +1845,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <section class="appendix">
 <h2>Acknowledgements</h2>
 <p>Ian Hickson and Tantek Çelı̇k provided the majority of early contributions to this content. Additional significant contributions were made by Tab Atkins.</p>
-<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103. Thanks to Yaibeelen Mangang and Amir Aharoni for <code class="kw" translate="no">meetei</code>.</p>
+<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103, and <code class="kw" translate="no">tally-mark</code> by Mike Bremford. Thanks to Yaibeelen Mangang and Amir Aharoni for <code class="kw" translate="no">meetei</code>.</p>
 </section>
   </body>
 </html>
