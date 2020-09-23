@@ -3,17 +3,11 @@
   <head>
     <title>Ready-made Counter Styles</title>
     <meta charset="utf-8"/>
-	<link rel="canonical" href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/"/>
-	<link rel="stylesheet" href="local.css" type="text/css" />
-    <!-- 
-      === NOTA BENE ===
-      For the three scripts below, if your spec resides on dev.w3 you can check them
-      out in the same tree and use relative links so that they'll work offline,
-     -->
-    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+	<link rel="stylesheet" href="local.css" />
+
+	<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
     <script class="remove">
       var respecConfig = {
-          useExperimentalStyles: true,
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
           specStatus:          "ED",
           //publishDate:  		"2017-02-16",
@@ -26,41 +20,25 @@
 
           edDraftURI:          "https://w3c.github.io/predefined-counter-styles/",
 
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
-
           editors:  [
               { name: "Richard Ishida", url: "",
                 company: "W3C", companyURL: "",
     			w3cid: 3439 }
-          ],
+          	],
 
-          wg:           "Internationalization Working Group",
-          wgURI:        "https://www.w3.org/International/core/Overview",
-          wgPublicList: "www-international",
-          
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/32113/status",
-
+          group: 				"i18n",
+		  
           github: "w3c/predefined-counter-styles",
       };
     </script>
-  </head>
-  <body>
-  <div id="sotd">
-  <p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group. It is expected that the document will be updated from time to time to include new information.</p>
-  <div class="note">
-    <p style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
-    <p>If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/predefined-counter-styles/issues" style="font-size: 120%;">github issues</a> . Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
-    <p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
-  </div>
-  </div>
-    <section id="abstract">This document provides code snippets for user-defined counter styles used by various cultures around the world, and can be used as a reference for those wishing to create their own user-defined counter styles for CSS style sheets.
-  </section>
+</head>
+<body>
+<div id="sotd">
+<p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group. It is expected that the document will be updated from time to time to include new information.</p>
+</div>
+<section id="abstract">
+<p>This document provides ready-made definitions for counter styles and covers the needs of various cultures around the world. The code snippets provided in the document can be included in style declarations by simply copying and pasting, or they can be use as a starting point and modified as desired.</p>
+</section>
     
 <section id="intro">
 <h2>Introduction</h2>
@@ -1846,6 +1824,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <p>The following summarises substantive changes since the previous publication.</p>
   <ol>
     <li>Added <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code></li>
+<li>Added <code class="kw" translate="no">meetei</code></li>
 </ol>
     <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
@@ -1854,7 +1833,7 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <section class="appendix">
 <h2>Acknowledgements</h2>
 <p>Ian Hickson and Tantek Çelı̇k provided the majority of early contributions to this content. Additional significant contributions were made by Tab Atkins.</p>
-<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103.</p>
+<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103. Thanks to Yaibeelen Mangang and Amir Aharoni for <code class="kw" translate="no">meetei</code>.</p>
 </section>
   </body>
 </html>
