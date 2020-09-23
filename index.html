@@ -1588,7 +1588,7 @@ symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';<
 
 
 <section id="digit-styles">
-<h2>European Digits &amp; Roman</h2>
+<h2>European Digits, Roman, etc.</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -1599,6 +1599,17 @@ symbols: '\30' '\31';<br/>
 }
 </bdo></code></div>
 
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="tally-mark"><a href="#tally-mark">tally-mark</a></dfn> {<br/>
+system: additive;<br/>
+additive-symbols: 5 '\1D378', 1 '\1D377';<br/>
+/* symbols: 5 𝍸, 1 𝍷; */<br/>
+suffix: ' ';<br/>
+}
+</bdo></code></div>
+
+	
 <div class="counterstyle">
 <code><bdo dir="ltr">
 @counter-style <dfn id="circled-decimal"><a href="#circled-decimal">circled-decimal</a></dfn> {<br/>
