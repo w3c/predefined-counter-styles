@@ -392,8 +392,11 @@ additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550
 </section>
 
 
+
+
+
 <section id="bengali-styles">
-  <h2>Bengali</h2>
+<h2>Bengali</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -402,10 +405,27 @@ system: numeric;
 symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
 /* symbols: '&#2534;' '&#2535;' '&#2536;' '&#2537;' '&#2538;' '&#2539;' '&#2540;' '&#2541;' '&#2542;' '&#2543;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined  in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
+</bdo></code>
 
+<code>
+Alternative prefix/suffix styles:
+
+<bdo dir="ltr">/* U+0964: DEVANAGARI DANDA */
+suffix: ' । ';
+
+/* parentheses */
+prefix: '('
+suffix: ') '; 
+</bdo>
+</code></div>
+
+<p class="note">The basic symbols for this style are defined  in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. </p>
 </section>
+
+
+
+
+
 <section id="cyrillic-styles">
   <h2>Cyrillic</h2>
 
