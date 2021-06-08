@@ -1371,6 +1371,10 @@ negative: "\B9C8\C774\B108\C2A4  ";
 /* 마이너스 (followed by a space) */
 } 
 </bdo></code></div>
+<p class="note" id="korean_alt_affix"><strong>Alternative affix styles:</strong> Many of the Korean styles listed here use <span class="codepoint" translate="no"><span lang="ko">&#x002C;&#x0020;</span> [<span class="uname">U+002C COMMA</span> + <span class="uname">U+0020 SPACE</span>]</span> as the default suffix, however sometimes <span class="codepoint" translate="no"><span lang="zh">&#x002E;&#x0020;</span> [<span class="uname">U+002E FULL STOP</span> + <span class="uname">U+0020 SPACE</span>]</span> is preferred. To apply that to the styles above, replace the suffix declarations with:<br>
+<code>
+<bdo dir="ltr">suffix: \002E\0020; /*. */ </bdo>
+</code> </p>
 <p class="note">The <code class="kw" translate="no">korean-hangul-formal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.  Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hangul-formal</a></code>, <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-formal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-informal</a></code> styles.</p>
 <p class="note">See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
 </section>
