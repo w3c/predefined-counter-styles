@@ -210,6 +210,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
 </code></div>
 
 <p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">arabic-indic </a></code>and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">persian</a></code> styles.</p>
+<p class="note">Blink and Webkit have built-in support for an  <code class="kw" translate="no">urdu</code><code class="kw" translate="no"></code> style, which is identical to the Persian style above. It is not supported out of the box in Gecko browsers. The above <code class="kw" translate="no">persian</code> template can be renamed and used to provide support in Firefox via a declaration in the CSS file.</p>
 <p class="note">Note that HEH+ZWJ are used together in lists of this kind to distinguish the heh from the number 5. The symbols are listed in logical order where escapes are used and also in the underlying code when they are represented as characters (so the code should copy-paste correctly). When reading the displayed list of symbols as arabic characters, however, you should read them  RTL.  (In previous versions of the document a <code class="kw" translate="no">bdo</code> element was used to display everything LTR, but this interfered with the display of the HEH, which is followed by a ZWJ and should appear to join to the left.)</p>
 <div class="note">
   <table id="arabic_comp">
@@ -432,7 +433,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
 </section>
 
 <section id="armenian-styles">
-  <h2>Armenian</h2>
+<h2>Armenian</h2>
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -721,6 +722,45 @@ suffix: '\1366 '; /* ፦ */
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
+@counter-style <dfn id="ethiopic-haleme"><a href="#ethiopic-haleme">ethiopic-haleme</a></dfn> {
+system: alphabetic;
+symbols: '\1200' '\1208' '\1210' '\1218' '\1220' '\1228' '\1230' '\1240' '\1260' '\1270' '\1280' '\1290' '\12A0' '\12A8' '\12C8' '\12D0' '\12D8' '\12E8' '\12F0' '\1308' '\1320' '\1330' '\1338' '\1340' '\1348' '\1350';
+/* symbols: '&#x1200;' '&#x1208;' '&#x1210;' '&#x1218;' '&#x1220;' '&#x1228;' '&#x1230;' '&#x1240;' '&#x1260;' '&#x1270;' '&#x1280;' '&#x1290;' '&#x12A0;' '&#x12A8;' '&#x12C8;' '&#x12D0;' '&#x12D8;' '&#x12E8;' '&#x12F0;' '&#x1308;' '&#x1320;' '&#x1330;' '&#x1338;' '&#x1340;' '&#x1348;' '&#x1350;'; */
+suffix: '\1366 '; /* ፦ */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="ethiopic-haleme-am"><a href="#ethiopic-haleme-am">ethiopic-haleme-am</a></dfn> {
+system: alphabetic;
+symbols: '\1200' '\1208' '\1210' '\1218' '\1220' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1280' '\1290' '\1298' '\12A0' '\12A8' '\12B8' '\12C8' '\12D0' '\12D8' '\12E0' '\12E8' '\12F0' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1340' '\1348' '\1350';
+/* symbols: '&#x1200;' '&#x1208;' '&#x1210;' '&#x1218;' '&#x1220;' '&#x1228;' '&#x1230;' '&#x1238;' '&#x1240;' '&#x1260;' '&#x1270;' '&#x1278;' '&#x1280;' '&#x1290;' '&#x1298;' '&#x12A0;' '&#x12A8;' '&#x12B8;' '&#x12C8;' '&#x12D0;' '&#x12D8;' '&#x12E0;' '&#x12E8;' '&#x12F0;' '&#x1300;' '&#x1308;' '&#x1320;' '&#x1328;' '&#x1330;' '&#x1338;' '&#x1340;' '&#x1348;' '&#x1350;'; */
+suffix: '\1366 '; /* ፦ */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="ethiopic-haleme-ti-er"><a href="#ethiopic-haleme-ti-er">ethiopic-haleme-ti-er</a></dfn> {
+system: alphabetic;
+symbols: '\1200' '\1208' '\1210' '\1218' '\1228' '\1230' '\1238' '\1240' '\1250' '\1260' '\1270' '\1278' '\1290' '\1298' '\12A0' '\12A8' '\12B8' '\12C8' '\12D0' '\12D8' '\12E0' '\12E8' '\12F0' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348' '\1350';
+/* symbols: '&#x1200;' '&#x1208;' '&#x1210;' '&#x1218;' '&#x1228;' '&#x1230;' '&#x1238;' '&#x1240;' '&#x1250;' '&#x1260;' '&#x1270;' '&#x1278;' '&#x1290;' '&#x1298;' '&#x12A0;' '&#x12A8;' '&#x12B8;' '&#x12C8;' '&#x12D0;' '&#x12D8;' '&#x12E0;' '&#x12E8;' '&#x12F0;' '&#x1300;' '&#x1308;' '&#x1320;' '&#x1328;' '&#x1330;' '&#x1338;' '&#x1348;' '&#x1350;'; */
+suffix: '\1366 '; /* ፦ */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="ethiopic-haleme-ti-et"><a href="#ethiopic-haleme-ti-et">ethiopic-haleme-ti-et</a></dfn> {
+system: alphabetic;
+symbols: '\1200' '\1208' '\1210' '\1218' '\1220' '\1228' '\1230' '\1238' '\1240' '\1250' '\1260' '\1270' '\1278' '\1280' '\1290' '\1298' '\12A0' '\12A8' '\12B8' '\12C8' '\12D0' '\12D8' '\12E0' '\12E8' '\12F0' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1340' '\1348' '\1350';
+/* symbols: '&#x1200;' '&#x1208;' '&#x1210;' '&#x1218;' '&#x1220;' '&#x1228;' '&#x1230;' '&#x1238;' '&#x1240;' '&#x1250;' '&#x1260;' '&#x1270;' '&#x1278;' '&#x1280;' '&#x1290;' '&#x1298;' '&#x12A0;' '&#x12A8;' '&#x12B8;' '&#x12C8;' '&#x12D0;' '&#x12D8;' '&#x12E0;' '&#x12E8;' '&#x12F0;' '&#x1300;' '&#x1308;' '&#x1320;' '&#x1328;' '&#x1330;' '&#x1338;' '&#x1340;' '&#x1348;' '&#x1350;'; */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
 @counter-style <dfn id="gedeo"><a href="#gedeo">gedeo</a></dfn> {
 system: alphabetic;
 symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1270' '\1278' '\1290' '\1300' '\1308' '\1320' '\1328' '\1330' '\1338' '\1348' '\1350';
@@ -888,6 +928,8 @@ symbols: '\1200' '\1208' '\1218' '\1228' '\1230' '\1238' '\1240' '\1260' '\1268'
 suffix: '\1366 '; /* ፦ */
 }
 </bdo></code></div>
+
+<p class="note">The following are built-in styles in Blink, and some in Webkit, but none work out of the box in Firefox: <code class="kw" translate="no">ethiopic-halehame</code>, <code class="kw" translate="no">ethiopic-halehame-am</code>, <code class="kw" translate="no">ethiopic-halehame-ti-er</code>, <code class="kw" translate="no">ethiopic-halehame-ti-et</code>. Use the templates provided here  if you want those names to work on all browsers that support counter-styles definitions.</p>
 
 <p class="note"> See also the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification for the more complex, predefined <code class="kw" translate="no">ethiopic-numeric</code> style.     Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#ethiopic" target="_blank">ethiopic-numeric</a></code> style.</p>
 </section>
@@ -1296,6 +1338,24 @@ suffix: ' ';
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
+@counter-style <dfn id="hangul"><a href="#hangul">hangul</a></dfn> {
+system: alphabetic;
+symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';
+/* symbols: '&#xAC00;' '&#xB098;' '&#xB2E4;' '&#xB77C;' '&#xB9C8;' '&#xBC14;' '&#xC0AC;' '&#xC544;' '&#xC790;' '&#xCC28;' '&#xCE74;' '&#xD0C0;' '&#xD30C;' '&#xD558;'; */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="hangul-consonant"><a href="#hangul-consonant">hangul-consonant</a></dfn> {
+system: alphabetic;
+symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
+/* symbols: '&#x3131;' '&#x3134;' '&#x3137;' '&#x3139;' '&#x3141;' '&#x3142;' '&#x3145;' '&#x3147;' '&#x3148;' '&#x314A;' '&#x314B;' '&#x314C;' '&#x314D;' '&#x314E;'; */
+}
+</bdo></code></div>
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
 @counter-style <dfn id="korean-consonant"><a href="#korean-consonant">korean-consonant</a></dfn> {
 system: alphabetic;
 symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
@@ -1376,6 +1436,7 @@ negative: "\B9C8\C774\B108\C2A4  ";
 <bdo dir="ltr">suffix: \002E\0020; /*. */ </bdo>
 </code> </p>
 <p class="note">The <code class="kw" translate="no">korean-hangul-formal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.  Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hangul-formal</a></code>, <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-formal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-informal</a></code> styles.</p>
+<p class="note">The following are built-in styles in Blink and  Webkit, but none work out of the box in Firefox: <code class="kw" translate="no">hangul</code>, <code class="kw" translate="no">hangul-consonant</code><code class="kw" translate="no"></code>. Use the templates provided here if you want those names to work on all browsers that support counter-styles definitions.</p>
 <p class="note">See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
 </section>
 
