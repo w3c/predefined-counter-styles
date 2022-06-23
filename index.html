@@ -9,7 +9,7 @@
     <script class="remove">
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:          "ED",
+          specStatus:          "NOTE",
           //publishDate:  		"2017-02-16",
           //previousPublishDate: "2017-02-15",
           //previousMaturity:  	"WD",
@@ -172,6 +172,34 @@ symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\6
 /* symbols: '&#1575;' '&#1576;' '&#1580;' '&#1583;' '&#1607;&#8205;' '&#1608;' '&#1586;' '&#1581;' '&#1591;' '&#1610;' '&#1603;' '&#1604;' '&#1605;' '&#1606;' '&#1587;' '&#1593;' '&#1601;' '&#1589;' '&#1602;' '&#1585;' '&#1588;' '&#1578;' '&#1579;' '&#1582;' '&#1584;' '&#1590;' '&#1592;' '&#1594;' */;
 }
 </code></div>
+
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="kashmiri"><a href="#kashmiri">kashmiri</a></dfn> {
+system: alphabetic;
+symbols: '\0627' '\0622' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC' '\06D2' '\06C4' '\0620' ;
+/* symbols:  '&#x0627;' '&#x0622;' '&#x0628;' '&#x067E;' '&#x062A;' '&#x0679;' '&#x062B;' '&#x062C;' '&#x0686;' '&#x062D;' '&#x062E;' '&#x062F;' '&#x0688;' '&#x0630;' '&#x0631;' '&#x0691;' '&#x0632;' '&#x0698;' '&#x0633;' '&#x0634;' '&#x0635;' '&#x0636;' '&#x0637;' '&#x0638;' '&#x0639;' '&#x063A;' '&#x0641;' '&#x0642;' '&#x06A9;' '&#x06AF;' '&#x0644;' '&#x0645;' '&#x0646;' '&#x06BA;' '&#x0648;' '&#x06C1;' '&#x06BE;' '&#x0621;' '&#x06CC;' '&#x06D2;' '&#x06C4;' '&#x0620;'; */
+suffix: ') ';
+}
+</bdo></code></div>
+
+<aside class="note">
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
 
 <div class="counterstyle">
 <code>
@@ -482,7 +510,36 @@ symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
 </bdo></code></div>
 <p class="note">This style is defined  in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.     Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">bengali</a></code> style.</p>
 
+
+
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="bangla"><a href="#bangla">bangla</a></dfn> {
+system: alphabetic;
+symbols: '\0995' '\0996' '\0997' '\0998' '\0999' '\099A' '\099B' '\099C' '\099D' '\099E' '\099F' '\09A0' '\09A1' '\09A1\09BC' '\09A2' '\09A2\09BC' '\09A3' '\09A4' '\09CE' '\09A5' '\09A6' '\09A7' '\09A8' '\09AA' '\09AB' '\09AC' '\09AD' '\09AE' '\09AF' '\09AF\09BC' '\09B0' '\09B2' '\09B6' '\09B7' '\09B8' '\09B9' ;
+/* symbols: 'ক' 'খ' 'গ' 'ঘ' 'ঙ' 'চ' 'ছ' 'জ' 'ঝ' 'ঞ' 'ট' 'ঠ' 'ড' 'ড়' 'ঢ' 'ঢ়' 'ণ' 'ত' 'ৎ' 'থ' 'দ' 'ধ' 'ন' 'প' 'ফ' 'ব' 'ভ' 'ম' 'য' 'য়' 'র' 'ল' 'শ' 'ষ' 'স' 'হ' ; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to replace the default suffix:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ')';
+</bdo></code></li>
+</ol>
+</aside>
 </section>
+
+
+
+
+
+
+
 <section id="cyrillic-styles">
 <h2>Cyrillic</h2>
 
@@ -643,8 +700,39 @@ symbols: '\410' '\411' '\412' '\413' '\490' '\414' '\415' '\404' '\416' '\417' '
 
 
 
+
+
 <section id="devanagari-styles">
 <h2>Devanagari</h2>
+
+
+
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="bodo"><a href="#bodo">bodo</a></dfn> {
+system: alphabetic;
+symbols: '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939' ;
+/* symbols: 'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">bodo</code> style uses identical counters to the <code class="kw" translate="no">hindi</code> style. The marker should be surrounded by parentheses if the list size exceeds the number of letters, eg. (<span lang="brx">कक</span>).</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
@@ -653,7 +741,39 @@ system: numeric;
 symbols: '\966' '\967' '\968' '\969' '\96A' '\96B' '\96C' '\96D' '\96E' '\96F';
 /* symbols: '&#2406;' '&#2407;' '&#2408;' '&#2409;' '&#2410;' '&#2411;' '&#2412;' '&#2413;' '&#2414;' '&#2415;'; */
 }
+</bdo></code>
+</div>
+<aside class="note"><p>The <code class="kw" translate="no">devanagari</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.     Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">devanagari</a></code> style.</p></aside>
+
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="dogri"><a href="#dogri">dogri</a></dfn> {
+system: alphabetic;
+symbols:  : '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939';
+/* symbols:  '&#x0915;' '&#x0916;' '&#x0917;' '&#x0918;' '&#x0919;' '&#x091A;' '&#x091B;' '&#x091C;' '&#x091D;' '&#x091E;' '&#x091F;' '&#x0920;' '&#x0921;' '&#x0922;' '&#x0923;' '&#x0924;' '&#x0925;' '&#x0926;' '&#x0927;' '&#x0928;' '&#x092A;' '&#x092B;' '&#x092C;' '&#x092D;' '&#x092E;' '&#x092F;' '&#x0930;' '&#x0932;' '&#x0935;' '&#x0936;' '&#x0937;' '&#x0938;' '&#x0939;' */
+suffix: ') ';
+}
 </bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">dogri</code> style uses identical counters to the <code class="kw" translate="no">hindi</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
+
 <div class="counterstyle">
   <code><bdo dir="ltr">
 @counter-style <dfn id="hindi"><a href="#hindi">hindi</a></dfn> {
@@ -662,7 +782,125 @@ symbols: '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '
 /* symbols: '&#2325;' '&#2326;' '&#2327;' '&#2328;' '&#2329;' '&#2330;' '&#2331;' '&#2332;' '&#2333;' '&#2334;' '&#2335;' '&#2336;' '&#2337;' '&#2338;' '&#2339;' '&#2340;' '&#2341;' '&#2342;' '&#2343;' '&#2344;' '&#2346;' '&#2347;' '&#2348;' '&#2349;' '&#2350;' '&#2351;' '&#2352;' '&#2354;' '&#2357;' '&#2358;' '&#2359;' '&#2360;' '&#2361;'; */
 }
 </bdo></code></div>
-<p class="note">The <code class="kw" translate="no">devanagari</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.     Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">devanagari</a></code> style.</p>
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="konkani"><a href="#konkani">konkani</a></dfn> {
+system: alphabetic;
+symbols:  '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939' '\933';
+/* symbols:  'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' 'ळ' ; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">konkani</code> style uses one more counter than the <code class="kw" translate="no">hindi</code> style (ळ).  This makes it the same as the <code class="kw" translate="no">marathi</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="maithili"><a href="#maithili">maithili</a></dfn> {
+system: alphabetic;
+symbols: '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939' ;
+/* symbols: 'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">maithili</code> style uses identical counters to the <code class="kw" translate="no">hindi</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="marathi"><a href="#marathi">marathi</a></dfn> {
+system: alphabetic;
+symbols:  '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939' '\933';
+/* symbols:  'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' 'ळ' ; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">marathi</code> style uses one more counter than the <code class="kw" translate="no">hindi</code> style (ळ).  This makes it the same as the <code class="kw" translate="no">konkani</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="sanskrit"><a href="#sanskrit">sanskrit</a></dfn> {
+system: alphabetic;
+symbols:  :  '\915' '\916' '\917' '\918' '\919' '\91A' '\91B' '\91C' '\91D' '\91E' '\91F' '\920' '\921' '\922' '\923' '\924' '\925' '\926' '\927' '\928' '\92A' '\92B' '\92C' '\92D' '\92E' '\92F' '\930' '\932' '\935' '\936' '\937' '\938' '\939' ;
+/* symbols:   'क' 'ख' 'ग' 'घ' 'ङ' 'च' 'छ' 'ज' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ढ' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'ब' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह'; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">sanskrit</code> style uses identical counters to the <code class="kw" translate="no">hindi</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="sindhi"><a href="#sindhi">sindhi</a></dfn> {
+system: alphabetic;
+symbols:  '\0915' '\0916' '\0916 \093C' '\0917' '\097B' '\0917 \093C' '\0918' '\0919' '\091A' '\091B' '\091C' '\097C' '\091C\093C' '\091D' '\091E' '\091F' '\0920' '\0921' '\097E' '\0921\093C' '\0922' '\0922 \093C' '\0923' '\0924' '\0925' '\0926' '\0927' '\0928' '\092A' '\092B' '\092B\093C' '\092C' '\097F' '\092D' '\092E' '\092F' '\0930' '\0932' '\0935' '\0936' '\0937' '\0938' '\0939' ;
+/* symbols:  'क' 'ख' 'ख़' 'ग' 'ॻ' 'ग़' 'घ' 'ङ' 'च' 'छ' 'ज' 'ॼ' 'ज़' 'झ' 'ञ' 'ट' 'ठ' 'ड' 'ॾ' 'ड़' 'ढ' 'ढ़' 'ण' 'त' 'थ' 'द' 'ध' 'न' 'प' 'फ' 'फ़' 'ब' 'ॿ' 'भ' 'म' 'य' 'र' 'ल' 'व' 'श' 'ष' 'स' 'ह' ; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
+
 </section>
 
 
@@ -1020,6 +1258,32 @@ symbols: '\AE6' '\AE7' '\AE8' '\AE9' '\AEA' '\AEB' '\AEC' '\AED' '\AEE' '\AEF';
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.   Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">gujarati</a></code> style.</p>
 
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="gujarati-alpha"><a href="#gujarati-alpha">gujarati-alpha</a></dfn> {
+system: alphabetic;
+symbols:  :  '\0A95' '\0A96' '\0A97' '\0A98' '\0A99' '\0A9A' '\0A9B' '\0A9C' '\0A9D' '\0A9E' '\0A9F' '\0AA0' '\0AA1' '\0AA2' '\0AA3' '\0AA4' '\0AA5' '\0AA6' '\0AA7' '\0AA8' '\0AAA' '\0AAB' '\0AAC' '\0AAD' '\0AAE' '\0AAF' '\0AB0' '\0AB2' '\0AB5' '\0AB6' '\0AB7' '\0AB8' '\0AB9' '\0AB3';
+/* symbols:  'ક' 'ખ' 'ગ' 'ઘ' 'ઙ' 'ચ' 'છ' 'જ' 'ઝ' 'ઞ' 'ટ' 'ઠ' 'ડ' 'ઢ' 'ણ' 'ત' 'થ' 'દ' 'ધ' 'ન' 'પ' 'ફ' 'બ' 'ભ' 'મ' 'ય' 'ર' 'લ' 'વ' 'શ' 'ષ' 'સ' 'હ' 'ળ' ;  */
+prefix: '( ';
+suffix: ' ) ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>Although long lists can have list markers with multiple letters (eg. <span lang="gu">કક</span>), in such cases a numeric counter-style is preferred.</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<ol>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: ') ';
+</bdo></code></li>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: '. ';
+</bdo></code></li>
+</ol>
+</aside>
+
 </section>
 
 
@@ -1036,6 +1300,29 @@ symbols: '\A66' '\A67' '\A68' '\A69' '\A6A' '\A6B' '\A6C' '\A6D' '\A6E' '\A6F';
 }
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.   Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">gurmukhi</a></code> style.</p>
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="punjabi"><a href="#punjabi">punjabi</a></dfn> {
+system: alphabetic;
+symbols:  :  '\0A73' '\0A05' '\0A72' '\0A38' '\0A39' '\0A15' '\0A16' '\0A17' '\0A18' '\0A19' '\0A1A' '\0A1B' '\0A1C' '\0A1D' '\0A1E' '\0A1F' '\0A20' '\0A21 ' '\0A22' '\0A23' '\0A24' '\0A25' '\0A26' '\0A27' '\0A28' '\0A2A' '\0A2B ' '\0A2C' '\0A2D' '\0A2E' '\0A2F' '\0A30' '\0A32' '\0A35' '\0A5C' ;
+/* symbols:  'ੳ' 'ਅ' 'ੲ' 'ਸ' 'ਹ' 'ਕ' 'ਖ' 'ਗ' 'ਘ' 'ਙ' 'ਚ' 'ਛ' 'ਜ' 'ਝ' 'ਞ' 'ਟ' 'ਠ' 'ਡ' 'ਢ' 'ਣ' 'ਤ' 'ਥ' 'ਦ' 'ਧ' 'ਨ' 'ਪ' 'ਫ' 'ਬ' 'ਭ' 'ਮ' 'ਯ' 'ਰ' 'ਲ' 'ਵ' 'ੜ' ;  */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p>The <code class="kw" translate="no">sanskrit</code> style uses identical counters to the <code class="kw" translate="no">hindi</code> style.</p>
+
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to change the default styling:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
 
 </section>
 
@@ -1271,6 +1558,26 @@ symbols: '\CE6' '\CE7' '\CE8' '\CE9' '\CEA' '\CEB' '\CEC' '\CED' '\CEE' '\CEF';
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">kannada</a></code> style.</p>
 
+
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="kannada-alpha"><a href="#kannada-alpha">kannada-alpha</a></dfn> {
+system: alphabetic;
+symbols: '\0C85' '\0C86' '\0C87' '\0C88' '\0C89' '\0C8A' '\0C8B' '\0C8E' '\0C8F' '\0C90' '\0C92' '\0C93' '\0C94' '\0C95' '\0C96' '\0C97' '\0C98' '\0C99' ;
+/* symbols: 'ಅ' 'ಆ' 'ಇ' 'ಈ' 'ಉ' 'ಊ' 'ಋ' 'ಎ' 'ಏ' 'ಐ' 'ಒ' 'ಓ' 'ಔ' 'ಕ' 'ಖ' 'ಗ' 'ಘ' 'ಙ';  */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to replace the default suffix:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ')';
+</bdo></code></li>
+</ol>
+</aside>
 </section>
 
 
@@ -1581,6 +1888,20 @@ symbols: '\D66' '\D67' '\D68' '\D69' '\D6A' '\D6B' '\D6C' '\D6D' '\D6E' '\D6F';
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">malayalam</a></code> style.</p>
 
+
+
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="malayalam-alpha"><a href="#malayalam-alpha">malayalam-alpha</a></dfn> {
+system: alphabetic;
+symbols: '\D15' '\D7F' '\D16' '\D17' '\D18' '\D19' '\D1A''\D1B' '\D1C' '\D1D' '\D1E' '\D1F' '\D20' '\D21' '\D22' '\D23' '\D7A' '\D24' '\D25' '\D26' '\D27' '\D28' '\D7B' '\D2A' '\D2B' '\D2C' '\D2D' '\D2E' '\D2F' '\D30' '\D7C' '\D32' '\D7D' '\D35' '\D36' '\D37' '\D38' '\D39' '\D33' '\D7E' '\D34' '\D31' ;
+/* symbols: 'ക' 'ൿ ''ഖ' 'ഗ' 'ഘ' 'ങ' 'ച' 'ഛ' 'ജ' 'ഝ' 'ഞ' ട' 'ഠ' 'ഡ' 'ഢ' 'ണ' 'ൺ' 'ത' 'ഥ' 'ദ' 'ധ' 'ന' 'ൻ' 'പ' 'ഫ' 'ബ' 'ഭ' 'മ' 'യ' 'ര' 'ർ' 'ല' 'ൽ' 'വ' 'ശ' 'ഷ' 'സ' 'ഹ' 'ള' 'ൾ' 'ഴ' 'റ' ; */
+prefix: '(';
+suffix: ')';
+}
+</bdo></code></div>
 </section>
 
 
@@ -1598,6 +1919,16 @@ suffix: ') ';
 }
 </bdo></code></div>
 
+
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="manipuri"><a href="#manipuri">manipuri</a></dfn> {
+system: alphabetic;
+symbols: '\ABC0' '\ABC1' '\ABC2' '\ABC3' '\ABC4' '\ABC5' '\ABC6' '\ABC7' '\ABC8' '\ABC9' '\ABCA' '\ABCB' '\ABCC' '\ABCD' '\ABCE' '\ABCF' '\ABD0' '\ABD1' '\ABD2' '\ABD3' '\ABD4' '\ABD5' '\ABD6' '\ABD7' '\ABD8' '\ABD9' '\ABDA' ;
+/* symbols: 'ꯀ' 'ꯁ' 'ꯂ' 'ꯃ' 'ꯄ' 'ꯅ' 'ꯆ' 'ꯇ' 'ꯈ' 'ꯉ' 'ꯊ' 'ꯋ' 'ꯌ' 'ꯍ' 'ꯎ' 'ꯏ' 'ꯐ' 'ꯑ' 'ꯒ' 'ꯓ' 'ꯔ' 'ꯕ' 'ꯖ' 'ꯗ' 'ꯘ' 'ꯙ' 'ꯚ'; */
+}
+</bdo></code></div>
 </section>
 
 
@@ -1628,8 +1959,7 @@ symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818'
 system: numeric;
 symbols: '\1040' '\1041' '\1042' '\1043' '\1044' '\1045' '\1046' '\1047' '\1048' '\1049';
 /* symbols: '&#4160;' '&#4161;' '&#4162;' '&#4163;' '&#4164;' '&#4165;' '&#4166;' '&#4167;' '&#4168;' '&#4169;'; */
-prefix: '('
-suffix: ') '; 
+prefix: '('; suffix: ') '; 
 }
 </bdo></code></div>
 
@@ -1639,22 +1969,24 @@ suffix: ') ';
 system: numeric;
 symbols: '\1090' '\1091' '\1092' '\1093' '\1094' '\1095' '\1096' '\1097' '\1098' '\1099';
 /* symbols: '&#4240;' '&#4241;' '&#4242;' '&#4243;' '&#4244;' '&#4245;' '&#4246;' '&#4247;' '&#4248;' '&#4249;'; */
-prefix: '('
-suffix: ') '; 
+prefix: '('; suffix: ') '; 
 }
 </bdo></code>
 </div>
 
 
-<p class="note"><strong>Alternative prefix/suffix styles:</strong> When supported by browsers natively, the <code class="kw" translate="no">myanmar</code> counters are followed by period+space, however it is more common for counters in lists to appear in parentheses, as shown here. Both <code class="kw" translate="no">myanmar</code> and <code class="kw" translate="no">shan</code> styles may also sometimes use <span class="codepoint" translate="no"><span lang="my">&#x104B;</span> [<span class="uname">U+104B MYANMAR SIGN SECTION</span>]</span> as a suffix, instead of surrounding the counter with parentheses. The replacement code for that is:<br>
-<code><bdo dir="ltr">
-prefix: '';<br>
-suffix: \104B\0020; /*။ */
-</bdo>
-</code>
-</p>
-
-
+<aside class="note">
+<p>When supported by browsers natively, the <code class="kw" translate="no">myanmar</code> counters are followed by period+space, however it is more common for counters in lists to appear in parentheses, as shown here. Both <code class="kw" translate="no">myanmar</code> and <code class="kw" translate="no">shan</code> styles may also sometimes use <span class="codepoint" translate="no"><span lang="my">&#x104B;</span> [<span class="uname">U+104B MYANMAR SIGN SECTION</span>]</span> as a suffix, instead of surrounding the counter with parentheses</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<ol>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: ') ';
+</bdo></code></li>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: '။ ';
+</bdo></code></li>
+</ol>
+</aside>
 <p class="note">The <code class="kw" translate="no">myanmar</code> style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification, but with period+space as the default suffix (see just above). Check  browser  support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">myanmar</a></code> style.</p>
 
 </section>
@@ -1669,28 +2001,53 @@ suffix: \104B\0020; /*။ */
 
 <div class="counterstyle">
 <code><bdo dir="ltr">
-@counter-style <dfn id="santali"><a href="#santali">santali</a></dfn> {
+@counter-style <dfn id="ol-chiki"><a href="#ol-chiki">ol-chiki</a></dfn> {
 system: numeric;
 symbols: '\1C50' '\1C51' '\1C52' '\1C53' '\1C54' '\1C55' '\1C56' '\1C57' '\1C58' '\1C59';
 /* symbols: '᱐' '᱑' '᱒' '᱓' '᱔' '᱕' '᱖' '᱗' '᱘' '᱙'; */
+suffix: '. ';
 }
 </bdo></code>
+</div>
+<aside class="note">
+<p>The period+space suffix is common for the numeric style, however counters are sometimes followed by just a space, or enclosed in parentheses</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<ol>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: ' ';
+</bdo></code></li>
+<li><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
 
-<!--code>
-Alternative prefix/suffix styles:
-
-<bdo dir="ltr">/* space only */
-suffix: ' ';
-
-/* parentheses */
-prefix: '('
-suffix: ') '; 
-</bdo>
-</code--></div>
 
 
-
-<p class="note"><strong>Alternative prefix/suffix styles:</strong> The <code class="kw" translate="no">santali</code> style described here produces a period+space suffix, however  counters are sometimes followed by just a space, or enclosed in parentheses.</p>
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="santali"><a href="#santali">santali</a></dfn> {
+system: alphabetic;
+symbols:  :  '\1C5A' '\1C5B' '\1C5C' '\1C5D' '\1C5E' '\1C5F' '\1C60' '\1C61' '\1C62' '\1C63' '\1C64' '\1C65' '\1C66' '\1C67' '\1C68' '\1C69' '\1C6A' '\1C6B' '\1C6C' '\1C6D' '\1C6E' '\1C6F' '\1C70' '\1C71' '\1C72' '\1C73' '\1C74' '\1C75' '\1C76' '\1C77' ;
+/* symbols: '&#x1C5A;' '&#x1C5B;' '&#x1C5C;' '&#x1C5D;' '&#x1C5E;' '&#x1C5F;' '&#x1C60;' '&#x1C61;' '&#x1C62;' '&#x1C63;' '&#x1C64;' '&#x1C65;' '&#x1C66;' '&#x1C67;' '&#x1C68;' '&#x1C69;' '&#x1C6A;' '&#x1C6B;' '&#x1C6C;' '&#x1C6D;' '&#x1C6E;' '&#x1C6F;' '&#x1C70;' '&#x1C71;' '&#x1C72;' '&#x1C73;' '&#x1C74;' '&#x1C75;' '&#x1C76;' '&#x1C77;' */
+prefix: '('; suffix: ')';
+}
+</bdo></code></div>
+<aside class="note">
+<p> Once the range is large enough to require 2-letter markers (eg. <span lang="sat">ᱚᱚ</span>), then normally the only affixes used  are surrounding parentheses. The other affixes are only used if the length doesn't exceed the number of letters available.</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<ol>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: ') ';
+</bdo></code></li>
+<li><code><bdo dir="ltr">
+prefix: ''; suffix: '/ ';
+</bdo></code></li>
+<li><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
 </section>
 
 
@@ -1710,7 +2067,26 @@ symbols: '\B66' '\B67' '\B68' '\B69' '\B6A' '\B6B' '\B6C' '\B6D' '\B6E' '\B6F';
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">oriya</a></code> style.</p>
 
+
+
+<div class="counterstyle">
+<code>
+<bdo dir="ltr">
+@counter-style <dfn id="odia"><a href="#odia">odia</a></dfn> {
+system: alphabetic;
+symbols: '\0B15' '\0B16' '\0B17' '\0B18' '\0B19' '\0B1A' '\0B1B' '\0B1C' '\0B1D' '\0B1E' '\0B1F' '\0B20' '\0B21' '\0B21\0B3C' '\0B22' '\0B22\0B3C' '\0B23' '\0B24' '\0B25' '\0B26' '\0B27' '\0B28' '\0B2A' '\0B2B' '\0B2C' '\0B2D' '\0B2E' '\0B2F' '\0B5F' '\0B30' '\0B32' '\0B33' '\0B71' '\0B36' '\0B37' '\0B38' '\0B39' ;
+/* symbols: 'କ' 'ଖ' 'ଗ' 'ଘ' 'ଙ' 'ଚ' 'ଛ' 'ଜ' 'ଝ' 'ଞ' 'ଟ' 'ଠ' 'ଡ' 'ଡ଼' 'ଢ' 'ଢ଼' 'ଣ' 'ତ' 'ଥ' 'ଦ' 'ଧ' 'ନ' 'ପ' 'ଫ' 'ବ' 'ଭ' 'ମ' 'ଯ' 'ୟ' 'ର' 'ଲ' 'ଳ' 'ୱ' 'ଶ' 'ଷ' 'ସ' 'ହ' ; */
+prefix: '(';
+suffix: ')';
+}
+</bdo></code></div>
 </section>
+
+
+
+
+
+
 
 
 
@@ -1741,6 +2117,10 @@ symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';
 
 
 
+
+
+
+
 <section id="telugu-styles">
 <h2>Telugu</h2>
 
@@ -1754,7 +2134,28 @@ symbols: '\C66' '\C67' '\C68' '\C69' '\C6A' '\C6B' '\C6C' '\C6D' '\C6E' '\C6F';
 </bdo></code></div>
 <p class="note">This style is defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">telugu</a></code> style.</p>
 
+
+<div class="counterstyle">
+<code><bdo dir="ltr">
+@counter-style <dfn id="telugu-alpha"><a href="#telugu-alpha">telugu-alpha</a></dfn> {
+system: alphabetic;
+symbols: '\C15' '\C16' '\C17' '\C18' '\C19' '\C1A' '\C58' '\C1B' '\C1C' '\C1D' '\C1E' '\C1F' '\C20' '\C21' '\C22' '\C23' '\C24' '\C25' '\C26' '\C27' '\C28' '\C2A' '\C2B' '\C2C' '\C2D' '\C2E' '\C2F' '\C30' '\C31' '\C32' '\C33' '\C34' '\C35' '\C36' '\C37' '\C38' '\C39' ;
+/* symbols: 'క' 'ఖ' 'గ' 'ఘ' 'ఙ' 'చ' 'ౘ' 'ఛ' 'జ' 'ఝ' 'ఞ' 'ట' 'ఠ' 'డ' 'ఢ' 'ణ' 'త' 'థ' 'ద' 'ధ' 'న' 'ప' 'ఫ' 'బ' 'భ' 'మ' 'య' 'ర' 'ఱ' 'ల' 'ళ' 'ఴ' 'వ' 'శ' 'ష' 'స' 'హ' ; */
+suffix: ') ';
+}
+</bdo></code></div>
+<aside class="note">
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to replace the default suffix:</p>
+<ol>
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+prefix: '('; suffix: ') ';
+</bdo></code></li>
+</ol>
+</aside>
 </section>
+
+
+
 
 
 
@@ -2052,9 +2453,36 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <h2> Revision Log</h2>
   <p>The following summarises substantive changes since the previous publication.</p>
   <ol>
-    <li>Add templates for legacy Chrome styles in ethiopic and korean sections.</li>
-<li>Fix Han CJK, Japanese, and Korean headings.</li>
-<li>Add information about alternative affixes for Korean.</li>
+    <li>Add the following 17 templates: 
+    [Arabic]
+<a href="#kashmiri"><code class="kw" translate="no">kashmiri</code></a>,
+[Bengali]
+<a href="#bangla"><code class="kw" translate="no">bangla</code></a>,
+[Devanagari]
+<a href="#bodo"><code class="kw" translate="no">bodo</code></a>,
+<a href="#dogri"><code class="kw" translate="no">dogri</code></a>,
+<a href="#konkani"><code class="kw" translate="no">konkani</code></a>,
+<a href="#maithili"><code class="kw" translate="no">maithili</code></a>,
+<a href="#marathi"><code class="kw" translate="no">marathi</code></a>,
+<a href="#sanskrit"><code class="kw" translate="no">sanskrit</code></a>,
+<a href="#sindhi"><code class="kw" translate="no">sindhi</code></a>,
+[Gujarati]
+<a href="#gujarati-alpha"><code class="kw" translate="no">gujarati-alpha</code></a>,
+[Gurmukhi]
+<a href="#punjabi"><code class="kw" translate="no">punjabi</code></a>,
+[Kannada]
+<a href="#kannada-alpha"><code class="kw" translate="no">kannada-alpha</code></a>,
+[Malayalam]
+<a href="#malayalam-alpha"><code class="kw" translate="no">malayalam-alpha</code></a>,
+[Meetei]
+<a href="#manipuri"><code class="kw" translate="no">manipuri</code></a>,
+[Ol Chiki]
+<a href="#santali"><code class="kw" translate="no">santali</code></a>,
+[Oriya]
+<a href="#odia"><code class="kw" translate="no">odia</code></a>,
+[Telugu]
+<a href="#telugu"><code class="kw" translate="no">telugu</code></a>
+</li>
 </ol>
     <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
@@ -2063,7 +2491,36 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <section class="appendix">
 <h2>Acknowledgements</h2>
 <p>Ian Hickson and Tantek Çelı̇k provided the majority of early contributions to this content. Additional significant contributions were made by Tab Atkins.</p>
-<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103, and <code class="kw" translate="no">tally-mark</code> by Mike Bremford. Thanks to Yaibeelen Mangang and Amir Aharoni for <code class="kw" translate="no">meetei</code>.</p>
+<p>Additional thanks to Mati Allouche, George Schizas. <code class="kw" translate="no">cjk-tally-mark</code> and <code class="kw" translate="no">cjk-stem-branch</code> were proposed by @c933103, and <code class="kw" translate="no">tally-mark</code> by Mike Bremford. Thanks to Yaibeelen Mangang and Amir Aharoni for <code class="kw" translate="no">meetei</code>. Prashant Verma and CDAC provided templates for 17 Indian styles, including  
+[Arabic]
+<a href="#kashmiri"><code class="kw" translate="no">kashmiri</code></a>,
+[Bengali]
+<a href="#bangla"><code class="kw" translate="no">bangla</code></a>,
+[Devanagari]
+<a href="#bodo"><code class="kw" translate="no">bodo</code></a>,
+<a href="#dogri"><code class="kw" translate="no">dogri</code></a>,
+<a href="#konkani"><code class="kw" translate="no">konkani</code></a>,
+<a href="#maithili"><code class="kw" translate="no">maithili</code></a>,
+<a href="#marathi"><code class="kw" translate="no">marathi</code></a>,
+<a href="#sanskrit"><code class="kw" translate="no">sanskrit</code></a>,
+<a href="#sindhi"><code class="kw" translate="no">sindhi</code></a>,
+[Gujarati]
+<a href="#gujarati-alpha"><code class="kw" translate="no">gujarati-alpha</code></a>,
+[Gurmukhi]
+<a href="#punjabi"><code class="kw" translate="no">punjabi</code></a>,
+[Kannada]
+<a href="#kannada-alpha"><code class="kw" translate="no">kannada-alpha</code></a>,
+[Malayalam]
+<a href="#malayalam-alpha"><code class="kw" translate="no">malayalam-alpha</code></a>,
+[Meetei]
+<a href="#manipuri"><code class="kw" translate="no">manipuri</code></a>,
+[Ol Chiki]
+<a href="#santali"><code class="kw" translate="no">santali</code></a>,
+[Oriya]
+<a href="#odia"><code class="kw" translate="no">odia</code></a>,
+[Telugu]
+<a href="#telugu"><code class="kw" translate="no">telugu</code></a>.
+</p>
 </section>
   </body>
 </html>
