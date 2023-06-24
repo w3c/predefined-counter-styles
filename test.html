@@ -315,8 +315,12 @@ function copyTemplate (id) {
     margin: 0;
     padding: 0;
     text-align: start;
-    color: #999;
+    color: #bbb;
     font-size: 70%;
+    }
+.browser_output li::marker {
+    color: #666;
+    font-size: 1.2em;
     }
 .browser_output ol {
     display: block;
@@ -3821,94 +3825,261 @@ symbols: '\A901' '\A902' '\A903' '\A904' '\A905' '\A906' '\A907' '\A908' '\A909'
 <section id="khmer-styles">
 <h2>Khmer</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="cambodian"><a href="#cambodian">cambodian</a></dfn> {
+
+<style>
+@counter-style cambodian {
+system: numeric;
+symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('cambodian')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="cambodian"><code><bdo dir="ltr">
+@counter-style <a href="#cambodian">cambodian</a> {
 system: numeric;
 symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';
 /* symbols: '&#6112;' '&#6113;' '&#6114;' '&#6115;' '&#6116;' '&#6117;' '&#6118;' '&#6119;' '&#6120;' '&#6121;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_cambodian" class="browser_output"></div>
+<script>addExamples('cambodian', 'km', '')</script>
 
 
-<div class="counterstyle">
-  <code><bdo dir="ltr">
-@counter-style <dfn id="khmer"><a href="#khmer">khmer</a></dfn> {
+
+
+
+
+<style>
+@counter-style khmer {
+system: numeric;
+symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('khmer')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="khmer"><code><bdo dir="ltr">
+@counter-style <a href="#khmer">khmer</a> {
 system: numeric;
 symbols: '\17E0' '\17E1' '\17E2' '\17E3' '\17E4' '\17E5' '\17E6' '\17E7' '\17E8' '\17E9';
 /* symbols: '&#6112;' '&#6113;' '&#6114;' '&#6115;' '&#6116;' '&#6117;' '&#6118;' '&#6119;' '&#6120;' '&#6121;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="khmer-consonant"><a href="#khmer-consonant">khmer-consonant</a></dfn> {
+<div id="out_khmer" class="browser_output"></div>
+<script>addExamples('khmer', 'km', '')</script>
+
+
+<aside class="note">
+<p >The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are exactly the same. Both are listed separately here because both names are supported in some browsers, and it makes it easier to cut and paste if two clean instances are provided.</p>
+</aside>
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are defined in the [[[css-counter-styles-3]]] specification.   Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">cambodian</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">khmer</a></code> styles.</p>
+</aside>
+
+
+
+
+
+
+
+<style>
+@counter-style khmer-consonant {
+system: alphabetic;
+symbols: '\1780' '\1781' '\1782' '\1783' '\1784' '\1785' '\1786' '\1787' '\1788' '\1789' '\178A' '\178B' '\178C' '\178D' '\178E' '\178F' '\1790' '\1791' '\1792' '\1793' '\1794' '\1795' '\1796' '\1797' '\1798' '\1799' '\179A' '\179B' '\179C' '\179F' '\17A0' '\17A1' '\17A2';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('khmer-consonant')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="khmer-consonant"><code><bdo dir="ltr">
+@counter-style <a href="#khmer-consonant">khmer-consonant</a> {
 system: alphabetic;
 symbols: '\1780' '\1781' '\1782' '\1783' '\1784' '\1785' '\1786' '\1787' '\1788' '\1789' '\178A' '\178B' '\178C' '\178D' '\178E' '\178F' '\1790' '\1791' '\1792' '\1793' '\1794' '\1795' '\1796' '\1797' '\1798' '\1799' '\179A' '\179B' '\179C' '\179F' '\17A0' '\17A1' '\17A2';
 /* symbols: '&#6016;' '&#6017;' '&#6018;' '&#6019;' '&#6020;' '&#6021;' '&#6022;' '&#6023;' '&#6024;' '&#6025;' '&#6026;' '&#6027;' '&#6028;' '&#6029;' '&#6030;' '&#6031;' '&#6032;' '&#6033;' '&#6034;' '&#6035;' '&#6036;' '&#6037;' '&#6038;' '&#6039;' '&#6040;' '&#6041;' '&#6042;' '&#6043;' '&#6044;' '&#6047;' '&#6048;' '&#6049;' '&#6050;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<p class="note">The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are exactly the same. Both are listed separately here because both names are supported in some browsers, and it makes it easier to cut and paste if two clean instances are provided.</p>
-<p class="note">The <code class="kw" translate="no">cambodian</code> and <code class="kw" translate="no">khmer</code> styles are defined in the [[[css-counter-styles-3]]] specification.   Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">cambodian</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">khmer</a></code> styles.</p>
-
+<div id="out_khmer-consonant" class="browser_output"></div>
+<script>addExamples('khmer-consonant', 'km', '')</script>
 </section>
+
+
+
+
+
+
+
+
 
 
 
 <section id="korean-styles">
 <h2>Korean</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="circled-korean-consonant"><a href="#circled-korean-consonant">circled-korean-consonant</a></dfn> {
+
+<style>
+@counter-style circled-korean-consonant {
+system: fixed;
+symbols: '\3260' '\3261' '\3262' '\3263' '\3264' '\3265' '\3266' '\3267' '\3268' '\3269' '\326A' '\326B' '\326C' '\326D';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-korean-consonant')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-korean-consonant"><code><bdo dir="ltr">
+@counter-style <a href="#circled-korean-consonant">circled-korean-consonant</a> {
 system: fixed;
 symbols: '\3260' '\3261' '\3262' '\3263' '\3264' '\3265' '\3266' '\3267' '\3268' '\3269' '\326A' '\326B' '\326C' '\326D';
 /* symbols: '&#12896;' '&#12897;' '&#12898;' '&#12899;' '&#12900;' '&#12901;' '&#12902;' '&#12903;' '&#12904;' '&#12905;' '&#12906;' '&#12907;' '&#12908;' '&#12909;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="circled-korean-syllable"><a href="#circled-korean-syllable">circled-korean-syllable</a></dfn> {
+<div id="out_circled-korean-consonant" class="browser_output"></div>
+<script>addExamples('circled-korean-consonant', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style circled-korean-syllable {
+system: fixed;
+symbols: '\326E' '\326F' '\3270' '\3271' '\3272' '\3273' '\3274' '\3275' '\3276' '\3277' '\3278' '\3279' '\327A' '\327B';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-korean-syllable')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-korean-syllable"><code><bdo dir="ltr">
+@counter-style <a href="#circled-korean-syllable">circled-korean-syllable</a> {
 system: fixed;
 symbols: '\326E' '\326F' '\3270' '\3271' '\3272' '\3273' '\3274' '\3275' '\3276' '\3277' '\3278' '\3279' '\327A' '\327B';
 /* symbols: '&#12910;' '&#12911;' '&#12912;' '&#12913;' '&#12914;' '&#12915;' '&#12916;' '&#12917;' '&#12918;' '&#12919;' '&#12920;' '&#12921;' '&#12922;' '&#12923;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="hangul"><a href="#hangul">hangul</a></dfn> {
+<div id="out_circled-korean-syllable" class="browser_output"></div>
+<script>addExamples('circled-korean-syllable', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style hangul {
+system: alphabetic;
+symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('hangul')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="hangul"><code><bdo dir="ltr">
+@counter-style <a href="#hangul">hangul</a> {
 system: alphabetic;
 symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';
 /* symbols: '&#xAC00;' '&#xB098;' '&#xB2E4;' '&#xB77C;' '&#xB9C8;' '&#xBC14;' '&#xC0AC;' '&#xC544;' '&#xC790;' '&#xCC28;' '&#xCE74;' '&#xD0C0;' '&#xD30C;' '&#xD558;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="hangul-consonant"><a href="#hangul-consonant">hangul-consonant</a></dfn> {
+<div id="out_hangul" class="browser_output"></div>
+<script>addExamples('hangul', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style hangul-consonant {
+system: alphabetic;
+symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('hangul-consonant')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="hangul-consonant"><code><bdo dir="ltr">
+@counter-style <a href="#hangul-consonant">hangul-consonant</a> {
 system: alphabetic;
 symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
 /* symbols: '&#x3131;' '&#x3134;' '&#x3137;' '&#x3139;' '&#x3141;' '&#x3142;' '&#x3145;' '&#x3147;' '&#x3148;' '&#x314A;' '&#x314B;' '&#x314C;' '&#x314D;' '&#x314E;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="korean-consonant"><a href="#korean-consonant">korean-consonant</a></dfn> {
+<div id="out_hangul-consonant" class="browser_output"></div>
+<script>addExamples('hangul-consonant', 'ko', '')</script>
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">hangul</code> and <code class="kw" translate="no">hangul-consonant</code> styles are built-in styles in Blink and  Webkit, but none work out of the box in Firefox. Use the templates provided here if you want those names to work on all browsers that support counter-styles definitions.</p>
+</aside>
+
+
+
+
+
+<style>
+@counter-style korean-consonant {
+system: alphabetic;
+symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('korean-consonant')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="korean-consonant"><code><bdo dir="ltr">
+@counter-style <a href="#korean-consonant">korean-consonant</a> {
 system: alphabetic;
 symbols: '\3131' '\3134' '\3137' '\3139' '\3141' '\3142' '\3145' '\3147' '\3148' '\314A' '\314B' '\314C' '\314D' '\314E';
 /* symbols: '&#12593;' '&#12596;' '&#12599;' '&#12601;' '&#12609;' '&#12610;' '&#12613;' '&#12615;' '&#12616;' '&#12618;' '&#12619;' '&#12620;' '&#12621;' '&#12622;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="korean-hangul-formal"><a href="#korean-hangul-formal">korean-hangul-formal</a></dfn> {
+<div id="out_korean-consonant" class="browser_output"></div>
+<script>addExamples('korean-consonant', 'ko', '')</script>
+
+
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">hangul-consonant</code> and <code class="kw" translate="no">korean-consonant</code> styles are identical, apart from the name.</p>
+</aside>
+
+
+
+
+
+
+
+<style>
+@counter-style korean-hangul-formal {
+system: additive;
+range: -9999 9999;
+additive-symbols: 9000 '\AD6C\CC9C', 8000 '\D314\CC9C', 7000 '\CE60\CC9C', 6000 '\C721\CC9C', 5000 '\C624\CC9C', 4000 '\C0AC\CC9C', 3000 '\C0BC\CC9C', 2000 '\C774\CC9C', 1000 '\C77C\CC9C', 900 '\AD6C\BC31', 800 '\D314\BC31', 700 '\CE60\BC31', 600 '\C721\BC31', 500 '\C624\BC31', 400 '\C0AC\BC31', 300 '\C0BC\BC31', 200 '\C774\BC31', 100 '\C77C\BC31', 90 '\AD6C\C2ED', 80 '\D314\C2ED', 70 '\CE60\C2ED', 60 '\C721\C2ED', 50 '\C624\C2ED', 40 '\C0AC\C2ED', 30 '\C0BC\C2ED', 20 '\C774\C2ED', 10 '\C77C\C2ED', 9 '\AD6C', 8 '\D314', 7 '\CE60', 6 '\C721', 5 '\C624', 4 '\C0AC', 3 '\C0BC', 2 '\C774', 1 '\C77C', 0 '\C601';
+suffix:', ';
+negative: "\B9C8\C774\B108\C2A4  ";
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('korean-hangul-formal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="korean-hangul-formal"><code><bdo dir="ltr">
+@counter-style <a href="#korean-hangul-formal">korean-hangul-formal</a> {
 system: additive;
 range: -9999 9999;
 additive-symbols: 9000 '\AD6C\CC9C', 8000 '\D314\CC9C', 7000 '\CE60\CC9C', 6000 '\C721\CC9C', 5000 '\C624\CC9C', 4000 '\C0AC\CC9C', 3000 '\C0BC\CC9C', 2000 '\C774\CC9C', 1000 '\C77C\CC9C', 900 '\AD6C\BC31', 800 '\D314\BC31', 700 '\CE60\BC31', 600 '\C721\BC31', 500 '\C624\BC31', 400 '\C0AC\BC31', 300 '\C0BC\BC31', 200 '\C774\BC31', 100 '\C77C\BC31', 90 '\AD6C\C2ED', 80 '\D314\C2ED', 70 '\CE60\C2ED', 60 '\C721\C2ED', 50 '\C624\C2ED', 40 '\C0AC\C2ED', 30 '\C0BC\C2ED', 20 '\C774\C2ED', 10 '\C77C\C2ED', 9 '\AD6C', 8 '\D314', 7 '\CE60', 6 '\C721', 5 '\C624', 4 '\C0AC', 3 '\C0BC', 2 '\C774', 1 '\C77C', 0 '\C601';
@@ -3917,41 +4088,113 @@ suffix:', ';
 negative: "\B9C8\C774\B108\C2A4  ";
 /* 마이너스 (followed by a space) */
 }
-</bdo></code>
-</div>
-<div class="counterstyle">
-  <code><bdo dir="ltr">
-@counter-style <dfn id="korean-syllable"><a href="#korean-syllable">korean-syllable</a></dfn> {
+</bdo></code></p>
+
+<div id="out_korean-hangul-formal" class="browser_output"></div>
+<script>addExamples('korean-hangul-formal', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style korean-syllable {
+system: alphabetic;
+symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('korean-syllable')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="korean-syllable"><code><bdo dir="ltr">
+@counter-style <a href="#korean-syllable">korean-syllable</a> {
 system: alphabetic;
 symbols: '\AC00' '\B098' '\B2E4' '\B77C' '\B9C8' '\BC14' '\C0AC' '\C544' '\C790' '\CC28' '\CE74' '\D0C0' '\D30C' '\D558';
 /* symbols: '&#44032;' '&#45208;' '&#45796;' '&#46972;' '&#47560;' '&#48148;' '&#49324;' '&#50500;' '&#51088;' '&#52264;' '&#52852;' '&#53440;' '&#54028;' '&#54616;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="parenthesized-hangul-consonant"><a href="#parenthesized-hangul-consonant">parenthesized-hangul-consonant</a></dfn> {
+<div id="out_korean-syllable" class="browser_output"></div>
+<script>addExamples('korean-syllable', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style parenthesized-hangul-consonant {
+system: fixed;
+symbols: '\3200' '\3201' '\3202' '\3203' '\3204' '\3205' '\3206' '\3207' '\3208' '\3209' '\320A' '\320B' '\320C' '\320D';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('parenthesized-hangul-consonant')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="parenthesized-hangul-consonant"><code><bdo dir="ltr">
+@counter-style <a href="#parenthesized-hangul-consonant">parenthesized-hangul-consonant</a> {
 system: fixed;
 symbols: '\3200' '\3201' '\3202' '\3203' '\3204' '\3205' '\3206' '\3207' '\3208' '\3209' '\320A' '\320B' '\320C' '\320D';
 /* symbols: '&#12800;' '&#12801;' '&#12802;' '&#12803;' '&#12804;' '&#12805;' '&#12806;' '&#12807;' '&#12808;' '&#12809;' '&#12810;' '&#12811;' '&#12812;' '&#12813;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="parenthesized-hangul-syllable"><a href="#parenthesized-hangul-syllable">parenthesized-hangul-syllable</a></dfn> {
+<div id="out_parenthesized-hangul-consonant" class="browser_output"></div>
+<script>addExamples('parenthesized-hangul-consonant', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style parenthesized-hangul-syllable {
+system: fixed;
+symbols: '\320E' '\320F' '\3210' '\3211' '\3212' '\3213' '\3214' '\3215' '\3216' '\3217' '\3218' '\3219' '\321A';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('parenthesized-hangul-syllable')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="parenthesized-hangul-syllable"><code><bdo dir="ltr">
+@counter-style <a href="#parenthesized-hangul-syllable">parenthesized-hangul-syllable</a> {
 system: fixed;
 symbols: '\320E' '\320F' '\3210' '\3211' '\3212' '\3213' '\3214' '\3215' '\3216' '\3217' '\3218' '\3219' '\321A';
 /* symbols: '&#12814;' '&#12815;' '&#12816;' '&#12817;' '&#12818;' '&#12819;' '&#12820;' '&#12821;' '&#12822;' '&#12823;' '&#12824;' '&#12825;' '&#12826;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_parenthesized-hangul-syllable" class="browser_output"></div>
+<script>addExamples('parenthesized-hangul-syllable', 'ko', '')</script>
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="korean-hanja-informal"><a href="#korean-hanja-informal">korean-hanja-informal</a></dfn> { /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */
+
+
+
+
+
+<style>
+@counter-style korean-hanja-informal {
+system: additive;
+range: -9999 9999;
+additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \96F6;
+suffix:', ';
+negative: "\B9C8\C774\B108\C2A4  ";
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('korean-hanja-informal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="korean-hanja-informal"><code><bdo dir="ltr">
+@counter-style <a href="#korean-hanja-informal">korean-hanja-informal</a> {
 system: additive;
 range: -9999 9999;
 additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \96F6;
@@ -3960,11 +4203,31 @@ suffix:', ';
 negative: "\B9C8\C774\B108\C2A4  ";
 /* 마이너스 (followed by a space) */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="korean-hanja-formal"><a href="#korean-hanja-formal">korean-hanja-formal</a></dfn> { /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */
+<div id="out_korean-hanja-informal" class="browser_output"></div>
+<script>addExamples('korean-hanja-informal', 'ko', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style korean-hanja-formal {
+system: additive;
+range: -9999 9999;
+additive-symbols: 9000 \4E5D\4EDF, 8000 \516B\4EDF, 7000 \4E03\4EDF, 6000 \516D\4EDF, 5000 \4E94\4EDF, 4000 \56DB\4EDF, 3000 \53C3\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \53C3\767E, 200 \8CB3\767E, 100 \58F9\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4E94\62FE, 40 \56DB\62FE, 30 \53C3\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \53C3, 2 \8CB3, 1 \58F9, 0 \96F6;
+suffix:', ';
+negative: "\B9C8\C774\B108\C2A4  ";
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('korean-hanja-formal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="korean-hanja-formal"><code><bdo dir="ltr">
+@counter-style <a href="#korean-hanja-formal">korean-hanja-formal</a> {
 system: additive;
 range: -9999 9999;
 additive-symbols: 9000 \4E5D\4EDF, 8000 \516B\4EDF, 7000 \4E03\4EDF, 6000 \516D\4EDF, 5000 \4E94\4EDF, 4000 \56DB\4EDF, 3000 \53C3\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \53C3\767E, 200 \8CB3\767E, 100 \58F9\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4E94\62FE, 40 \56DB\62FE, 30 \53C3\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \53C3, 2 \8CB3, 1 \58F9, 0 \96F6;
@@ -3972,15 +4235,32 @@ additive-symbols: 9000 \4E5D\4EDF, 8000 \516B\4EDF, 7000 \4E03\4EDF, 6000 \516D\
 suffix:', ';
 negative: "\B9C8\C774\B108\C2A4  ";
 /* 마이너스 (followed by a space) */
-} 
-</bdo></code></div>
-<p class="note" id="korean_alt_affix"><strong>Alternative affix styles:</strong> Many of the Korean styles listed here use <span class="codepoint" translate="no"><span lang="ko">&#x002C;&#x0020;</span> [<span class="uname">U+002C COMMA</span> + <span class="uname">U+0020 SPACE</span>]</span> as the default suffix, however sometimes <span class="codepoint" translate="no"><span lang="zh">&#x002E;&#x0020;</span> [<span class="uname">U+002E FULL STOP</span> + <span class="uname">U+0020 SPACE</span>]</span> is preferred. To apply that to the styles above, replace the suffix declarations with:<br>
+}
+</bdo></code></p>
+
+<div id="out_korean-hanja-formal" class="browser_output"></div>
+<script>addExamples('korean-hanja-formal', 'ko', '')</script>
+
+
+
+
+
+
+
+<aside class="note">
+<p id="korean_alt_affix"><strong>Alternative affix styles:</strong> Many of the Korean styles listed here use <span class="codepoint" translate="no"><span lang="ko">&#x002C;&#x0020;</span> [<span class="uname">U+002C COMMA</span> + <span class="uname">U+0020 SPACE</span>]</span> as the default suffix, however sometimes <span class="codepoint" translate="no"><span lang="zh">&#x002E;&#x0020;</span> [<span class="uname">U+002E FULL STOP</span> + <span class="uname">U+0020 SPACE</span>]</span> is preferred. To apply that to the styles above, replace the suffix declarations with:<br>
 <code>
 <bdo dir="ltr">suffix: \002E\0020; /*. */ </bdo>
-</code> </p>
-<p class="note">The <code class="kw" translate="no">korean-hangul-formal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the [[[css-counter-styles-3]]] specification.  Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hangul-formal</a></code>, <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-formal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-informal</a></code> styles.</p>
-<p class="note">The following are built-in styles in Blink and  Webkit, but none work out of the box in Firefox: <code class="kw" translate="no">hangul</code>, <code class="kw" translate="no">hangul-consonant</code><code class="kw" translate="no"></code>. Use the templates provided here if you want those names to work on all browsers that support counter-styles definitions.</p>
-<p class="note">See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
+</code></p>
+</aside>
+
+<aside class="note">
+<p>The <code class="kw" translate="no">korean-hangul-formal</code>, <code class="kw" translate="no">korean-hanja-formal</code>, and <code class="kw" translate="no">korean-hanja-informal</code> styles are defined in the [[[css-counter-styles-3]]] specification.  Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hangul-formal</a></code>, <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-formal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#korean" target="_blank">korean-hanja-informal</a></code> styles.</p>
+</aside>
+
+<aside class="note">
+<p>See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
+</aside>
 </section>
 
 
@@ -3991,25 +4271,53 @@ negative: "\B9C8\C774\B108\C2A4  ";
 <section id="lanna-styles">
 <h2>Lanna (Tai Tham)</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lanna-hora"><a href="#lanna-hora">lanna-hora</a></dfn> {
+
+<style>
+@counter-style lanna-hora {
 system: numeric;
- symbols: \1A80  \1A81  \1A82  \1A83  \1A84  \1A85  \1A86  \1A87  \1A88  \1A89;
+symbols: \1A80  \1A81  \1A82  \1A83  \1A84  \1A85  \1A86  \1A87  \1A88  \1A89;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lanna-hora')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lanna-hora"><code><bdo dir="ltr">
+@counter-style <a href="#lanna-hora">lanna-hora</a> {
+system: numeric;
+symbols: '\1A80' '\1A81' '\1A82' '\1A83' '\1A84' '\1A85' '\1A86' '\1A87' '\1A88' '\1A89';
 /* symbols: ᪀ ᪁ ᪂ ᪃ ᪄ ᪅ ᪆ ᪇ ᪈ ᪉; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_lanna-hora" class="browser_output"></div>
+<script>addExamples('lanna-hora', 'nod', '')</script>
 
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lanna-tham"><a href="#lanna-tham">lanna-tham</a></dfn> {
+
+
+
+
+
+<style>
+@counter-style lanna-tham {
 system: numeric;
- symbols: \1A90  \1A91  \1A92  \1A93  \1A94  \1A95  \1A96  \1A97  \1A98  \1A99;
+symbols: '\1A90' '\1A91' '\1A92' '\1A93' '\1A94' '\1A95' '\1A96' '\1A97' '\1A98' '\1A99';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lanna-tham')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lanna-tham"><code><bdo dir="ltr">
+@counter-style <a href="#lanna-tham">lanna-tham</a> {
+system: numeric;
+symbols: '\1A90' '\1A91' '\1A92' '\1A93' '\1A94' '\1A95' '\1A96' '\1A97' '\1A98' '\1A99';
 /* symbols: ᪐ ᪑ ᪒ ᪓ ᪔ ᪕ ᪖ ᪗ ᪘ ᪙; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_lanna-tham" class="browser_output"></div>
+<script>addExamples('lanna-tham', 'nod', '')</script>
 </section>
 
 
@@ -4020,109 +4328,283 @@ system: numeric;
 <section id="lao-styles">
 <h2>Lao</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lao"><a href="#lao">lao</a></dfn> {
+
+<style>
+@counter-style lao {
+system: numeric;
+symbols: '\ED0' '\ED1' '\ED2' '\ED3' '\ED4' '\ED5' '\ED6' '\ED7' '\ED8' '\ED9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lao')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lao"><code><bdo dir="ltr">
+@counter-style <a href="#lao">lao</a> {
 system: numeric;
 symbols: '\ED0' '\ED1' '\ED2' '\ED3' '\ED4' '\ED5' '\ED6' '\ED7' '\ED8' '\ED9';
 /* symbols: '&#3792;' '&#3793;' '&#3794;' '&#3795;' '&#3796;' '&#3797;' '&#3798;' '&#3799;' '&#3800;' '&#3801;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">lao</a></code> style.</p>
+</bdo></code></p>
 
+<div id="out_lao" class="browser_output"></div>
+<script>addExamples('lao', 'lo', '')</script>
+
+
+
+<aside class="note">
+<p>This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">lao</a></code> style.</p>
+</aside>
 </section>
+
+
+
+
+
+
+
+
 
 
 
 <section id="latin-styles">
 <h2>Latin</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="fullwidth-lower-alpha"><a href="#fullwidth-lower-alpha">fullwidth-lower-alpha</a></dfn> {
+
+<style>
+@counter-style fullwidth-lower-alpha {
+system: alphabetic;
+symbols: '\FF41' '\FF42' '\FF43' '\FF44' '\FF45' '\FF46' '\FF47' '\FF48' '\FF49' '\FF4A' '\FF4B' '\FF4C' '\FF4D' '\FF4E' '\FF4F' '\FF50' '\FF51' '\FF52' '\FF53' '\FF54' '\FF55' '\FF56' '\FF57' '\FF58' '\FF59' '\FF5A';
+suffix: '\FF0E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('fullwidth-lower-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="fullwidth-lower-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#fullwidth-lower-alpha">fullwidth-lower-alpha</a> {
 system: alphabetic;
 symbols: '\FF41' '\FF42' '\FF43' '\FF44' '\FF45' '\FF46' '\FF47' '\FF48' '\FF49' '\FF4A' '\FF4B' '\FF4C' '\FF4D' '\FF4E' '\FF4F' '\FF50' '\FF51' '\FF52' '\FF53' '\FF54' '\FF55' '\FF56' '\FF57' '\FF58' '\FF59' '\FF5A';
 /* symbols: '&#65345;' '&#65346;' '&#65347;' '&#65348;' '&#65349;' '&#65350;' '&#65351;' '&#65352;' '&#65353;' '&#65354;' '&#65355;' '&#65356;' '&#65357;' '&#65358;' '&#65359;' '&#65360;' '&#65361;' '&#65362;' '&#65363;' '&#65364;' '&#65365;' '&#65366;' '&#65367;' '&#65368;' '&#65369;' '&#65370;'; */
-suffix: '&#65294;';
+suffix: '\FF0E';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="fullwidth-upper-alpha"><a href="#fullwidth-upper-alpha">fullwidth-upper-alpha</a></dfn> {
+<div id="out_fullwidth-lower-alpha" class="browser_output"></div>
+<script>addExamples('fullwidth-lower-alpha', 'ja', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style fullwidth-upper-alpha {
+system: alphabetic;
+symbols: '\FF21' '\FF22' '\FF23' '\FF24' '\FF25' '\FF26' '\FF27' '\FF28' '\FF29' '\FF2A' '\FF2B' '\FF2C' '\FF2D' '\FF2E' '\FF2F' '\FF30' '\FF31' '\FF32' '\FF33' '\FF34' '\FF35' '\FF36' '\FF37' '\FF38' '\FF39' '\FF3A';
+suffix: '\FF0E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('fullwidth-upper-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="fullwidth-upper-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#fullwidth-upper-alpha">fullwidth-upper-alpha</a> {
 system: alphabetic;
 symbols: '\FF21' '\FF22' '\FF23' '\FF24' '\FF25' '\FF26' '\FF27' '\FF28' '\FF29' '\FF2A' '\FF2B' '\FF2C' '\FF2D' '\FF2E' '\FF2F' '\FF30' '\FF31' '\FF32' '\FF33' '\FF34' '\FF35' '\FF36' '\FF37' '\FF38' '\FF39' '\FF3A';
 /* symbols: '&#65313;' '&#65314;' '&#65315;' '&#65316;' '&#65317;' '&#65318;' '&#65319;' '&#65320;' '&#65321;' '&#65322;' '&#65323;' '&#65324;' '&#65325;' '&#65326;' '&#65327;' '&#65328;' '&#65329;' '&#65330;' '&#65331;' '&#65332;' '&#65333;' '&#65334;' '&#65335;' '&#65336;' '&#65337;' '&#65338;'; */
-suffix: '&#65294;';
+suffix: '\FF0E';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lower-alpha"><a href="#lower-alpha">lower-alpha</a></dfn> {
+<div id="out_fullwidth-upper-alpha" class="browser_output"></div>
+<script>addExamples('fullwidth-upper-alpha', 'ja', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style lower-alpha {
+system: alphabetic;
+symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lower-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lower-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#lower-alpha">lower-alpha</a> {
 system: alphabetic;
 symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
 /* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lower-alpha-symbolic"><a href="#lower-alpha-symbolic">lower-alpha-symbolic</a></dfn> {
+<div id="out_lower-alpha" class="browser_output"></div>
+<script>addExamples('lower-alpha', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style lower-alpha-symbolic {
+system: symbolic;
+symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lower-alpha-symbolic')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lower-alpha-symbolic"><code><bdo dir="ltr">
+@counter-style <a href="#lower-alpha-symbolic">lower-alpha-symbolic</a> {
 system: symbolic;
 symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
 /* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lower-oromo-qubee"><a href="#lower-oromo-qubee">lower-oromo-qubee</a></dfn> {
+<div id="out_lower-alpha-symbolic" class="browser_output"></div>
+<script>addExamples('lower-alpha-symbolic', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style lower-oromo-qubee {
+system: alphabetic;
+symbols: '\61' '\61\61' '\62' '\63' '\64' '\65' '\65\65' '\66' '\67' '\68' '\69' '\69\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\6F\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\75\75' '\76' '\77' '\78' '\79' '\7A' '\63\68' '\64\68' '\6B\68' '\6E\79' '\70\68' '\73\68';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lower-oromo-qubee')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lower-oromo-qubee"><code><bdo dir="ltr">
+@counter-style <a href="#lower-oromo-qubee">lower-oromo-qubee</a> {
 system: alphabetic;
 symbols: '\61' '\61\61' '\62' '\63' '\64' '\65' '\65\65' '\66' '\67' '\68' '\69' '\69\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\6F\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\75\75' '\76' '\77' '\78' '\79' '\7A' '\63\68' '\64\68' '\6B\68' '\6E\79' '\70\68' '\73\68';
 /* symbols: 'a' 'aa' 'b' 'c' 'd' 'e' 'ee' 'f' 'g' 'h' 'i' 'ii' 'j' 'k' 'l' 'm' 'n' 'o' 'oo' 'p' 'q' 'r' 's' 't' 'u' 'uu' 'v' 'w' 'x' 'y' 'z' 'ch' 'dh' 'kh' 'ny' 'ph' 'sh'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="upper-alpha"><a href="#upper-alpha">upper-alpha</a></dfn> {
+<div id="out_lower-oromo-qubee" class="browser_output"></div>
+<script>addExamples('lower-oromo-qubee', 'om', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style upper-alpha {
+system: alphabetic;
+symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('upper-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="upper-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#upper-alpha">upper-alpha</a> {
 system: alphabetic;
 symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';
 /* symbols: 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="upper-alpha-symbolic"><a href="#upper-alpha-symbolic">upper-alpha-symbolic</a></dfn> {
+<div id="out_upper-alpha" class="browser_output"></div>
+<script>addExamples('upper-alpha', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style upper-alpha-symbolic {
+system: symbolic;
+symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('upper-alpha-symbolic')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="upper-alpha-symbolic"><code><bdo dir="ltr">
+@counter-style <a href="#upper-alpha-symbolic">upper-alpha-symbolic</a> {
 system: symbolic;
 symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A';
 /* symbols: 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="upper-oromo-qubee"><a href="#upper-oromo-qubee">upper-oromo-qubee</a></dfn> {
+<div id="out_upper-alpha-symbolic" class="browser_output"></div>
+<script>addExamples('upper-alpha-symbolic', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style upper-oromo-qubee {
+system: alphabetic;
+symbols: '\41' '\41\41' '\42' '\43' '\44' '\45' '\45\45' '\46' '\47' '\48' '\49' '\49\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\4F\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\55\55' '\56' '\57' '\58' '\59' '\5A' '\43\48' '\44\48' '\4B\48' '\4E\59' '\50\48' '\53\48';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('upper-oromo-qubee')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="upper-oromo-qubee"><code><bdo dir="ltr">
+@counter-style <a href="#upper-oromo-qubee">upper-oromo-qubee</a> {
 system: alphabetic;
 symbols: '\41' '\41\41' '\42' '\43' '\44' '\45' '\45\45' '\46' '\47' '\48' '\49' '\49\49' '\4A' '\4B' '\4C' '\4D' '\4E' '\4F' '\4F\4F' '\50' '\51' '\52' '\53' '\54' '\55' '\55\55' '\56' '\57' '\58' '\59' '\5A' '\43\48' '\44\48' '\4B\48' '\4E\59' '\50\48' '\53\48';
 /* symbols: 'A' 'AA' 'B' 'C' 'D' 'E' 'EE' 'F' 'G' 'H' 'I' 'II' 'J' 'K' 'L' 'M' 'N' 'O' 'OO' 'P' 'Q' 'R' 'S' 'T' 'U' 'UU' 'V' 'W' 'X' 'Y' 'Z' 'CH' 'DH' 'KH' 'NY' 'PH' 'SH'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="parenthesized-lower-latin"><a href="#parenthesized-lower-latin">parenthesized-lower-latin</a></dfn> {
+<div id="out_upper-oromo-qubee" class="browser_output"></div>
+<script>addExamples('upper-oromo-qubee', 'om', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style parenthesized-lower-latin {
+system: fixed;
+symbols: '\249C' '\249D' '\249E' '\249F' '\24A0' '\24A1' '\24A2' '\24A3' '\24A4' '\24A5' '\24A6' '\24A7' '\24A8' '\24A9' '\24AA' '\24AB' '\24AC' '\24AD' '\24AE' '\24AF' '\24B0' '\24B1' '\24B2' '\24B3' '\24B4' '\24B5';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('parenthesized-lower-latin')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="parenthesized-lower-latin"><code><bdo dir="ltr">
+@counter-style <a href="#parenthesized-lower-latin">parenthesized-lower-latin</a> {
 system: fixed;
 symbols: '\249C' '\249D' '\249E' '\249F' '\24A0' '\24A1' '\24A2' '\24A3' '\24A4' '\24A5' '\24A6' '\24A7' '\24A8' '\24A9' '\24AA' '\24AB' '\24AC' '\24AD' '\24AE' '\24AF' '\24B0' '\24B1' '\24B2' '\24B3' '\24B4' '\24B5';
 /* symbols: '&#9372;' '&#9373;' '&#9374;' '&#9375;' '&#9376;' '&#9377;' '&#9378;' '&#9379;' '&#9380;' '&#9381;' '&#9382;' '&#9383;' '&#9384;' '&#9385;' '&#9386;' '&#9387;' '&#9388;' '&#9389;' '&#9390;' '&#9391;' '&#9392;' '&#9393;' '&#9394;' '&#9395;' '&#9396;' '&#9397;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<p class="note">The <code class="kw" translate="no">lower-alpha</code> and <code class="kw" translate="no">upper-alpha</code> styles are defined in the [[[css-counter-styles-3]]] specification.</p>
-<p class="note">See also the section <a href="#digit-styles">European Digits &amp; Roman</a></p>
+<div id="out_parenthesized-lower-latin" class="browser_output"></div>
+<script>addExamples('parenthesized-lower-latin', 'en', '')</script>
+
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">lower-alpha</code> and <code class="kw" translate="no">upper-alpha</code> styles are defined in the [[[css-counter-styles-3]]] specification.</p>
+</aside>
+
+<aside class="note">
+<p>See also the section <a href="#digit-styles">European Digits &amp; Roman</a></p>
+</aside>
 </section>
 
 
@@ -4134,15 +4616,26 @@ suffix: ' ';
 <section id="lepcha-styles">
 <h2>Lepcha</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lepcha"><a href="#lepcha">lepcha</a></dfn> {
+
+<style>
+@counter-style lepcha {
+system: numeric;
+symbols: '\1C40' '\1C41' '\1C42' '\1C43' '\1C44' '\1C45' '\1C46' '\1C47' '\1C48' '\1C49';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lepcha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lepcha"><code><bdo dir="ltr">
+@counter-style <a href="#lepcha">lepcha</a> {
 system: numeric;
 symbols: '\1C40' '\1C41' '\1C42' '\1C43' '\1C44' '\1C45' '\1C46' '\1C47' '\1C48' '\1C49';
 /* symbols: '&#7232;' '&#7233;' '&#7234;' '&#7235;' '&#7236;' '&#7237;' '&#7238;' '&#7239;' '&#7240;' '&#7241;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_lepcha" class="browser_output"></div>
+<script>addExamples('lepcha', 'lep', '')</script>
 </section>
 
 
@@ -4153,15 +4646,26 @@ symbols: '\1C40' '\1C41' '\1C42' '\1C43' '\1C44' '\1C45' '\1C46' '\1C47' '\1C48'
 <section id="limbu-styles">
 <h2>Limbu</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="limbu"><a href="#limbu">limbu</a></dfn> {
+
+<style>
+@counter-style limbu {
 system: numeric;
- symbols: \1946  \1947  \1948  \1949  \194A  \194B  \194C  \194D  \194E  \194F ;
+symbols: \1946  \1947  \1948  \1949  \194A  \194B  \194C  \194D  \194E  \194F ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('limbu')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="limbu"><code><bdo dir="ltr">
+@counter-style <a href="#limbu">limbu</a> {
+system: numeric;
+symbols: \1946  \1947  \1948  \1949  \194A  \194B  \194C  \194D  \194E  \194F ;
 /* symbols: ᥆ ᥇ ᥈ ᥉ ᥊ ᥋ ᥌ ᥍ ᥎ ᥏; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_limbu" class="browser_output"></div>
+<script>addExamples('limbu', 'lif', '')</script>
 </section>
 
 
@@ -4174,74 +4678,163 @@ system: numeric;
 <section id="malayalam-styles">
 <h2>Malayalam</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="malayalam"><a href="#malayalam">malayalam</a></dfn> {
+
+<style>
+@counter-style malayalam {
+system: numeric;
+symbols: '\D66' '\D67' '\D68' '\D69' '\D6A' '\D6B' '\D6C' '\D6D' '\D6E' '\D6F';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('malayalam')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="malayalam"><code><bdo dir="ltr">
+@counter-style <a href="#malayalam">malayalam</a> {
 system: numeric;
 symbols: '\D66' '\D67' '\D68' '\D69' '\D6A' '\D6B' '\D6C' '\D6D' '\D6E' '\D6F';
 /* symbols: '&#3430;' '&#3431;' '&#3432;' '&#3433;' '&#3434;' '&#3435;' '&#3436;' '&#3437;' '&#3438;' '&#3439;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_malayalam" class="browser_output"></div>
+<script>addExamples('malayalam', 'ml', '')</script>
+
+
 <p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">malayalam</a></code> style.</p>
 
 
 
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="malayalam-alpha"><a href="#malayalam-alpha">malayalam-alpha</a></dfn> {
+<style>
+@counter-style malayalam-alpha {
+system: alphabetic;
+symbols: '\D15' '\D7F' '\D16' '\D17' '\D18' '\D19' '\D1A''\D1B' '\D1C' '\D1D' '\D1E' '\D1F' '\D20' '\D21' '\D22' '\D23' '\D7A' '\D24' '\D25' '\D26' '\D27' '\D28' '\D7B' '\D2A' '\D2B' '\D2C' '\D2D' '\D2E' '\D2F' '\D30' '\D7C' '\D32' '\D7D' '\D35' '\D36' '\D37' '\D38' '\D39' '\D33' '\D7E' '\D34' '\D31' ;
+prefix: '(';
+suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('malayalam-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="malayalam-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#malayalam-alpha">malayalam-alpha</a> {
 system: alphabetic;
 symbols: '\D15' '\D7F' '\D16' '\D17' '\D18' '\D19' '\D1A''\D1B' '\D1C' '\D1D' '\D1E' '\D1F' '\D20' '\D21' '\D22' '\D23' '\D7A' '\D24' '\D25' '\D26' '\D27' '\D28' '\D7B' '\D2A' '\D2B' '\D2C' '\D2D' '\D2E' '\D2F' '\D30' '\D7C' '\D32' '\D7D' '\D35' '\D36' '\D37' '\D38' '\D39' '\D33' '\D7E' '\D34' '\D31' ;
 /* symbols: 'ക' 'ൿ ''ഖ' 'ഗ' 'ഘ' 'ങ' 'ച' 'ഛ' 'ജ' 'ഝ' 'ഞ' ട' 'ഠ' 'ഡ' 'ഢ' 'ണ' 'ൺ' 'ത' 'ഥ' 'ദ' 'ധ' 'ന' 'ൻ' 'പ' 'ഫ' 'ബ' 'ഭ' 'മ' 'യ' 'ര' 'ർ' 'ല' 'ൽ' 'വ' 'ശ' 'ഷ' 'സ' 'ഹ' 'ള' 'ൾ' 'ഴ' 'റ' ; */
 prefix: '(';
-suffix: ')';
+suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_malayalam-alpha" class="browser_output"></div>
+<script>addExamples('malayalam-alpha', 'ml', '')</script>
 </section>
+
+
+
+
+
+
+
+
+
 
 
 
 <section id="meetei-styles">
 <h2>Meetei</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="meetei"><a href="#meetei">meetei</a></dfn> {
+
+<style>
+@counter-style meetei {
+system: numeric;
+symbols: '\ABF0' '\ABF1' '\ABF2' '\ABF3' '\ABF4' '\ABF5' '\ABF6' '\ABF7' '\ABF8' '\ABF9';
+suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('meetei')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="meetei"><code><bdo dir="ltr">
+@counter-style <a href="#meetei">meetei</a> {
 system: numeric;
 symbols: '\ABF0' '\ABF1' '\ABF2' '\ABF3' '\ABF4' '\ABF5' '\ABF6' '\ABF7' '\ABF8' '\ABF9';
 /* symbols: '&#44016;' '&#44017;' '&#44018;' '&#44019;' '&#44020;' '&#44021;' '&#44022;' '&#44023;' '&#44024;' '&#44025;'; */
 suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_meetei" class="browser_output"></div>
+<script>addExamples('meetei', 'mni', '')</script>
 
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="manipuri"><a href="#manipuri">manipuri</a></dfn> {
+
+
+
+
+<style>
+@counter-style manipuri {
+system: alphabetic;
+symbols: '\ABC0' '\ABC1' '\ABC2' '\ABC3' '\ABC4' '\ABC5' '\ABC6' '\ABC7' '\ABC8' '\ABC9' '\ABCA' '\ABCB' '\ABCC' '\ABCD' '\ABCE' '\ABCF' '\ABD0' '\ABD1' '\ABD2' '\ABD3' '\ABD4' '\ABD5' '\ABD6' '\ABD7' '\ABD8' '\ABD9' '\ABDA' ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('manipuri')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="manipuri"><code><bdo dir="ltr">
+@counter-style <a href="#manipuri">manipuri</a> {
 system: alphabetic;
 symbols: '\ABC0' '\ABC1' '\ABC2' '\ABC3' '\ABC4' '\ABC5' '\ABC6' '\ABC7' '\ABC8' '\ABC9' '\ABCA' '\ABCB' '\ABCC' '\ABCD' '\ABCE' '\ABCF' '\ABD0' '\ABD1' '\ABD2' '\ABD3' '\ABD4' '\ABD5' '\ABD6' '\ABD7' '\ABD8' '\ABD9' '\ABDA' ;
 /* symbols: 'ꯀ' 'ꯁ' 'ꯂ' 'ꯃ' 'ꯄ' 'ꯅ' 'ꯆ' 'ꯇ' 'ꯈ' 'ꯉ' 'ꯊ' 'ꯋ' 'ꯌ' 'ꯍ' 'ꯎ' 'ꯏ' 'ꯐ' 'ꯑ' 'ꯒ' 'ꯓ' 'ꯔ' 'ꯕ' 'ꯖ' 'ꯗ' 'ꯘ' 'ꯙ' 'ꯚ'; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_manipuri" class="browser_output"></div>
+<script>addExamples('manipuri', 'mni', '')</script>
 </section>
+
+
+
+
+
+
+
+
 
 
 
 <section id="mongolian-styles">
 <h2>Mongolian</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="mongolian"><a href="#mongolian">mongolian</a></dfn> {
+
+<style>
+@counter-style mongolian {
+system: numeric;
+symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818' '\1819';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('mongolian')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="mongolian"><code><bdo dir="ltr">
+@counter-style <a href="#mongolian">mongolian</a> {
 system: numeric;
 symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818' '\1819';
 /* symbols: '&#6160;' '&#6161;' '&#6162;' '&#6163;' '&#6164;' '&#6165;' '&#6166;' '&#6167;' '&#6168;' '&#6169;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">mongolian</a></code> style.</p>
+</bdo></code></p>
 
+<div id="out_mongolian" class="browser_output"></div>
+<script>addExamples('mongolian', 'mn', '')</script>
+
+
+
+
+<aside class="note">
+<p>This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">mongolian</a></code> style.</p>
+</aside>
 </section>
 
 
@@ -4252,16 +4845,31 @@ symbols: '\1810' '\1811' '\1812' '\1813' '\1814' '\1815' '\1816' '\1817' '\1818'
 <section id="mro-styles">
 <h2>Mro</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="mro"><a href="#mro">mro</a></dfn> {
+
+<style>
+@counter-style mro {
 system: numeric;
- symbols: \016A60  \016A61  \016A62  \016A63  \016A64  \016A65  \016A66  \016A67  \016A68  \016A69 ;
+symbols: \016A60  \016A61  \016A62  \016A63  \016A64  \016A65  \016A66  \016A67  \016A68  \016A69 ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('mro')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="mro"><code><bdo dir="ltr">
+@counter-style <a href="#mro">mro</a> {
+system: numeric;
+symbols: \016A60  \016A61  \016A62  \016A63  \016A64  \016A65  \016A66  \016A67  \016A68  \016A69 ;
 /* symbols: 𖩠 𖩡 𖩢 𖩣 𖩤 𖩥 𖩦 𖩧 𖩨 𖩩; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_mro" class="browser_output"></div>
+<script>addExamples('mro', 'mro', '')</script>
 </section>
+
+
+
+
 
 
 
@@ -4272,26 +4880,61 @@ system: numeric;
 <section id="myanmar-styles">
 <h2>Myanmar (Burmese)</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="myanmar"><a href="#myanmar">myanmar</a></dfn> {
+
+<style>
+@counter-style myanmar {
+system: numeric;
+symbols: '\1040' '\1041' '\1042' '\1043' '\1044' '\1045' '\1046' '\1047' '\1048' '\1049';
+prefix: '('; suffix: ') '; 
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('myanmar')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="myanmar"><code><bdo dir="ltr">
+@counter-style <a href="#myanmar">myanmar</a> {
 system: numeric;
 symbols: '\1040' '\1041' '\1042' '\1043' '\1044' '\1045' '\1046' '\1047' '\1048' '\1049';
 /* symbols: '&#4160;' '&#4161;' '&#4162;' '&#4163;' '&#4164;' '&#4165;' '&#4166;' '&#4167;' '&#4168;' '&#4169;'; */
 prefix: '('; suffix: ') '; 
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="shan"><a href="#shan">shan</a></dfn> {
+<div id="out_myanmar" class="browser_output"></div>
+<script>addExamples('myanmar', 'my', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style shan {
+system: numeric;
+symbols: '\1090' '\1091' '\1092' '\1093' '\1094' '\1095' '\1096' '\1097' '\1098' '\1099';
+prefix: '('; suffix: ') '; 
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('shan')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="shan"><code><bdo dir="ltr">
+@counter-style <a href="#shan">shan</a> {
 system: numeric;
 symbols: '\1090' '\1091' '\1092' '\1093' '\1094' '\1095' '\1096' '\1097' '\1098' '\1099';
 /* symbols: '&#4240;' '&#4241;' '&#4242;' '&#4243;' '&#4244;' '&#4245;' '&#4246;' '&#4247;' '&#4248;' '&#4249;'; */
 prefix: '('; suffix: ') '; 
 }
-</bdo></code>
-</div>
+</bdo></code></p>
+
+<div id="out_shan" class="browser_output"></div>
+<script>addExamples('shan', 'shn', '')</script>
+
+
+
+
+
 
 
 <aside class="note">
@@ -4306,8 +4949,10 @@ prefix: ''; suffix: '။ ';
 </bdo></code></li>
 </ol>
 </aside>
-<p class="note">The <code class="kw" translate="no">myanmar</code> style is defined in the [[[css-counter-styles-3]]] specification, but with period+space as the default suffix (see just above). Check  browser  support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">myanmar</a></code> style.</p>
 
+<aside class="note">
+<p>The <code class="kw" translate="no">myanmar</code> style is defined in the [[[css-counter-styles-3]]] specification, but with period+space as the default suffix (see just above). Check  browser  support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">myanmar</a></code> style.</p>
+</aside>
 </section>
 
 
@@ -4318,16 +4963,28 @@ prefix: ''; suffix: '။ ';
 <section id="nko-styles">
 <h2>N’Ko</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="nko-cardinal"><a href="#nko-cardinal">nko-cardinal</a></dfn> {
+
+<style>
+@counter-style nko-cardinal {
+system: numeric;
+symbols: \07C1  \07C2  \07C3  \07C4  \07C5  \07C6  \07C7  \07C8  \07C9  \07C0;
+suffix: ' - ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('nko-cardinal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="nko-cardinal"><code><bdo dir="ltr">
+@counter-style <a href="#nko-cardinal">nko-cardinal</a> {
 system: numeric;
 symbols: \07C1  \07C2  \07C3  \07C4  \07C5  \07C6  \07C7  \07C8  \07C9  \07C0;
 /* symbols: &#x07C1; &#x07C2; &#x07C3; &#x07C4; &#x07C5; &#x07C6; &#x07C7; &#x07C8; &#x07C9; &#x07C0; */
 suffix: ' - ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_nko-cardinal" class="browser_output"></div>
+<script>addExamples('nko-cardinal', 'nqo', 'rtl')</script>
 </section>
 
 
@@ -4338,15 +4995,26 @@ suffix: ' - ';
 <section id="nag-mundari-styles">
 <h2>Nag Mundari</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="nag-mundari"><a href="#nag-mundari">nag-mundari</a></dfn> {
+
+<style>
+@counter-style nag-mundari {
 system: numeric;
- symbols: \01E4F0  \01E4F1  \01E4F2  \01E4F3  \01E4F4  \01E4F5  \01E4F6  \01E4F7  \01E4F8  \01E4F9 ;
+symbols: '\01E4F0' '\01E4F1' '\01E4F2' '\01E4F3' '\01E4F4' '\01E4F5' '\01E4F6' '\01E4F7' '\01E4F8' '\01E4F9' ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('nag-mundari')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="nag-mundari"><code><bdo dir="ltr">
+@counter-style <a href="#nag-mundari">nag-mundari</a> {
+system: numeric;
+symbols: '\01E4F0' '\01E4F1' '\01E4F2' '\01E4F3' '\01E4F4' '\01E4F5' '\01E4F6' '\01E4F7' '\01E4F8' '\01E4F9' ;
 /* symbols: 𞓰 𞓱 𞓲 𞓳 𞓴 𞓵 𞓶 𞓷 𞓸 𞓹; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_nag-mundari" class="browser_output"></div>
+<script>addExamples('nag-mundari', 'unr', '')</script>
 </section>
 
 
@@ -4357,15 +5025,26 @@ system: numeric;
 <section id="newa-styles">
 <h2>Newa</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="newa"><a href="#newa">newa</a></dfn> {
+
+<style>
+@counter-style newa {
 system: numeric;
- symbols: \011450  \011451  \011452  \011453  \011454  \011455  \011456  \011457  \011458  \011459 ;
+symbols: '\011450' '\011451' '\011452' '\011453' '\011454' '\011455' '\011456' '\011457' '\011458' '\011459' ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('newa')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="newa"><code><bdo dir="ltr">
+@counter-style <a href="#newa">newa</a> {
+system: numeric;
+symbols: '\011450' '\011451' '\011452' '\011453' '\011454' '\011455' '\011456' '\011457' '\011458' '\011459';
 /* symbols: 𑑐 𑑑 𑑒 𑑓 𑑔 𑑕 𑑖 𑑗 𑑘 𑑙; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_newa" class="browser_output"></div>
+<script>addExamples('newa', 'new', '')</script>
 </section>
 
 
@@ -4377,52 +5056,109 @@ system: numeric;
 <section id="ol-chiki-styles">
 <h2>Ol Chiki</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="ol-chiki"><a href="#ol-chiki">ol-chiki</a></dfn> {
+
+<style>
+@counter-style ol-chiki {
+system: numeric;
+symbols: '\1C50' '\1C51' '\1C52' '\1C53' '\1C54' '\1C55' '\1C56' '\1C57' '\1C58' '\1C59';
+suffix: '. ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('ol-chiki')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="ol-chiki"><code><bdo dir="ltr">
+@counter-style <a href="#ol-chiki">ol-chiki</a> {
 system: numeric;
 symbols: '\1C50' '\1C51' '\1C52' '\1C53' '\1C54' '\1C55' '\1C56' '\1C57' '\1C58' '\1C59';
 /* symbols: '᱐' '᱑' '᱒' '᱓' '᱔' '᱕' '᱖' '᱗' '᱘' '᱙'; */
 suffix: '. ';
 }
-</bdo></code>
-</div>
+</bdo></code></p>
+
+<div id="out_ol-chiki" class="browser_output"></div>
+<script>addExamples('ol-chiki', 'sat', '')</script>
+
+
+
 <aside class="note">
 <p>The period+space suffix is common for the numeric style, however counters are sometimes followed by just a space, or enclosed in parentheses</p>
-<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following to change the default affixes:</p>
 <ol>
-<li><code><bdo dir="ltr">
-prefix: ''; suffix: ' ';
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+@counter-style ol-chiki-space {
+system: extends ol-chiki;
+prefix: "";
+suffix: " ";
+}
 </bdo></code></li>
-<li><code><bdo dir="ltr">
-prefix: '('; suffix: ') ';
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+@counter-style ol-chiki-dbl-paren {
+system: extends ol-chiki;
+prefix: "(";
+suffix: ") ";
+}
 </bdo></code></li>
 </ol>
 </aside>
 
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="santali"><a href="#santali">santali</a></dfn> {
+
+
+
+<style>
+@counter-style santali {
+system: alphabetic;
+symbols: '\1C5A' '\1C5B' '\1C5C' '\1C5D' '\1C5E' '\1C5F' '\1C60' '\1C61' '\1C62' '\1C63' '\1C64' '\1C65' '\1C66' '\1C67' '\1C68' '\1C69' '\1C6A' '\1C6B' '\1C6C' '\1C6D' '\1C6E' '\1C6F' '\1C70' '\1C71' '\1C72' '\1C73' '\1C74' '\1C75' '\1C76' '\1C77' ;
+prefix: '('; suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('santali')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="santali"><code><bdo dir="ltr">
+@counter-style <a href="#santali">santali</a> {
 system: alphabetic;
 symbols: '\1C5A' '\1C5B' '\1C5C' '\1C5D' '\1C5E' '\1C5F' '\1C60' '\1C61' '\1C62' '\1C63' '\1C64' '\1C65' '\1C66' '\1C67' '\1C68' '\1C69' '\1C6A' '\1C6B' '\1C6C' '\1C6D' '\1C6E' '\1C6F' '\1C70' '\1C71' '\1C72' '\1C73' '\1C74' '\1C75' '\1C76' '\1C77' ;
 /* symbols: '&#x1C5A;' '&#x1C5B;' '&#x1C5C;' '&#x1C5D;' '&#x1C5E;' '&#x1C5F;' '&#x1C60;' '&#x1C61;' '&#x1C62;' '&#x1C63;' '&#x1C64;' '&#x1C65;' '&#x1C66;' '&#x1C67;' '&#x1C68;' '&#x1C69;' '&#x1C6A;' '&#x1C6B;' '&#x1C6C;' '&#x1C6D;' '&#x1C6E;' '&#x1C6F;' '&#x1C70;' '&#x1C71;' '&#x1C72;' '&#x1C73;' '&#x1C74;' '&#x1C75;' '&#x1C76;' '&#x1C77;' */
-prefix: '('; suffix: ')';
+prefix: '('; suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_santali" class="browser_output"></div>
+<script>addExamples('santali', 'sat', '')</script>
+
+
+
 <aside class="note">
 <p> Once the range is large enough to require 2-letter markers (eg. <span lang="sat">ᱚᱚ</span>), then normally the only affixes used  are surrounding parentheses. The other affixes are only used if the length doesn't exceed the number of letters available.</p>
-<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use one of the following lines to change the default styling:</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following to change the default affixes:</p>
 <ol>
-<li><code><bdo dir="ltr">
-prefix: ''; suffix: ') ';
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+@counter-style santali-paren {
+system: extends santali;
+prefix: "";
+suffix: ") ";
+}
 </bdo></code></li>
-<li><code><bdo dir="ltr">
-prefix: ''; suffix: '/ ';
+
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+@counter-style santali-oblique {
+system: extends santali;
+prefix: "";
+suffix: "/ ";
+}
 </bdo></code></li>
-<li><code><bdo dir="ltr">
-prefix: '('; suffix: ') ';
+
+<li style="list-style-type: none;"><code><bdo dir="ltr">
+@counter-style santali-dbl-paren {
+system: extends santali;
+prefix: "(";
+suffix: ") ";
+}
 </bdo></code></li>
 </ol>
 </aside>
@@ -4435,29 +5171,65 @@ prefix: '('; suffix: ') ';
 <section id="oriya-styles">
 <h2>Oriya</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="oriya"><a href="#oriya">oriya</a></dfn> {
+
+<style>
+@counter-style oriya {
+system: numeric;
+symbols: '\B66' '\B67' '\B68' '\B69' '\B6A' '\B6B' '\B6C' '\B6D' '\B6E' '\B6F';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('oriya')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="oriya"><code><bdo dir="ltr">
+@counter-style <a href="#oriya">oriya</a> {
 system: numeric;
 symbols: '\B66' '\B67' '\B68' '\B69' '\B6A' '\B6B' '\B6C' '\B6D' '\B6E' '\B6F';
 /* symbols: '&#2918;' '&#2919;' '&#2920;' '&#2921;' '&#2922;' '&#2923;' '&#2924;' '&#2925;' '&#2926;' '&#2927;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">oriya</a></code> style.</p>
+</bdo></code></p>
+
+<div id="out_oriya" class="browser_output"></div>
+<script>addExamples('oriya', 'or', '')</script>
 
 
 
-<div class="counterstyle">
-<code>
-<bdo dir="ltr">
-@counter-style <dfn id="odia"><a href="#odia">odia</a></dfn> {
+
+
+
+<aside class="note">
+<p>This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">oriya</a></code> style.</p>
+</aside>
+
+
+
+
+
+
+
+<style>
+@counter-style odia {
+system: alphabetic;
+symbols: '\0B15' '\0B16' '\0B17' '\0B18' '\0B19' '\0B1A' '\0B1B' '\0B1C' '\0B1D' '\0B1E' '\0B1F' '\0B20' '\0B21' '\0B21\0B3C' '\0B22' '\0B22\0B3C' '\0B23' '\0B24' '\0B25' '\0B26' '\0B27' '\0B28' '\0B2A' '\0B2B' '\0B2C' '\0B2D' '\0B2E' '\0B2F' '\0B5F' '\0B30' '\0B32' '\0B33' '\0B71' '\0B36' '\0B37' '\0B38' '\0B39' ;
+prefix: '(';
+suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('odia')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="odia"><code><bdo dir="ltr">
+@counter-style <a href="#odia">odia</a> {
 system: alphabetic;
 symbols: '\0B15' '\0B16' '\0B17' '\0B18' '\0B19' '\0B1A' '\0B1B' '\0B1C' '\0B1D' '\0B1E' '\0B1F' '\0B20' '\0B21' '\0B21\0B3C' '\0B22' '\0B22\0B3C' '\0B23' '\0B24' '\0B25' '\0B26' '\0B27' '\0B28' '\0B2A' '\0B2B' '\0B2C' '\0B2D' '\0B2E' '\0B2F' '\0B5F' '\0B30' '\0B32' '\0B33' '\0B71' '\0B36' '\0B37' '\0B38' '\0B39' ;
 /* symbols: 'କ' 'ଖ' 'ଗ' 'ଘ' 'ଙ' 'ଚ' 'ଛ' 'ଜ' 'ଝ' 'ଞ' 'ଟ' 'ଠ' 'ଡ' 'ଡ଼' 'ଢ' 'ଢ଼' 'ଣ' 'ତ' 'ଥ' 'ଦ' 'ଧ' 'ନ' 'ପ' 'ଫ' 'ବ' 'ଭ' 'ମ' 'ଯ' 'ୟ' 'ର' 'ଲ' 'ଳ' 'ୱ' 'ଶ' 'ଷ' 'ସ' 'ହ' ; */
 prefix: '(';
-suffix: ')';
+suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_odia" class="browser_output"></div>
+<script>addExamples('odia', 'or', '')</script>
 </section>
 
 
@@ -4468,16 +5240,30 @@ suffix: ')';
 <section id="sundanese-styles">
 <h2>Sundanese</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="sundanese"><a href="#sundanese">sundanese</a></dfn> {
+
+<style>
+@counter-style sundanese {
 system: numeric;
- symbols: \1BB0  \1BB1  \1BB2  \1BB3  \1BB4  \1BB5  \1BB6  \1BB7  \1BB8  \1BB9;
+symbols: '\1BB0' '\1BB1' '\1BB2' '\1BB3' '\1BB4' '\1BB5' '\1BB6' '\1BB7' '\1BB8' '\1BB9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('sundanese')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="sundanese"><code><bdo dir="ltr">
+@counter-style <a href="#sundanese">sundanese</a> {
+system: numeric;
+symbols: '\1BB0' '\1BB1' '\1BB2' '\1BB3' '\1BB4' '\1BB5' '\1BB6' '\1BB7' '\1BB8' '\1BB9';
 /* symbols: ᮰ ᮱ ᮲ ᮳ ᮴ ᮵ ᮶ ᮷ ᮸ ᮹; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_sundanese" class="browser_output"></div>
+<script>addExamples('sundanese', 'su', '')</script>
 </section>
+
+
+
 
 
 
@@ -4487,15 +5273,26 @@ system: numeric;
 <section id="tailue-styles">
 <h2>Tai Lü</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="tai-lue"><a href="#tai-lue">tai-lue</a></dfn> {
-system: numeric;
- symbols: \19D0  \19D1  \19D2  \19D3  \19D4  \19D5  \19D6  \19D7  \19D8  \19D9  \19DA;
-/* symbols: ᧐ ᧑ ᧒ ᧓ ᧔ ᧕ ᧖ ᧗ ᧘ ᧙ ᧚; */
-}
-</bdo></code></div>
 
+<style>
+@counter-style tai-lue {
+system: numeric;
+symbols: '\19D0' '\19D1' '\19D2' '\19D3' '\19D4' '\19D5' '\19D6' '\19D7' '\19D8' '\19D9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('tai-lue')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="tai-lue"><code><bdo dir="ltr">
+@counter-style <a href="#tai-lue">tai-lue</a> {
+system: numeric;
+symbols: '\19D0' '\19D1' '\19D2' '\19D3' '\19D4' '\19D5' '\19D6' '\19D7' '\19D8' '\19D9';
+/* symbols: ᧐ ᧑ ᧒ ᧓ ᧔ ᧕ ᧖ ᧗ ᧘ ᧙; */
+}
+</bdo></code></p>
+
+<div id="out_tai-lue" class="browser_output"></div>
+<script>addExamples('tai-lue', 'khb', '')</script>
 </section>
 
 
@@ -4509,27 +5306,65 @@ system: numeric;
 <section id="tamil-styles">
 <h2>Tamil</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="ancient-tamil"><a href="#ancient-tamil">ancient-tamil</a></dfn> {
+
+<style>
+@counter-style ancient-tamil {
+system: additive;
+range: 1 9999;
+additive-symbols: 9000 '\BEF\BF2', 8000 '\BEE\BF2', 7000 '\BED\BF2', 6000 '\BEC\BF2', 5000 '\BEB\BF2', 4000 '\BEA\BF2', 3000 '\BE9\BF2', 2000 '\BE8\BF2', 1000 '\BF2', 900 '\BEF\BF1', 800 '\BEE\BF1', 700 '\BED\BF1', 600 '\BEC\BF1', 500 '\BEB\BF1', 400 '\BEA\BF1', 300 '\BE9\BF1', 200 '\BE8\BF1', 100 '\BF1', 90 '\BEF\BF0', 80 '\BEE\BF0', 70 '\BED\BF0', 60 '\BEC\BF0', 50 '\BEB\BF0', 40 '\BEA\BF0', 30 '\BE9\BF0', 20 '\BE8\BF0', 10 '\BF0', 9 '\BEF', 8 '\BEE', 7 '\BED', 6 '\BEC', 5 '\BEB', 4 '\BEA', 3 '\BE9', 2 '\BE8', 1 '\BE7';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('ancient-tamil')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="ancient-tamil"><code><bdo dir="ltr">
+@counter-style <a href="#ancient-tamil">ancient-tamil</a> {
 system: additive;
 range: 1 9999;
 additive-symbols: 9000 '\BEF\BF2', 8000 '\BEE\BF2', 7000 '\BED\BF2', 6000 '\BEC\BF2', 5000 '\BEB\BF2', 4000 '\BEA\BF2', 3000 '\BE9\BF2', 2000 '\BE8\BF2', 1000 '\BF2', 900 '\BEF\BF1', 800 '\BEE\BF1', 700 '\BED\BF1', 600 '\BEC\BF1', 500 '\BEB\BF1', 400 '\BEA\BF1', 300 '\BE9\BF1', 200 '\BE8\BF1', 100 '\BF1', 90 '\BEF\BF0', 80 '\BEE\BF0', 70 '\BED\BF0', 60 '\BEC\BF0', 50 '\BEB\BF0', 40 '\BEA\BF0', 30 '\BE9\BF0', 20 '\BE8\BF0', 10 '\BF0', 9 '\BEF', 8 '\BEE', 7 '\BED', 6 '\BEC', 5 '\BEB', 4 '\BEA', 3 '\BE9', 2 '\BE8', 1 '\BE7';
 /* additive-symbols: 9000 '&#3055;&#3058;', 8000 '&#3054;&#3058;', 7000 '&#3053;&#3058;', 6000 '&#3052;&#3058;', 5000 '&#3051;&#3058;', 4000 '&#3050;&#3058;', 3000 '&#3049;&#3058;', 2000 '&#3048;&#3058;', 1000 '&#3058;', 900 '&#3055;&#3057;', 800 '&#3054;&#3057;', 700 '&#3053;&#3057;', 600 '&#3052;&#3057;', 500 '&#3051;&#3057;', 400 '&#3050;&#3057;', 300 '&#3049;&#3057;', 200 '&#3048;&#3057;', 100 '&#3057;', 90 '&#3055;&#3056;', 80 '&#3054;&#3056;', 70 '&#3053;&#3056;', 60 '&#3052;&#3056;', 50 '&#3051;&#3056;', 40 '&#3050;&#3056;', 30 '&#3049;&#3056;', 20 '&#3048;&#3056;', 10 '&#3056;', 9 '&#3055;', 8 '&#3054;', 7 '&#3053;', 6 '&#3052;', 5 '&#3051;', 4 '&#3050;', 3 '&#3049;', 2 '&#3048;', 1 '&#3047;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="tamil"><a href="#tamil">tamil</a></dfn> {
+<div id="out_ancient-tamil" class="browser_output"></div>
+<script>addExamples('ancient-tamil', 'ta', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style tamil {
+system: numeric;
+symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('tamil')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="tamil"><code><bdo dir="ltr">
+@counter-style <a href="#tamil">tamil</a> {
 system: numeric;
 symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';
 /* symbols: '&#3046;' '&#3047;' '&#3048;' '&#3049;' '&#3050;' '&#3051;' '&#3052;' '&#3053;' '&#3054;' '&#3055;'; */
 }
-</bdo></code></div>
-<p class="note">The <code class="kw" translate="no">tamil</code> style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">tamil</a></code> style.</p>
+</bdo></code></p>
 
+<div id="out_tamil" class="browser_output"></div>
+<script>addExamples('tamil', 'ta', '')</script>
+
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">tamil</code> style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">tamil</a></code> style.</p>
+</aside>
 </section>
+
+
+
+
 
 
 
@@ -4540,31 +5375,70 @@ symbols: '\BE6' '\BE7' '\BE8' '\BE9' '\BEA' '\BEB' '\BEC' '\BED' '\BEE' '\BEF';
 <section id="telugu-styles">
 <h2>Telugu</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="telugu"><a href="#telugu">telugu</a></dfn> {
+
+<style>
+@counter-style telugu {
+system: numeric;
+symbols: '\C66' '\C67' '\C68' '\C69' '\C6A' '\C6B' '\C6C' '\C6D' '\C6E' '\C6F';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('telugu')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="telugu"><code><bdo dir="ltr">
+@counter-style <a href="#telugu">telugu</a> {
 system: numeric;
 symbols: '\C66' '\C67' '\C68' '\C69' '\C6A' '\C6B' '\C6C' '\C6D' '\C6E' '\C6F';
 /* symbols: '&#3174;' '&#3175;' '&#3176;' '&#3177;' '&#3178;' '&#3179;' '&#3180;' '&#3181;' '&#3182;' '&#3183;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_telugu" class="browser_output"></div>
+<script>addExamples('telugu', 'te', '')</script>
+
+
+
+
 <p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">telugu</a></code> style.</p>
 
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="telugu-alpha"><a href="#telugu-alpha">telugu-alpha</a></dfn> {
+
+
+
+<style>
+@counter-style telugu-alpha {
+system: alphabetic;
+symbols: '\C15' '\C16' '\C17' '\C18' '\C19' '\C1A' '\C58' '\C1B' '\C1C' '\C1D' '\C1E' '\C1F' '\C20' '\C21' '\C22' '\C23' '\C24' '\C25' '\C26' '\C27' '\C28' '\C2A' '\C2B' '\C2C' '\C2D' '\C2E' '\C2F' '\C30' '\C31' '\C32' '\C33' '\C34' '\C35' '\C36' '\C37' '\C38' '\C39' ;
+suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('telugu-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="telugu-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#telugu-alpha">telugu-alpha</a> {
 system: alphabetic;
 symbols: '\C15' '\C16' '\C17' '\C18' '\C19' '\C1A' '\C58' '\C1B' '\C1C' '\C1D' '\C1E' '\C1F' '\C20' '\C21' '\C22' '\C23' '\C24' '\C25' '\C26' '\C27' '\C28' '\C2A' '\C2B' '\C2C' '\C2D' '\C2E' '\C2F' '\C30' '\C31' '\C32' '\C33' '\C34' '\C35' '\C36' '\C37' '\C38' '\C39' ;
 /* symbols: 'క' 'ఖ' 'గ' 'ఘ' 'ఙ' 'చ' 'ౘ' 'ఛ' 'జ' 'ఝ' 'ఞ' 'ట' 'ఠ' 'డ' 'ఢ' 'ణ' 'త' 'థ' 'ద' 'ధ' 'న' 'ప' 'ఫ' 'బ' 'భ' 'మ' 'య' 'ర' 'ఱ' 'ల' 'ళ' 'ఴ' 'వ' 'శ' 'ష' 'స' 'హ' ; */
 suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_telugu-alpha" class="browser_output"></div>
+<script>addExamples('telugu-alpha', 'te', '')</script>
+
+
+
 <aside class="note">
-<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>Use the following line to replace the default suffix:</p>
+<p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
+Use the following to change the default affixes:</p>
 <ol>
 <li style="list-style-type: none;"><code><bdo dir="ltr">
-prefix: '('; suffix: ') ';
+@counter-style telugu-alpha-dbl-paren {
+system: extends telugu-alpha;
+prefix: "(";
+suffix: ") ";
+}
 </bdo></code></li>
 </ol>
 </aside>
@@ -4578,25 +5452,54 @@ prefix: '('; suffix: ') ';
 <section id="thai-styles">
 <h2>Thai</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="thai"><a href="#thai">thai</a></dfn> {
+
+<style>
+@counter-style thai {
+system: numeric;
+symbols: '\E50' '\E51' '\E52' '\E53' '\E54' '\E55' '\E56' '\E57' '\E58' '\E59';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('thai')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="thai"><code><bdo dir="ltr">
+@counter-style <a href="#thai">thai</a> {
 system: numeric;
 symbols: '\E50' '\E51' '\E52' '\E53' '\E54' '\E55' '\E56' '\E57' '\E58' '\E59';
 /* symbols: '&#3664;' '&#3665;' '&#3666;' '&#3667;' '&#3668;' '&#3669;' '&#3670;' '&#3671;' '&#3672;' '&#3673;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="thai-alphabetic"><a href="#thai-alphabetic">thai-alphabetic</a></dfn> {
+<div id="out_thai" class="browser_output"></div>
+<script>addExamples('thai', 'th', '')</script>
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">thai</code> style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">thai</a></code> style.</p>
+</aside>
+
+
+
+
+<style>
+@counter-style thai-alpha {
+system: alphabetic;
+symbols: '\E01' '\E02' '\E04' '\E07' '\E08' '\E09' '\E0A' '\E0B' '\E0C' '\E0D' '\E0E' '\E0F' '\E10' '\E11' '\E12' '\E13' '\E14' '\E15' '\E16' '\E17' '\E18' '\E19' '\E1A' '\E1B' '\E1C' '\E1D' '\E1E' '\E1F' '\E20' '\E21' '\E22' '\E23' '\E25' '\E27' '\E28' '\E29' '\E2A' '\E2B' '\E2C' '\E2D' '\E2E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('thai-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="thai-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#thai-alpha">thai-alpha</a> {
 system: alphabetic;
 symbols: '\E01' '\E02' '\E04' '\E07' '\E08' '\E09' '\E0A' '\E0B' '\E0C' '\E0D' '\E0E' '\E0F' '\E10' '\E11' '\E12' '\E13' '\E14' '\E15' '\E16' '\E17' '\E18' '\E19' '\E1A' '\E1B' '\E1C' '\E1D' '\E1E' '\E1F' '\E20' '\E21' '\E22' '\E23' '\E25' '\E27' '\E28' '\E29' '\E2A' '\E2B' '\E2C' '\E2D' '\E2E';
 /* symbols: '&#3585;' '&#3586;' '&#3588;' '&#3591;' '&#3592;' '&#3593;' '&#3594;' '&#3595;' '&#3596;' '&#3597;' '&#3598;' '&#3599;' '&#3600;' '&#3601;' '&#3602;' '&#3603;' '&#3604;' '&#3605;' '&#3606;' '&#3607;' '&#3608;' '&#3609;' '&#3610;' '&#3611;' '&#3612;' '&#3613;' '&#3614;' '&#3615;' '&#3616;' '&#3617;' '&#3618;' '&#3619;' '&#3621;' '&#3623;' '&#3624;' '&#3625;' '&#3626;' '&#3627;' '&#3628;' '&#3629;' '&#3630;'; */
 }
-</bdo></code></div>
-<p class="note">The <code class="kw" translate="no">thai</code> style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">thai</a></code> style.</p>
+</bdo></code></p>
 
+<div id="out_thai-alpha" class="browser_output"></div>
+<script>addExamples('thai-alpha', 'th', '')</script>
 </section>
 
 
@@ -4607,16 +5510,32 @@ symbols: '\E01' '\E02' '\E04' '\E07' '\E08' '\E09' '\E0A' '\E0B' '\E0C' '\E0D' '
 <section id="tibetan-styles">
 <h2>Tibetan</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="tibetan"><a href="#tibetan">tibetan</a></dfn> {
+
+<style>
+@counter-style tibetan {
+system: numeric;
+symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('tibetan')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="tibetan"><code><bdo dir="ltr">
+@counter-style <a href="#tibetan">tibetan</a> {
 system: numeric;
 symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';
 /* symbols: '&#3872;' '&#3873;' '&#3874;' '&#3875;' '&#3876;' '&#3877;' '&#3878;' '&#3879;' '&#3880;' '&#3881;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">tibetan</a></code> style.</p>
+</bdo></code></p>
 
+<div id="out_tibetan" class="browser_output"></div>
+<script>addExamples('tibetan', 'bo', '')</script>
+
+
+
+<aside class="note">
+<p>This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">tibetan</a></code> style.</p>
+</aside>
 </section>
 
 
@@ -4627,14 +5546,26 @@ symbols: '\F20' '\F21' '\F22' '\F23' '\F24' '\F25' '\F26' '\F27' '\F28' '\F29';
 <section id="warangciti-styles">
 <h2>Warang Citi</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="warang-citi"><a href="#warang-citi">warang-citi</a></dfn> {
+
+<style>
+@counter-style warang-citi {
 system: numeric;
- symbols: '\6F0' '\6F1' '\6F2' '\6F3' '\6F4' '\6F5' '\6F6' '\6F7' '\6F8' '\6F9';
+symbols: '\118E0' '\118E1' '\118E2' '\118E3' '\118E4' '\118E5' '\118E6' '\118E7' '\118E8' '\118E9';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('warang-citi')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="warang-citi"><code><bdo dir="ltr">
+@counter-style <a href="#warang-citi">warang-citi</a> {
+system: numeric;
+symbols: '\118E90' '\118E1' '\118E2' '\118E3' '\118E4' '\118E5' '\118E6' '\118E7' '\118E8' '\118E9';
 /* symbols: '𑣠' '𑣡' '𑣢' '𑣣' '𑣤' '𑣥' '𑣦' '𑣧' '𑣨' '𑣩'; */
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_warang-citi" class="browser_output"></div>
+<script>addExamples('warang-citi', 'hoc', '')</script>
 </section>
 
 
@@ -4646,230 +5577,627 @@ system: numeric;
 <section id="digit-styles">
 <h2>European Digits, Roman, etc.</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="binary"><a href="#binary">binary</a></dfn> {
+
+<style>
+@counter-style binary {
+system: numeric;
+symbols: '\30' '\31';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('binary')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="binary"><code><bdo dir="ltr">
+@counter-style <a href="#binary">binary</a> {
 system: numeric;
 symbols: '\30' '\31';
 /* symbols: '0' '1'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="tally-mark"><a href="#tally-mark">tally-mark</a></dfn> {
+<div id="out_binary" class="browser_output"></div>
+<script>addExamples('binary', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style tally-mark {
+system: additive;
+additive-symbols: 5 '\1D378', 1 '\1D377';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('tally-mark')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="tally-mark"><code><bdo dir="ltr">
+@counter-style <a href="#tally-mark">tally-mark</a> {
 system: additive;
 additive-symbols: 5 '\1D378', 1 '\1D377';
 /* symbols: 5 𝍸, 1 𝍷; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-	
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="circled-decimal"><a href="#circled-decimal">circled-decimal</a></dfn> {
+<div id="out_tally-mark" class="browser_output"></div>
+<script>addExamples('tally-mark', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style circled-decimal {
+system: fixed 0;
+symbols: '\24EA' '\2460' '\2461' '\2462' '\2463' '\2464' '\2465' '\2466' '\2467' '\2468' '\2469' '\246A' '\246B' '\246C' '\246D' '\246E' '\246F' '\2470' '\2471' '\2472' '\2473' '\3251' '\3252' '\3253' '\3254' '\3255' '\3256' '\3257' '\3258' '\3259' '\325a' '\325b' '\325c' '\325d' '\325e' '\325f' '\32b1' '\32b2' '\32b3' '\32b4' '\32b5' '\32b6' '\32b7' '\32b8' '\32b9' '\32ba' '\32bb' '\32bc' '\32bd' '\32be' '\32bf';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#circled-decimal">circled-decimal</a> {
 system: fixed 0;
 symbols: '\24EA' '\2460' '\2461' '\2462' '\2463' '\2464' '\2465' '\2466' '\2467' '\2468' '\2469' '\246A' '\246B' '\246C' '\246D' '\246E' '\246F' '\2470' '\2471' '\2472' '\2473' '\3251' '\3252' '\3253' '\3254' '\3255' '\3256' '\3257' '\3258' '\3259' '\325a' '\325b' '\325c' '\325d' '\325e' '\325f' '\32b1' '\32b2' '\32b3' '\32b4' '\32b5' '\32b6' '\32b7' '\32b8' '\32b9' '\32ba' '\32bb' '\32bc' '\32bd' '\32be' '\32bf';
 /* symbols: '&#9450;' '&#9312;' '&#9313;' '&#9314;' '&#9315;' '&#9316;' '&#9317;' '&#9318;' '&#9319;' '&#9320;' '&#9321;' '&#9322;' '&#9323;' '&#9324;' '&#9325;' '&#9326;' '&#9327;' '&#9328;' '&#9329;' '&#9330;' '&#9331;' '&#12881;' '&#12882;' '&#12883;' '&#12884;' '&#12885;' '&#12886;' '&#12887;' '&#12888;' '&#12889;' '&#12890;' '&#12891;' '&#12892;' '&#12893;' '&#12894;' '&#12895;' '&#12977;' '&#12978;' '&#12979;' '&#12980;' '&#12981;' '&#12982;' '&#12983;' '&#12984;' '&#12985;' '&#12986;' '&#12987;' '&#12988;' '&#12989;' '&#12990;' '&#12991;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="circled-lower-latin"><a href="#circled-lower-latin">circled-lower-latin</a></dfn> {
+<div id="out_circled-decimal" class="browser_output"></div>
+<script>addExamples('circled-decimal', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style circled-lower-latin {
+system: fixed;
+symbols: '\24D0' '\24D1' '\24D2' '\24D3' '\24D4' '\24D5' '\24D6' '\24D7' '\24D8' '\24D9' '\24DA' '\24DB' '\24DC' '\24DD' '\24DE' '\24DF' '\24E0' '\24E1' '\24E2' '\24E3' '\24E4' '\24E5' '\24E6' '\24E7' '\24E8' '\24E9';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-lower-latin')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-lower-latin"><code><bdo dir="ltr">
+@counter-style <a href="#circled-lower-latin">circled-lower-latin</a> {
 system: fixed;
 symbols: '\24D0' '\24D1' '\24D2' '\24D3' '\24D4' '\24D5' '\24D6' '\24D7' '\24D8' '\24D9' '\24DA' '\24DB' '\24DC' '\24DD' '\24DE' '\24DF' '\24E0' '\24E1' '\24E2' '\24E3' '\24E4' '\24E5' '\24E6' '\24E7' '\24E8' '\24E9';
 /* symbols: '&#9424;' '&#9425;' '&#9426;' '&#9427;' '&#9428;' '&#9429;' '&#9430;' '&#9431;' '&#9432;' '&#9433;' '&#9434;' '&#9435;' '&#9436;' '&#9437;' '&#9438;' '&#9439;' '&#9440;' '&#9441;' '&#9442;' '&#9443;' '&#9444;' '&#9445;' '&#9446;' '&#9447;' '&#9448;' '&#9449;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="circled-upper-latin"><a href="#circled-upper-latin">circled-upper-latin</a></dfn> {
+<div id="out_circled-lower-latin" class="browser_output"></div>
+<script>addExamples('circled-lower-latin', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style circled-upper-latin {
+system: fixed;
+symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-upper-latin')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-upper-latin"><code><bdo dir="ltr">
+@counter-style <a href="#circled-upper-latin">circled-upper-latin</a> {
 system: fixed;
 symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
 /* symbols: '&#9398;' '&#9399;' '&#9400;' '&#9401;' '&#9402;' '&#9403;' '&#9404;' '&#9405;' '&#9406;' '&#9407;' '&#9408;' '&#9409;' '&#9410;' '&#9411;' '&#9412;' '&#9413;' '&#9414;' '&#9415;' '&#9416;' '&#9417;' '&#9418;' '&#9419;' '&#9420;' '&#9421;' '&#9422;' '&#9423;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="decimal"><a href="#decimal">decimal</a></dfn> {
-system: numeric;
-symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39';
-/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9'; */
+<div id="out_circled-upper-latin" class="browser_output"></div>
+<script>addExamples('circled-upper-latin', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style decimal {
+system: fixed;
+symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
+suffix: ' ';
 }
-</bdo></code></div>
+</style>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="decimal-leading-zero"><a href="#decimal-leading-zero">decimal-leading-zero</a></dfn> {
+<div class="copyMe" onclick="copyTemplate('decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="decimal"><code><bdo dir="ltr">
+@counter-style <a href="#decimal">decimal</a> {
+system: fixed;
+symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
+/* symbols: '&#9398;' '&#9399;' '&#9400;' '&#9401;' '&#9402;' '&#9403;' '&#9404;' '&#9405;' '&#9406;' '&#9407;' '&#9408;' '&#9409;' '&#9410;' '&#9411;' '&#9412;' '&#9413;' '&#9414;' '&#9415;' '&#9416;' '&#9417;' '&#9418;' '&#9419;' '&#9420;' '&#9421;' '&#9422;' '&#9423;'; */
+suffix: ' ';
+}
+</bdo></code></p>
+
+<div id="out_decimal" class="browser_output"></div>
+<script>addExamples('decimal', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style decimal-leading-zero {
+system: fixed -9;
+symbols: '\2D\30\39' '\2D\30\38' '\2D\30\37' '\2D\30\36' '\2D\30\35' '\2D\30\34' '\2D\30\33' '\2D\30\32' '\2D\30\31' '\30\30' '\30\31' '\30\32' '\30\33' '\30\34' '\30\35' '\30\36' '\30\37' '\30\38' '\30\39';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('decimal-leading-zero')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="decimal-leading-zero"><code><bdo dir="ltr">
+@counter-style <a href="#decimal-leading-zero">decimal-leading-zero</a> {
 system: fixed -9;
 symbols: '\2D\30\39' '\2D\30\38' '\2D\30\37' '\2D\30\36' '\2D\30\35' '\2D\30\34' '\2D\30\33' '\2D\30\32' '\2D\30\31' '\30\30' '\30\31' '\30\32' '\30\33' '\30\34' '\30\35' '\30\36' '\30\37' '\30\38' '\30\39';
 /* symbols: '-09' '-08' '-07' '-06' '-05' '-04' '-03' '-02' '-01' '00' '01' '02' '03' '04' '05' '06' '07' '08' '09'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="dotted-decimal"><a href="#dotted-decimal">dotted-decimal</a></dfn> {
+<div id="out_decimal-leading-zero" class="browser_output"></div>
+<script>addExamples('decimal-leading-zero', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style dotted-decimal {
+system: fixed;
+symbols: '\2488' '\2489' '\248A' '\248B' '\248C' '\248D' '\248E' '\248F' '\2490' '\2491' '\2492' '\2493' '\2494' '\2495' '\2496' '\2497' '\2498' '\2499' '\249A' '\249B';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('dotted-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="dotted-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#dotted-decimal">dotted-decimal</a> {
 system: fixed;
 symbols: '\2488' '\2489' '\248A' '\248B' '\248C' '\248D' '\248E' '\248F' '\2490' '\2491' '\2492' '\2493' '\2494' '\2495' '\2496' '\2497' '\2498' '\2499' '\249A' '\249B';
 /* symbols: '&#9352;' '&#9353;' '&#9354;' '&#9355;' '&#9356;' '&#9357;' '&#9358;' '&#9359;' '&#9360;' '&#9361;' '&#9362;' '&#9363;' '&#9364;' '&#9365;' '&#9366;' '&#9367;' '&#9368;' '&#9369;' '&#9370;' '&#9371;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="double-circled-decimal"><a href="#double-circled-decimal">double-circled-decimal</a></dfn> {
+<div id="out_dotted-decimal" class="browser_output"></div>
+<script>addExamples('dotted-decimal', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style double-circled-decimal {
+system: fixed;
+symbols: '\24F5' '\24F6' '\24F7' '\24F8' '\24F9' '\24FA' '\24FB' '\24FC' '\24FD' '\24FE';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('double-circled-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="double-circled-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#double-circled-decimal">double-circled-decimal</a> {
 system: fixed;
 symbols: '\24F5' '\24F6' '\24F7' '\24F8' '\24F9' '\24FA' '\24FB' '\24FC' '\24FD' '\24FE';
 /* symbols: '&#9461;' '&#9462;' '&#9463;' '&#9464;' '&#9465;' '&#9466;' '&#9467;' '&#9468;' '&#9469;' '&#9470;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="filled-circled-decimal"><a href="#filled-circled-decimal">filled-circled-decimal</a></dfn> {
+<div id="out_double-circled-decimal" class="browser_output"></div>
+<script>addExamples('double-circled-decimal', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style filled-circled-decimal {
+system: fixed;
+symbols: '\2776' '\2777' '\2778' '\2779' '\277a' '\277b' '\277c' '\277d' '\277e' '\277f' '\24EB' '\24EC' '\24ED' '\24EE' '\24EF' '\24F0' '\24F1' '\24F2' '\24F3' '\24F4';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('filled-circled-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="filled-circled-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#filled-circled-decimal">filled-circled-decimal</a> {
 system: fixed;
 symbols: '\2776' '\2777' '\2778' '\2779' '\277a' '\277b' '\277c' '\277d' '\277e' '\277f' '\24EB' '\24EC' '\24ED' '\24EE' '\24EF' '\24F0' '\24F1' '\24F2' '\24F3' '\24F4';
 /* symbols: '&#10102;' '&#10103;' '&#10104;' '&#10105;' '&#10106;' '&#10107;' '&#10108;' '&#10109;' '&#10110;' '&#10111;' '&#9451;' '&#9452;' '&#9453;' '&#9454;' '&#9455;' '&#9456;' '&#9457;' '&#9458;' '&#9459;' '&#9460;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="fullwidth-decimal"><a href="#fullwidth-decimal">fullwidth-decimal</a></dfn> {
+<div id="out_filled-circled-decimal" class="browser_output"></div>
+<script>addExamples('filled-circled-decimal', 'en', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style fullwidth-decimal {
+system: numeric;
+symbols: '\FF10' '\FF11' '\FF12' '\FF13' '\FF14' '\FF15' '\FF16' '\FF17' '\FF18' '\FF19';
+suffix: '\FF0E';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('fullwidth-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="fullwidth-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#fullwidth-decimal">fullwidth-decimal</a> {
 system: numeric;
 symbols: '\FF10' '\FF11' '\FF12' '\FF13' '\FF14' '\FF15' '\FF16' '\FF17' '\FF18' '\FF19';
 /* symbols: '&#65296;' '&#65297;' '&#65298;' '&#65299;' '&#65300;' '&#65301;' '&#65302;' '&#65303;' '&#65304;' '&#65305;'; */
 suffix: '\FF0E';
 /* suffix: '&#65294;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="fullwidth-lower-roman"><a href="#fullwidth-lower-roman">fullwidth-lower-roman</a></dfn> {
+<div id="out_fullwidth-decimal" class="browser_output"></div>
+<script>addExamples('fullwidth-decimal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style fullwidth-lower-roman {
+system: fixed;
+symbols: '\2170' '\2171' '\2172' '\2173' '\2174' '\2175' '\2176' '\2177' '\2178' '\2179' '\217A' '\217B';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('fullwidth-lower-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="fullwidth-lower-roman"><code><bdo dir="ltr">
+@counter-style <a href="#fullwidth-lower-roman">fullwidth-lower-roman</a> {
 system: fixed;
 symbols: '\2170' '\2171' '\2172' '\2173' '\2174' '\2175' '\2176' '\2177' '\2178' '\2179' '\217A' '\217B';
 /* symbols: '&#8560;' '&#8561;' '&#8562;' '&#8563;' '&#8564;' '&#8565;' '&#8566;' '&#8567;' '&#8568;' '&#8569;' '&#8570;' '&#8571;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="fullwidth-upper-roman"><a href="#fullwidth-upper-roman">fullwidth-upper-roman</a></dfn> {
+<div id="out_fullwidth-lower-roman" class="browser_output"></div>
+<script>addExamples('fullwidth-lower-roman', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style fullwidth-upper-roman {
+system: fixed;
+symbols: '\2160' '\2161' '\2162' '\2163' '\2164' '\2165' '\2166' '\2167' '\2168' '\2169' '\216A' '\216B';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('fullwidth-upper-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="fullwidth-upper-roman"><code><bdo dir="ltr">
+@counter-style <a href="#fullwidth-upper-roman">fullwidth-upper-roman</a> {
 system: fixed;
 symbols: '\2160' '\2161' '\2162' '\2163' '\2164' '\2165' '\2166' '\2167' '\2168' '\2169' '\216A' '\216B';
 /* symbols: '&#8544;' '&#8545;' '&#8546;' '&#8547;' '&#8548;' '&#8549;' '&#8550;' '&#8551;' '&#8552;' '&#8553;' '&#8554;' '&#8555;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lower-hexadecimal"><a href="#lower-hexadecimal">lower-hexadecimal</a></dfn> {
+<div id="out_fullwidth-upper-roman" class="browser_output"></div>
+<script>addExamples('fullwidth-upper-roman', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style lower-hexadecimal {
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\61' '\62' '\63' '\64' '\65' '\66';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lower-hexadecimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lower-hexadecimal"><code><bdo dir="ltr">
+@counter-style <a href="#lower-hexadecimal">lower-hexadecimal</a> {
 system: numeric;
 symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\61' '\62' '\63' '\64' '\65' '\66';
 /* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'a' 'b' 'c' 'd' 'e' 'f'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="lower-roman"><a href="#lower-roman">lower-roman</a></dfn> {
+<div id="out_lower-hexadecimal" class="browser_output"></div>
+<script>addExamples('lower-hexadecimal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style lower-roman {
+system: additive;
+range: 1 3999;
+additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 90 '\78\63', 50 '\6C', 40 '\78\6C', 10 '\78', 9 '\69\78', 5 '\76', 4 '\69\76', 1 '\69';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('lower-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="lower-roman"><code><bdo dir="ltr">
+@counter-style <a href="#lower-roman">lower-roman</a> {
 system: additive;
 range: 1 3999;
 additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 90 '\78\63', 50 '\6C', 40 '\78\6C', 10 '\78', 9 '\69\78', 5 '\76', 4 '\69\76', 1 '\69';
 /* additive-symbols: 1000 'm', 900 'cm', 500 'd', 400 'cd', 100 'c', 90 'xc', 50 'l', 40 'xl', 10 'x', 9 'ix', 5 'v', 4 'iv', 1 'i'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="new-base-60"><a href="#new-base-60">new-base-60</a></dfn> {
+<div id="out_lower-roman" class="browser_output"></div>
+<script>addExamples('lower-roman', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style new-base-60 {
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\4A' '\4B' '\4C' '\4D' '\4E' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A' '\5F' '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('new-base-60')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="new-base-60"><code><bdo dir="ltr">
+@counter-style <a href="#new-base-60">new-base-60</a> {
 system: numeric;
 symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\4A' '\4B' '\4C' '\4D' '\4E' '\50' '\51' '\52' '\53' '\54' '\55' '\56' '\57' '\58' '\59' '\5A' '\5F' '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
 /* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'J' 'K' 'L' 'M' 'N' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '_' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="octal"><a href="#octal">octal</a></dfn> {
+<div id="out_new-base-60" class="browser_output"></div>
+<script>addExamples('new-base-60', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style octal {
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('octal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="octal"><code><bdo dir="ltr">
+@counter-style <a href="#octal">octal</a> {
 system: numeric;
 symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37';
 /* symbols: '0' '1' '2' '3' '4' '5' '6' '7'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="parenthesized-decimal"><a href="#parenthesized-decimal">parenthesized-decimal</a></dfn> {
+<div id="out_octal" class="browser_output"></div>
+<script>addExamples('octal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style parenthesized-decimal {
+system: fixed;
+symbols: '\2474' '\2475' '\2476' '\2477' '\2478' '\2479' '\247A' '\247B' '\247C' '\247D' '\247E' '\247F' '\2480' '\2481' '\2482' '\2483' '\2484' '\2485' '\2486' '\2487';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('parenthesized-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="parenthesized-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#parenthesized-decimal">parenthesized-decimal</a> {
 system: fixed;
 symbols: '\2474' '\2475' '\2476' '\2477' '\2478' '\2479' '\247A' '\247B' '\247C' '\247D' '\247E' '\247F' '\2480' '\2481' '\2482' '\2483' '\2484' '\2485' '\2486' '\2487';
 /* symbols: '&#9332;' '&#9333;' '&#9334;' '&#9335;' '&#9336;' '&#9337;' '&#9338;' '&#9339;' '&#9340;' '&#9341;' '&#9342;' '&#9343;' '&#9344;' '&#9345;' '&#9346;' '&#9347;' '&#9348;' '&#9349;' '&#9350;' '&#9351;'; */
 suffix: ' ';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="simple-lower-roman"><a href="#simple-lower-roman">simple-lower-roman</a></dfn> {
+<div id="out_parenthesized-decimal" class="browser_output"></div>
+<script>addExamples('parenthesized-decimal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style simple-lower-roman {
+system: additive;
+range: 1 4999;
+additive-symbols: 1000 '\6D', 500 '\64', 100 '\63', 50 '\6C', 10 '\78', 5 '\76', 1 '\69';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('simple-lower-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="simple-lower-roman"><code><bdo dir="ltr">
+@counter-style <a href="#simple-lower-roman">simple-lower-roman</a> {
 system: additive;
 range: 1 4999;
 additive-symbols: 1000 '\6D', 500 '\64', 100 '\63', 50 '\6C', 10 '\78', 5 '\76', 1 '\69';
 /* additive-symbols: 1000 'm', 500 'd', 100 'c', 50 'l', 10 'x', 5 'v', 1 'i'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="simple-upper-roman"><a href="#simple-upper-roman">simple-upper-roman</a></dfn> {
+<div id="out_simple-lower-roman" class="browser_output"></div>
+<script>addExamples('simple-lower-roman', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style simple-upper-roman {
+system: additive;
+range: 1 4999;
+additive-symbols: 1000 '\4D', 500 '\44', 100 '\43', 50 '\4C', 10 '\58', 5 '\56', 1 '\49';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('simple-upper-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="simple-upper-roman"><code><bdo dir="ltr">
+@counter-style <a href="#simple-upper-roman">simple-upper-roman</a> {
 system: additive;
 range: 1 4999;
 additive-symbols: 1000 '\4D', 500 '\44', 100 '\43', 50 '\4C', 10 '\58', 5 '\56', 1 '\49';
 /* additive-symbols: 1000 'M', 500 'D', 100 'C', 50 'L', 10 'X', 5 'V', 1 'I'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="super-decimal"><a href="#super-decimal">super-decimal</a></dfn> {
+<div id="out_simple-upper-roman" class="browser_output"></div>
+<script>addExamples('simple-upper-roman', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style super-decimal {
+system: numeric;
+symbols: '\2070' '\B9' '\B2' '\B3' '\2074' '\2075' '\2076' '\2077' '\2078' '\2079';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('super-decimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="super-decimal"><code><bdo dir="ltr">
+@counter-style <a href="#super-decimal">super-decimal</a> {
 system: numeric;
 symbols: '\2070' '\B9' '\B2' '\B3' '\2074' '\2075' '\2076' '\2077' '\2078' '\2079';
 /* symbols: '&#8304;' '&#185;' '&#178;' '&#179;' '&#8308;' '&#8309;' '&#8310;' '&#8311;' '&#8312;' '&#8313;'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="upper-hexadecimal"><a href="#upper-hexadecimal">upper-hexadecimal</a></dfn> {
+<div id="out_super-decimal" class="browser_output"></div>
+<script>addExamples('super-decimal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style upper-hexadecimal {
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('upper-hexadecimal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="upper-hexadecimal"><code><bdo dir="ltr">
+@counter-style <a href="#upper-hexadecimal">upper-hexadecimal</a> {
 system: numeric;
 symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39' '\41' '\42' '\43' '\44' '\45' '\46';
 /* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F'; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="upper-roman"><a href="#upper-roman">upper-roman</a></dfn> {
+<div id="out_upper-hexadecimal" class="browser_output"></div>
+<script>addExamples('upper-hexadecimal', 'en', '')</script>
+
+
+
+
+
+
+<style>
+@counter-style upper-roman {
+system: additive;
+range: 1 3999;
+additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 90 '\58\43', 50 '\4C', 40 '\58\4C', 10 '\58', 9 '\49\58', 5 '\56', 4 '\49\56', 1 '\49';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('upper-roman')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="upper-roman"><code><bdo dir="ltr">
+@counter-style <a href="#upper-roman">upper-roman</a> {
 system: additive;
 range: 1 3999;
 additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 90 '\58\43', 50 '\4C', 40 '\58\4C', 10 '\58', 9 '\49\58', 5 '\56', 4 '\49\56', 1 '\49';
 /* additive-symbols: 1000 'M', 900 'CM', 500 'D', 400 'CD', 100 'C', 90 'XC', 50 'L', 40 'XL', 10 'X', 9 'IX', 5 'V', 4 'IV', 1 'I'; */
 }
-</bdo></code></div>
-<p class="note">The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the [[[css-counter-styles-3]]] specification. Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">lower-roman</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">upper-roman</a></code> styles.</p>
+</bdo></code></p>
+
+<div id="out_upper-roman" class="browser_output"></div>
+<script>addExamples('upper-roman', 'en', '')</script>
+
+
+
+
+
+<aside class="note">
+<p>The <code class="kw" translate="no">lower-roman</code>  and <code class="kw" translate="no">upper-roman</code> styles are defined in the [[[css-counter-styles-3]]] specification. Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">lower-roman</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">upper-roman</a></code> styles.</p>
+</aside>
 </section>
 
 
