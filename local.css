@@ -113,7 +113,9 @@ h3 {
       }
 	  
 .counterstyle { margin: 20px 30px; }
-.counterstyle code { font-family: "Lucida Console", Monaco, monospace; color: black; font-size: 12px; white-space: pre-wrap; }
+/*.counterstyle code { font-family: "Lucida Console", Monaco, monospace; color: black; font-size: 12px; white-space: pre-wrap; }
+*/
+.counterstyle code { white-space: pre-wrap; text-align: start; }
 
 #arabic_comp td { border: 1px solid #ccc; padding: 0 2px; min-width: 10px; text-align: center; }
 #arabic_comp th { font-weight: normal; }
