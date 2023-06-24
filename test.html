@@ -252,6 +252,56 @@ function addExamples (styleName, lang, dir) {
     document.getElementById('out_'+styleName).innerHTML = out
     }
 
+function addExamples (styleName, lang, dir) {
+    var out = ''
+    out += `<p class="browser_output_title">Output in your browser:<a style="float:right" href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#browser_compatibility" target="_blank"><img src="compat.svg" alt="Check for built-in browser support." title="Check for built-in browser support."></a></p>`
+    out += `<div class="template_container" style="display:flex; flex-direction:row; text-justify:space-between;"`
+    if (dir === 'rtl') out += ` dir="rtl">`
+    else out += `>`
+    
+    out += `
+    <ol lang="${ lang }" style="list-style-type: ${ styleName }; display:block;"><li>one</li><li>two</li><li>three</li><li>four</li><li>five</li></ol>
+    <ol start="6" lang="${ lang }" style="list-style-type: ${ styleName }; display:block;"><li>six</li><li>seven</li><li>eight</li><li>nine</li><li>ten</li></ol>
+    <div>
+    <ol start="11" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>11</li></ol>
+    <ol start="22" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>22</li></ol>
+    <ol start="33" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>33</li></ol>
+    <ol start="44" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>44</li></ol>
+    </div>
+    <div>
+    <ol start="111" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>111</li></ol>
+    <ol start="222" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>222</li></ol>
+    <ol start="333" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>333</li></ol>
+    <ol start="444" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>444</li></ol>
+    </div>
+    `
+/*
+<br>
+    <ol start="11" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="22" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="33" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="44" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <br>
+    <ol class="counter" start="11" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="22" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="33" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="44" style="list-style-type: counter;"><li></li></ol>
+    <br>
+    <ol start="111" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="222" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="333" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <ol start="444" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
+    <br>
+    <ol class="counter" start="111" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="222" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="333" style="list-style-type: counter;"><li></li></ol>
+    <ol class="counter" start="444" style="list-style-type: counter;"><li></li></ol>`
+    */
+    out += `</div>`
+
+    document.getElementById('out_'+styleName).innerHTML = out
+    }
+
 function copyTemplate (id) {
     navigator.clipboard.writeText(document.getElementById(id).textContent)
     document.getElementById('copyNotice').style.display = 'block'
@@ -259,7 +309,30 @@ function copyTemplate (id) {
     }
 </script>
 
+<style>
+.browser_output li {
+    width: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    color: #999;
+    font-size: 70%;
+    }
+.browser_output ol {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-inline-start: 3em;
+    }
+.browser_output ol.high {
+    margin-inline-start: 6em;
+    }
+.template_container {
+    padding-inline-start: 0;
+    }
 
+
+</style>
 
 
 
@@ -3368,58 +3441,162 @@ suffix: '、';
 <section id="kana-styles">
 <h2>Japanese</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="hiragana"><a href="#hiragana">hiragana</a></dfn> {
+
+<style>
+@counter-style hiragana {
+system: alphabetic;
+symbols: '\3042' '\3044' '\3046' '\3048' '\304A' '\304B' '\304D' '\304F' '\3051' '\3053' '\3055' '\3057' '\3059' '\305B' '\305D' '\305F' '\3061' '\3064' '\3066' '\3068' '\306A' '\306B' '\306C' '\306D' '\306E' '\306F' '\3072' '\3075' '\3078' '\307B' '\307E' '\307F' '\3080' '\3081' '\3082' '\3084' '\3086' '\3088' '\3089' '\308A' '\308B' '\308C' '\308D' '\308F' '\3090' '\3091' '\3092' '\3093';
+suffix: '、';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('hiragana')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="hiragana"><code><bdo dir="ltr">
+@counter-style <a href="#hiragana">hiragana</a> {
 system: alphabetic;
 symbols: '\3042' '\3044' '\3046' '\3048' '\304A' '\304B' '\304D' '\304F' '\3051' '\3053' '\3055' '\3057' '\3059' '\305B' '\305D' '\305F' '\3061' '\3064' '\3066' '\3068' '\306A' '\306B' '\306C' '\306D' '\306E' '\306F' '\3072' '\3075' '\3078' '\307B' '\307E' '\307F' '\3080' '\3081' '\3082' '\3084' '\3086' '\3088' '\3089' '\308A' '\308B' '\308C' '\308D' '\308F' '\3090' '\3091' '\3092' '\3093';
 /* symbols: あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ ま み む め も や ゆ よ ら り る れ ろ わ ゐ ゑ を ん; */
 suffix: '、';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="hiragana-iroha"><a href="#hiragana-iroha">hiragana-iroha</a></dfn> {
+<div id="out_hiragana" class="browser_output"></div>
+<script>addExamples('hiragana', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style hiragana-iroha {
+system: alphabetic;
+symbols: '\3044' '\308D' '\306F' '\306B' '\307B' '\3078' '\3068' '\3061' '\308A' '\306C' '\308B' '\3092' '\308F' '\304B' '\3088' '\305F' '\308C' '\305D' '\3064' '\306D' '\306A' '\3089' '\3080' '\3046' '\3090' '\306E' '\304A' '\304F' '\3084' '\307E' '\3051' '\3075' '\3053' '\3048' '\3066' '\3042' '\3055' '\304D' '\3086' '\3081' '\307F' '\3057' '\3091' '\3072' '\3082' '\305B' '\3059';
+suffix: '、';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('hiragana-iroha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="hiragana-iroha"><code><bdo dir="ltr">
+@counter-style <a href="#hiragana-iroha">hiragana-iroha</a> {
 system: alphabetic;
 symbols: '\3044' '\308D' '\306F' '\306B' '\307B' '\3078' '\3068' '\3061' '\308A' '\306C' '\308B' '\3092' '\308F' '\304B' '\3088' '\305F' '\308C' '\305D' '\3064' '\306D' '\306A' '\3089' '\3080' '\3046' '\3090' '\306E' '\304A' '\304F' '\3084' '\307E' '\3051' '\3075' '\3053' '\3048' '\3066' '\3042' '\3055' '\304D' '\3086' '\3081' '\307F' '\3057' '\3091' '\3072' '\3082' '\305B' '\3059';
 /* symbols: い ろ は に ほ へ と ち り ぬ る を わ か よ た れ そ つ ね な ら む う ゐ の お く や ま け ふ こ え て あ さ き ゆ め み し ゑ ひ も せ す; */
 suffix: '、';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="katakana"><a href="#katakana">katakana</a></dfn> {
+<div id="out_hiragana-iroha" class="browser_output"></div>
+<script>addExamples('hiragana-iroha', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style katakana {
+system: alphabetic;
+symbols: '\30A2' '\30A4' '\30A6' '\30A8' '\30AA' '\30AB' '\30AD' '\30AF' '\30B1' '\30B3' '\30B5' '\30B7' '\30B9' '\30BB' '\30BD' '\30BF' '\30C1' '\30C4' '\30C6' '\30C8' '\30CA' '\30CB' '\30CC' '\30CD' '\30CE' '\30CF' '\30D2' '\30D5' '\30D8' '\30DB' '\30DE' '\30DF' '\30E0' '\30E1' '\30E2' '\30E4' '\30E6' '\30E8' '\30E9' '\30EA' '\30EB' '\30EC' '\30ED' '\30EF' '\30F0' '\30F1' '\30F2' '\30F3';
+suffix: '、';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('katakana')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="katakana"><code><bdo dir="ltr">
+@counter-style <a href="#katakana">katakana</a> {
 system: alphabetic;
 symbols: '\30A2' '\30A4' '\30A6' '\30A8' '\30AA' '\30AB' '\30AD' '\30AF' '\30B1' '\30B3' '\30B5' '\30B7' '\30B9' '\30BB' '\30BD' '\30BF' '\30C1' '\30C4' '\30C6' '\30C8' '\30CA' '\30CB' '\30CC' '\30CD' '\30CE' '\30CF' '\30D2' '\30D5' '\30D8' '\30DB' '\30DE' '\30DF' '\30E0' '\30E1' '\30E2' '\30E4' '\30E6' '\30E8' '\30E9' '\30EA' '\30EB' '\30EC' '\30ED' '\30EF' '\30F0' '\30F1' '\30F2' '\30F3';
 /* symbols: ア イ ウ エ オ カ キ ク ケ コ サ シ ス セ ソ タ チ ツ テ ト ナ ニ ヌ ネ ノ ハ ヒ フ ヘ ホ マ ミ ム メ モ ヤ ユ ヨ ラ リ ル レ ロ ワ ヰ ヱ ヲ ン; */
 suffix: '、';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="katakana-iroha"><a href="#katakana-iroha">katakana-iroha</a></dfn> {
+<div id="out_katakana" class="browser_output"></div>
+<script>addExamples('katakana', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style katakana-iroha {
+system: alphabetic;
+symbols: '\30A4' '\30ED' '\30CF' '\30CB' '\30DB' '\30D8' '\30C8' '\30C1' '\30EA' '\30CC' '\30EB' '\30F2' '\30EF' '\30AB' '\30E8' '\30BF' '\30EC' '\30BD' '\30C4' '\30CD' '\30CA' '\30E9' '\30E0' '\30A6' '\30F0' '\30CE' '\30AA' '\30AF' '\30E4' '\30DE' '\30B1' '\30D5' '\30B3' '\30A8' '\30C6' '\30A2' '\30B5' '\30AD' '\30E6' '\30E1' '\30DF' '\30B7' '\30F1' '\30D2' '\30E2' '\30BB' '\30B9';
+suffix: '、';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('katakana-iroha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="katakana-iroha"><code><bdo dir="ltr">
+@counter-style <a href="#katakana-iroha">katakana-iroha</a> {
 system: alphabetic;
 symbols: '\30A4' '\30ED' '\30CF' '\30CB' '\30DB' '\30D8' '\30C8' '\30C1' '\30EA' '\30CC' '\30EB' '\30F2' '\30EF' '\30AB' '\30E8' '\30BF' '\30EC' '\30BD' '\30C4' '\30CD' '\30CA' '\30E9' '\30E0' '\30A6' '\30F0' '\30CE' '\30AA' '\30AF' '\30E4' '\30DE' '\30B1' '\30D5' '\30B3' '\30A8' '\30C6' '\30A2' '\30B5' '\30AD' '\30E6' '\30E1' '\30DF' '\30B7' '\30F1' '\30D2' '\30E2' '\30BB' '\30B9';
 /* symbols: イ ロ ハ ニ ホ ヘ ト チ リ ヌ ル ヲ ワ カ ヨ タ レ ソ ツ ネ ナ ラ ム ウ ヰ ノ オ ク ヤ マ ケ フ コ エ テ ア サ キ ユ メ ミ シ ヱ ヒ モ セ ス; */
 suffix: '、';
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle"> 
-<code><bdo dir="ltr"> @counter-style <dfn id="circled-katakana"><a href="#circled-katakana">circled-katakana</a></dfn> {
+<div id="out_katakana-iroha" class="browser_output"></div>
+<script>addExamples('katakana-iroha', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style circled-katakana {
+system: fixed;
+symbols: '\32D0' '\32D1' '\32D2' '\32D3' '\32D4' '\32D5' '\32D6' '\32D7' '\32D8' '\32D9' '\32DA' '\32DB' '\32DC' '\32DD' '\32DE' '\32DF' '\32E0' '\32E1' '\32E2' '\32E3' '\32E4' '\32E5' '\32E6' '\32E7' '\32E8' '\32E9' '\32EA' '\32EB' '\32EC' '\32ED' '\32EE' '\32EF' '\32F0' '\32F1' '\32F2' '\32F3' '\32F4' '\32F5' '\32F6' '\32F7' '\32F8' '\32F9' '\32FA' '\32FB' '\32FC' '\32FD' '\32FE';
+suffix: ' ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('circled-katakana')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="circled-katakana"><code><bdo dir="ltr">
+@counter-style <a href="#circled-katakana">circled-katakana</a> {
 system: fixed;
 symbols: '\32D0' '\32D1' '\32D2' '\32D3' '\32D4' '\32D5' '\32D6' '\32D7' '\32D8' '\32D9' '\32DA' '\32DB' '\32DC' '\32DD' '\32DE' '\32DF' '\32E0' '\32E1' '\32E2' '\32E3' '\32E4' '\32E5' '\32E6' '\32E7' '\32E8' '\32E9' '\32EA' '\32EB' '\32EC' '\32ED' '\32EE' '\32EF' '\32F0' '\32F1' '\32F2' '\32F3' '\32F4' '\32F5' '\32F6' '\32F7' '\32F8' '\32F9' '\32FA' '\32FB' '\32FC' '\32FD' '\32FE';
 /* symbols: ㋐ ㋑ ㋒ ㋓ ㋔ ㋕ ㋖ ㋗ ㋘ ㋙ ㋚ ㋛ ㋜ ㋝ ㋞ ㋟ ㋠ ㋡ ㋢ ㋣ ㋤ ㋥ ㋦ ㋧ ㋨ ㋩ ㋪ ㋫ ㋬ ㋭ ㋮ ㋯ ㋰ ㋱ ㋲ ㋳ ㋴ ㋵ ㋶ ㋷ ㋸ ㋹ ㋺ ㋻ ㋼ ㋽ ㋾; */
 suffix: ' ';
-} </bdo>
-</code></div>
+}
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="japanese-informal"><a href="#japanese-informal">japanese-informal</a></dfn> { /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */
+<div id="out_circled-katakana" class="browser_output"></div>
+<script>addExamples('circled-katakana', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style japanese-informal {
+system: additive;
+range: -9999 9999;
+additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \3007;
+suffix: '\3001';
+negative: "\30DE\30A4\30CA\30B9";
+fallback: cjk-decimal;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('japanese-informal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="japanese-informal"><code><bdo dir="ltr">
+@counter-style <a href="#japanese-informal">japanese-informal</a> {
 system: additive;
 range: -9999 9999;
 additive-symbols: 9000 \4E5D\5343, 8000 \516B\5343, 7000 \4E03\5343, 6000 \516D\5343, 5000 \4E94\5343, 4000 \56DB\5343, 3000 \4E09\5343, 2000 \4E8C\5343, 1000 \5343, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4E94\767E, 400 \56DB\767E, 300 \4E09\767E, 200 \4E8C\767E, 100 \767E, 90 \4E5D\5341, 80 \516B\5341, 70 \4E03\5341, 60 \516D\5341, 50 \4E94\5341, 40 \56DB\5341, 30 \4E09\5341, 20 \4E8C\5341, 10 \5341, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4E94, 4 \56DB, 3 \4E09, 2 \4E8C, 1 \4E00, 0 \3007;
@@ -3430,11 +3607,32 @@ negative: "\30DE\30A4\30CA\30B9";
 /* negative: マイナス; */
 fallback: cjk-decimal;
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="japanese-formal"><a href="#japanese-formal">japanese-formal</a></dfn> { /* this is a predefined complex style in the <a href="https://www.w3.org/TR/css-counter-styles-3/#complex-predefined-counters">CSS3 Counter Styles</a> specification */
+<div id="out_japanese-informal" class="browser_output"></div>
+<script>addExamples('japanese-informal', 'ja', '')</script>
+
+
+
+
+
+
+
+<style>
+@counter-style japanese-formal {
+system: additive;
+range: -9999 9999;
+additive-symbols: 9000 \4E5D\9621, 8000 \516B\9621, 7000 \4E03\9621, 6000 \516D\9621, 5000 \4F0D\9621, 4000 \56DB\9621, 3000 \53C2\9621, 2000 \5F10\9621, 1000 \58F1\9621, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4F0D\767E, 400 \56DB\767E, 300 \53C2\767E, 200 \5F10\767E, 100 \58F1\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4F0D\62FE, 40 \56DB\62FE, 30 \53C2\62FE, 20 \5F10\62FE, 10 \58F1\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4F0D, 4 \56DB, 3 \53C2, 2 \5F10, 1 \58F1, 0 \96F6;
+suffix: '\3001';
+negative: "\30DE\30A4\30CA\30B9";
+fallback: cjk-decimal;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('japanese-formal')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="japanese-formal"><code><bdo dir="ltr">
+@counter-style <a href="#japanese-formal">japanese-formal</a> {
 system: additive;
 range: -9999 9999;
 additive-symbols: 9000 \4E5D\9621, 8000 \516B\9621, 7000 \4E03\9621, 6000 \516D\9621, 5000 \4F0D\9621, 4000 \56DB\9621, 3000 \53C2\9621, 2000 \5F10\9621, 1000 \58F1\9621, 900 \4E5D\767E, 800 \516B\767E, 700 \4E03\767E, 600 \516D\767E, 500 \4F0D\767E, 400 \56DB\767E, 300 \53C2\767E, 200 \5F10\767E, 100 \58F1\767E, 90 \4E5D\62FE, 80 \516B\62FE, 70 \4E03\62FE, 60 \516D\62FE, 50 \4F0D\62FE, 40 \56DB\62FE, 30 \53C2\62FE, 20 \5F10\62FE, 10 \58F1\62FE, 9 \4E5D, 8 \516B, 7 \4E03, 6 \516D, 5 \4F0D, 4 \56DB, 3 \53C2, 2 \5F10, 1 \58F1, 0 \96F6;
@@ -3445,10 +3643,23 @@ negative: "\30DE\30A4\30CA\30B9";
 /* negative: マイナス; */
 fallback: cjk-decimal;
 }
-</bdo></code></div>
+</bdo></code></p>
 
-<p class="note">All styles are defined in the [[[css-counter-styles-3]]] specification.    Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">hiragana</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">hiragana-iroha</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">katakana</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">katakana-iroha</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#japanese" target="_blank">japanese-informal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#japanese" target="_blank">japanese-formal</a></code> styles.</p>
-<p class="note">See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
+<div id="out_japanese-formal" class="browser_output"></div>
+<script>addExamples('japanese-formal', 'ja', '')</script>
+
+
+
+
+
+
+<aside class="note">
+<p>All styles are defined in the [[[css-counter-styles-3]]] specification.    Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">hiragana</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">hiragana-iroha</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">katakana</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplealphabetic" target="_blank">katakana-iroha</a>, <a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#japanese" target="_blank">japanese-informal</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#japanese" target="_blank">japanese-formal</a></code> styles.</p>
+</aside>
+
+<aside class="note">
+<p>See also the <a href="#chinese-styles">Han CJK</a> section for additional styles.</p>
+</aside>
 </section>
 
 
@@ -3460,15 +3671,26 @@ fallback: cjk-decimal;
 <section id="javanese-styles">
 <h2>Javanese</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="javanese"><a href="#javanese">javanese</a></dfn> {
+
+<style>
+@counter-style javanese {
 system: numeric;
- symbols: \A9D0  \A9D1  \A9D2  \A9D3  \A9D4  \A9D5  \A9D6  \A9D7  \A9D8  \A9D9 ;
+symbols: \A9D0  \A9D1  \A9D2  \A9D3  \A9D4  \A9D5  \A9D6  \A9D7  \A9D8  \A9D9 ;
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('javanese')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="javanese"><code><bdo dir="ltr">
+@counter-style <a href="#javanese">javanese</a> {
+system: numeric;
+symbols: \A9D0  \A9D1  \A9D2  \A9D3  \A9D4  \A9D5  \A9D6  \A9D7  \A9D8  \A9D9 ;
 /* symbols: ꧐ ꧑ ꧒ ꧓ ꧔ ꧕ ꧖ ꧗ ꧘ ꧙; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_javanese" class="browser_output"></div>
+<script>addExamples('javanese', 'jv', '')</script>
 </section>
 
 
@@ -3482,34 +3704,74 @@ system: numeric;
 <section id="kannada-styles">
 <h2>Kannada</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="kannada"><a href="#kannada">kannada</a></dfn> {
+
+<style>
+@counter-style kannada {
+system: numeric;
+symbols: '\CE6' '\CE7' '\CE8' '\CE9' '\CEA' '\CEB' '\CEC' '\CED' '\CEE' '\CEF';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('kannada')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="kannada"><code><bdo dir="ltr">
+@counter-style <a href="#kannada">kannada</a> {
 system: numeric;
 symbols: '\CE6' '\CE7' '\CE8' '\CE9' '\CEA' '\CEB' '\CEC' '\CED' '\CEE' '\CEF';
 /* symbols: '&#3302;' '&#3303;' '&#3304;' '&#3305;' '&#3306;' '&#3307;' '&#3308;' '&#3309;' '&#3310;' '&#3311;'; */
 }
-</bdo></code></div>
-<p class="note">This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">kannada</a></code> style.</p>
+</bdo></code></p>
+
+<div id="out_kannada" class="browser_output"></div>
+<script>addExamples('kannada', 'kn', '')</script>
 
 
 
-<div class="counterstyle">
-<code>
-<bdo dir="ltr">
-@counter-style <dfn id="kannada-alpha"><a href="#kannada-alpha">kannada-alpha</a></dfn> {
+<aside class="note">
+<p>This style is defined in the [[[css-counter-styles-3]]] specification. Check browser support for the <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">kannada</a></code> style.</p>
+</aside>
+
+
+
+
+
+
+<style>
+@counter-style kannada-alpha {
+system: alphabetic;
+symbols: '\0C85' '\0C86' '\0C87' '\0C88' '\0C89' '\0C8A' '\0C8B' '\0C8E' '\0C8F' '\0C90' '\0C92' '\0C93' '\0C94' '\0C95' '\0C96' '\0C97' '\0C98' '\0C99' ;
+suffix: ') ';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('kannada-alpha')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="kannada-alpha"><code><bdo dir="ltr">
+@counter-style <a href="#kannada-alpha">kannada-alpha</a> {
 system: alphabetic;
 symbols: '\0C85' '\0C86' '\0C87' '\0C88' '\0C89' '\0C8A' '\0C8B' '\0C8E' '\0C8F' '\0C90' '\0C92' '\0C93' '\0C94' '\0C95' '\0C96' '\0C97' '\0C98' '\0C99' ;
 /* symbols: 'ಅ' 'ಆ' 'ಇ' 'ಈ' 'ಉ' 'ಊ' 'ಋ' 'ಎ' 'ಏ' 'ಐ' 'ಒ' 'ಓ' 'ಔ' 'ಕ' 'ಖ' 'ಗ' 'ಘ' 'ಙ';  */
 suffix: ') ';
 }
-</bdo></code></div>
+</bdo></code></p>
+
+<div id="out_kannada-alpha" class="browser_output"></div>
+<script>addExamples('kannada-alpha', 'kn', '')</script>
+
+
+
+
+
 <aside class="note">
 <p><strong>Alternative prefix/suffix styles:</strong> <span class="linkToAffixes">(see [[[#affixes]]])</span><br>
-Use the following to replace the line beginning with 'suffix:' in the <code><a href="#kannada-alpha">kannada-alpha</a></code> code above:</p>
+Use the following to change the default affixes:</p>
 <ol>
 <li style="list-style-type: none;"><code><bdo dir="ltr">
-prefix: '('; suffix: ')';
+@counter-style kannada-alpha-dbl-paren {
+system: extends kannada-alpha;
+prefix: '(';
+suffix: ") ";
+}
 </bdo></code></li>
 </ol>
 </aside>
@@ -3523,15 +3785,26 @@ prefix: '('; suffix: ')';
 <section id="kayah-li-styles">
 <h2>Kayah Li</h2>
 
-<div class="counterstyle">
-<code><bdo dir="ltr">
-@counter-style <dfn id="kayah-li"><a href="#kayah-li">kayah-li</a></dfn> {
+
+<style>
+@counter-style kayah-li {
 system: numeric;
- symbols: \A901  \A902  \A903  \A904  \A905  \A906  \A907  \A908  \A909  \A900 ;
+symbols: '\A901' '\A902' '\A903' '\A904' '\A905' '\A906' '\A907' '\A908' '\A909' '\A900';
+}
+</style>
+
+<div class="copyMe" onclick="copyTemplate('kayah-li')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="counterstyle" id="kayah-li"><code><bdo dir="ltr">
+@counter-style <a href="#kayah-li">kayah-li</a> {
+system: numeric;
+symbols: '\A901' '\A902' '\A903' '\A904' '\A905' '\A906' '\A907' '\A908' '\A909' '\A900';
 /* symbols: ꤁ ꤂ ꤃ ꤄ ꤅ ꤆ ꤇ ꤈ ꤉ ꤀; */
 }
-</bdo></code></div>
+</bdo></code></p>
 
+<div id="out_kayah-li" class="browser_output"></div>
+<script>addExamples('kayah-li', 'kyu', '')</script>
 </section>
 
 
