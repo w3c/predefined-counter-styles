@@ -32,19 +32,31 @@
       };
     </script>
 </head>
+
+
 <body>
 <section id="abstract">
 <p>This document provides ready-made definitions for counter styles and covers the needs of a range of cultures around the world. The code snippets provided in the document can be included in style declarations by simply copying and pasting, or they can be use as a starting point and modified as desired.</p>
 </section>
+
+
+
 <div id="sotd">
-  <p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group. It is expected that the document will be updated from time to time to include new information.</p>
+<p>This document describes counter styles used by various cultures around the world and can be used as a reference for those wishing to define user-defined counter styles for CSS. The content of this document was originally part of the CSS Lists and Counters specification, but is now published as a standalone document by the W3C Internationalization Working Group. It is expected that the document will be updated from time to time to include new information.</p>
 </div>
+
+
+
       
 <section id="intro">
 <h2>Introduction</h2>
+
 <p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-markers and generated-content counters.  </p>
+
 <p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you yourself will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 30 writing systems around the world. </p>
+
 <p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
+
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
 <div class="example">
 <pre>
@@ -56,7 +68,9 @@
 
 ol { list-style-type: arabic-indic; }</pre>
 </div>
+
 <p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note.</p>
+
 <p>We try to only include in this document counter styles that are in regular use in the wild, and we are particularly interested in supporting the needs of people who use non-Latin scripts. You may find more experimental or new templates on other sites, such as that <a href="https://github.com/Crissov/css-counters">provided by Christoph Päper</a>.</p>
 
 <p>Total number of styles: <span id="stats"></span></p>
@@ -70,6 +84,7 @@ ol { list-style-type: arabic-indic; }</pre>
 <h3>Adapting prefixes &amp; suffixes</h3>
 
 <p>The likelihood that you will need to customise the basic counter symbols in the styles provided here is low. However, there is a much higher likelihood that you will want to vary the affixes (prefix and/or suffix) associated with  counters. For example, counters used for numbering headings may look better as just the bare counter, whereas in lists the counter may be following by a period+space,  be surrounded by parentheses, or be followed by a script-specific delimiter, etc. In fact, different strategies  may be used on the same page, depending on the level of nesting or the context in which the list is used.</p>
+
 <p>For the styles shown here we apply a common default. (Often, none is specified, which will result in a period+space suffix.) If you want a different affix you should make the appropriate change. Code for some common alternatives is given in the panel just below.</p>
 
 <div class="example" id="standard_alt_prefix_suffix">
@@ -82,6 +97,7 @@ suffix: ') ';</bdo></pre>
 </div>
 
 <p>Notes are used to describe alternative affixes for a given style, and where they involve a non-ASCII character or some other special arrangement, suggested code is provided.</p>
+
 <div class="example" id="native_alt_prefix_suffix">
 <p>For example, Myanmar may use <span class="codepoint" translate="no"><span lang="my">&#x104B;</span> [<span class="uname">U+104B MYANMAR SIGN SECTION</span>]</span> as a suffix, so the Myanmar section includes:</p>
 <pre translate="no"><bdo dir="ltr">suffix: '။ ';</bdo></pre>
@@ -123,11 +139,15 @@ ol { list-style-type: myanmar; }
 <ol>
 <li>
 <p>At the time of writing, the CSS Counter Styles Level 3 specification is still in the Candidate Recommendation phase. Custom counter styles are not  yet <a href="https://github.com/w3c/iip/issues/93">supported in all browsers</a>.  See a <a href="https://w3c.github.io/i18n-tests/results/counter-styles">set of basic tests</a> to find which browsers support this feature. On browsers that don't support custom counter styles, the counter styles will fall back to the default.</p>
+
 <p>Many of the styles described here are already supported by name in browsers. See <a href="https://w3c.github.io/i18n-tests/results/custom-counter-styles">the tests for a list of what international styles are supported</a> natively by which browsers.</p>
 </li>
+
 <li>
-  <p>You can call these styles or the ones you invent yourself by whatever name you prefer. For example, if you prefer to call the <code class="kw" translate="no">persian</code> counter style <code class="kw" translate="no">extended-arabic</code>, you can just change the name of the counter style. Bear in mind, however, that a counter style called <code class="kw" translate="no">persian</code> may be supported by browsers that don't support <code class="kw" translate="no">@counter-style</code>, so using standard names can sometimes be beneficial.</p></li>
+<p>You can call these styles or the ones you invent yourself by whatever name you prefer. For example, if you prefer to call the <code class="kw" translate="no">persian</code> counter style <code class="kw" translate="no">extended-arabic</code>, you can just change the name of the counter style. Bear in mind, however, that a counter style called <code class="kw" translate="no">persian</code> may be supported by browsers that don't support <code class="kw" translate="no">@counter-style</code>, so using standard names can sometimes be beneficial.</p></li>
+
 <li><p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a>.</p>
+
 <p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here. You should also provide a counter style definition for a template you'd like to see included.</p></li>
 </ol>
 </section>
@@ -148,77 +168,6 @@ ol { list-style-type: myanmar; }
 
 <dialog id="copyNotice">Copied !</dialog>
 
-<style>
-.browser_output {
-  font-size: 1.15rem;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  line-height: 1.4;
-}
-.template_container {
-    padding-inline-start: 4rem;
-    }
-.browser_output_title {
-  font-size: .8rem;
-  font-weight: bold;
-}
-.browser_output_title img {
-  height: 1em;
-}
-.browser_output p:first-of-type {
-  margin-block-end: .5rem;
-  margin-block-start: 0;
-}
-.browser_output ol {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin: 0;
-    padding: 0;
-    margin-inline-start: 4rem;
-    }
-.browser_output ol[lang] {
-    margin-block-start: .5rem;
-    font-size: 1.4em;
-    color: #333;
-    }
-.browser_output .counter {
-    color: #ccc;
-    font-size: 70%;
-    list-style-type: none;
-    }
-.browser_output li {
-    width: 4rem;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    }
-.copyMe {
-    float: right;
-    margin-inline-start: 2rem;
-    margin-block-end: 1rem;
-    margin-block-start: 5rem;
-    }
-.copyMe img {
-    height: 1.4em;
-    }
-#copyNotice {
-    position: fixed;
-    top: 40%;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 1rem;
-    }
-.counterstyle a {
-    font-size: 2em;
-    /*font-weight: bold;
-    font-style: italic;
-    font-family: serif;*/
-    text-decoration: none;
-    }
-
-</style>
 
 <style>
 @counter-style counter {
@@ -231,41 +180,11 @@ suffix: "    ";
 
 <script>
 
-function addExamples (styleName, lang, dir) {
-    var out = ''
-    out += `<p class="browser_output_title">Output in your browser:<a style="float:right" href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#browser_compatibility" target="_blank"><img src="compat.svg" alt="Check for built-in browser support." title="Check for built-in browser support."></a></p>`
-    out += `<div class="template_container"`
-    if (dir === 'rtl') out += ` dir="rtl">`
-    else out += `>`
-    out += `
-    <ol lang="${ lang }" style="list-style-type: ${ styleName };"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
-    <ol class="counter" style="list-style-type: counter;"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
-    <br>
-    <ol start="11" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="22" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="33" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="44" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <br>
-    <ol class="counter" start="11" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="22" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="33" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="44" style="list-style-type: counter;"><li></li></ol>
-    <br>
-    <ol start="111" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="222" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="333" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="444" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <br>
-    <ol class="counter" start="111" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="222" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="333" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="444" style="list-style-type: counter;"><li></li></ol>`
-    out += `</div>`
-
-    document.getElementById('out_'+styleName).innerHTML = out
-    }
-
-function addExamples (styleName, lang, dir) {
+function addExamples (styleName, lang, dir, type) {
+    // draws the "Output in your browser" boxes.
+    // type is one of 'vshort' (stops after 22), or short (stops after 44)
+    if (typeof type === 'undefined') type = 'full'
+    
     var out = ''
     out += `<p class="browser_output_title">Output in your browser:<a style="float:right" href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#browser_compatibility" target="_blank"><img src="compat.svg" alt="Check for built-in browser support." title="Check for built-in browser support."></a></p>`
     out += `<div class="template_container" style="display:flex; flex-direction:row; text-justify:space-between;"`
@@ -277,39 +196,22 @@ function addExamples (styleName, lang, dir) {
     <ol start="6" lang="${ lang }" style="list-style-type: ${ styleName }; display:block;"><li>six</li><li>seven</li><li>eight</li><li>nine</li><li>ten</li></ol>
     <div>
     <ol start="11" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>11</li></ol>
-    <ol start="22" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>22</li></ol>
+    <ol start="22" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>22</li></ol>`
+    if (type !== 'vshort') out += `
     <ol start="33" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>33</li></ol>
-    <ol start="44" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>44</li></ol>
-    </div>
-    <div>
+    <ol start="44" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>44</li></ol>`
+    out += `</div>`
+    
+    if (type === 'full') {
+        out += `<div>
     <ol start="111" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>111</li></ol>
     <ol start="222" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>222</li></ol>
     <ol start="333" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>333</li></ol>
-    <ol start="444" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>444</li></ol>
-    </div>
+    <ol start="444" class='high' lang="${ lang }" style="list-style-type: ${ styleName };"><li>444</li></ol>`
+        }
+    
+    out += `</div>
     `
-/*
-<br>
-    <ol start="11" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="22" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="33" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="44" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <br>
-    <ol class="counter" start="11" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="22" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="33" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="44" style="list-style-type: counter;"><li></li></ol>
-    <br>
-    <ol start="111" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="222" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="333" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <ol start="444" lang="${ lang }" style="list-style-type: ${ styleName };"><li></li></ol>
-    <br>
-    <ol class="counter" start="111" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="222" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="333" style="list-style-type: counter;"><li></li></ol>
-    <ol class="counter" start="444" style="list-style-type: counter;"><li></li></ol>`
-    */
     out += `</div>`
 
     document.getElementById('out_'+styleName).innerHTML = out
@@ -322,34 +224,6 @@ function copyTemplate (id) {
     }
 </script>
 
-<style>
-.browser_output li {
-    width: inherit;
-    margin: 0;
-    padding: 0;
-    text-align: start;
-    color: #bbb;
-    font-size: 70%;
-    }
-.browser_output li::marker {
-    color: #666;
-    font-size: 1.2em;
-    }
-.browser_output ol {
-    display: block;
-    margin: 0;
-    padding: 0;
-    margin-inline-start: 3em;
-    }
-.browser_output ol.high {
-    margin-inline-start: 6em;
-    }
-.template_container {
-    padding-inline-start: 0;
-    }
-
-
-</style>
 
 
 
@@ -3525,7 +3399,7 @@ suffix: ' ';
 </bdo></code></p>
 
 <div id="out_cjk-tally-mark" class="browser_output"></div>
-<script>addExamples('cjk-tally-mark', 'zh', '')</script>
+<script>addExamples('cjk-tally-mark', 'zh', '', 'vshort')</script>
 
 
 <aside class="note">
@@ -4780,7 +4654,7 @@ symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C'
 </bdo></code></p>
 
 <div id="out_lower-alpha-symbolic" class="browser_output"></div>
-<script>addExamples('lower-alpha-symbolic', 'en', '')</script>
+<script>addExamples('lower-alpha-symbolic', 'en', '', 'short')</script>
 
 
 
@@ -4807,7 +4681,7 @@ symbols: '\41' '\42' '\43' '\44' '\45' '\46' '\47' '\48' '\49' '\4A' '\4B' '\4C'
 </bdo></code></p>
 
 <div id="out_upper-alpha-symbolic" class="browser_output"></div>
-<script>addExamples('upper-alpha-symbolic', 'en', '')</script>
+<script>addExamples('upper-alpha-symbolic', 'en', '', 'short')</script>
 
 
 
@@ -5992,7 +5866,7 @@ suffix: ' ';
 </bdo></code></p>
 
 <div id="out_tally-mark" class="browser_output"></div>
-<script>addExamples('tally-mark', 'en', '')</script>
+<script>addExamples('tally-mark', 'en', '', 'vshort')</script>
 
 
 
@@ -6281,7 +6155,7 @@ suffix: ' ';
 <p class="name" id="fullwidth-lower-roman"><a href="#fullwidth-lower-roman">fullwidth-lower-roman</a></p>
 
 <p class="counterstyle"><code><bdo dir="ltr">
-@counter-style fullwidth-lower-roman {
+@counter-style § {
 system: fixed;
 symbols: '\2170' '\2171' '\2172' '\2173' '\2174' '\2175' '\2176' '\2177' '\2178' '\2179' '\217A' '\217B';
 /* symbols: '&#8560;' '&#8561;' '&#8562;' '&#8563;' '&#8564;' '&#8565;' '&#8566;' '&#8567;' '&#8568;' '&#8569;' '&#8570;' '&#8571;'; */

@@ -143,6 +143,92 @@ h3 {
     }
 
 
+.browser_output {
+  font-size: 1.15rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  line-height: 1.4;
+}
+.template_container {
+    padding-inline-start: 4rem;
+    }
+.browser_output_title {
+  font-size: .8rem;
+  font-weight: bold;
+}
+.browser_output_title img {
+  height: 1em;
+}
+.browser_output p:first-of-type {
+  margin-block-end: .5rem;
+  margin-block-start: 0;
+}
+.browser_output ol {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-inline-start: 3em;
+    }
+.browser_output ol[lang] {
+    margin-block-start: .5rem;
+    font-size: 1.4em;
+    color: #333;
+    }
+.browser_output ol.high {
+    margin-inline-start: 6em;
+    }
+.browser_output .counter {
+    color: #ccc;
+    font-size: 70%;
+    list-style-type: none;
+    }
+.browser_output li {
+    width: 4rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+.copyMe {
+    float: right;
+    margin-inline-start: 2rem;
+    margin-block-end: 1rem;
+    margin-block-start: 5rem;
+    }
+.copyMe img {
+    height: 1.4em;
+    }
+#copyNotice {
+    position: fixed;
+    top: 40%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    }
+.counterstyle a {
+    font-size: 2em;
+    /*font-weight: bold;
+    font-style: italic;
+    font-family: serif;*/
+    text-decoration: none;
+    }
+
+
+.browser_output li {
+    width: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    color: #bbb;
+    font-size: 70%;
+    }
+.browser_output li::marker {
+    color: #666;
+    font-size: 1.2em;
+    }
+.template_container {
+    padding-inline-start: 0;
+    }
 
 
 
