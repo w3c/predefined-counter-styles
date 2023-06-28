@@ -112,7 +112,7 @@ h3 {
       	font-size: 0.8em;
       }
 	  
-.counterstyle { margin: 20px 30px; }
+/* .counterstyle { margin: 20px 30px; } */
 /*.counterstyle code { font-family: "Lucida Console", Monaco, monospace; color: black; font-size: 12px; white-space: pre-wrap; }
 */
 .counterstyle code { white-space: pre-wrap; text-align: start; }
@@ -125,3 +125,41 @@ h3 {
     float: right;
     margin-inline-start: 1em;
     }
+
+
+.counterstyle {
+    margin-block-start: 0;
+    margin-inline: 2.4rem;
+    }
+
+
+.name { 
+    margin-block-start: 4em;
+    margin-block-end: 0;
+    }
+.name a {
+    font-size: 2em;
+    text-decoration: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
