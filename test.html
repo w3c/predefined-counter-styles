@@ -53,9 +53,9 @@
 
 <p>	Browsers that implement the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification provide a mechanism for authors to create user-defined counter styles for use with CSS list-markers and generated-content counters.  </p>
 
-<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you yourself will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 30 writing systems around the world. </p>
+<p>As a content author, unless the counter style you want to use is one of a small set that are predefined in the specification, you yourself will need to define how it works in your style sheet. To make it easier for you, this document provides code snippets that people have already worked out for a large set of  user-defined and predefined styles, covering more than 45 writing systems around the world. The total number of styles is <span id="stats"></span>.</p>
 
-<p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
+<p>If you find what you are looking for, you can simply cut and paste the style you need into your stylesheet. Click on the <img src="copy.svg" alt="Copy icon" style="height:1em;"> icon to copy the template to your clipboard. Alternatively, you can use the styles here for inspiration, or  adapt them to suit your preferences.</p>
 
 <p>For example,  the following CSS code defines the <code class="kw" translate="no">arabic-indic</code> counter style, then applies it to ordered lists using the <code class="kw" translate="no">list-style-type</code> property.</p>
 <div class="example">
@@ -69,17 +69,9 @@
 ol { list-style-type: arabic-indic; }</pre>
 </div>
 
-<p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note.</p>
+<p>The <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification includes a number of predefined counter-styles for which browsers are expected to implement built-in support. The definitions of those styles are also included here, for ease of reference, and identified as such by a note. Click on the <img src="compat.svg" alt="Compatibility icon" style="height:1em;"> icon to go to the MDN page for <code class="kw" translate="no">list-style-type</code>, which has indications of which styles are supported by browsers.</p>
 
 <p>We try to only include in this document counter styles that are in regular use in the wild, and we are particularly interested in supporting the needs of people who use non-Latin scripts. You may find more experimental or new templates on other sites, such as that <a href="https://github.com/Crissov/css-counters">provided by Christoph Päper</a>.</p>
-
-<p>Total number of styles: <span id="stats"></span></p>
-
-
-
-
-
-
 <section id="affixes">
 <h3>Adapting prefixes &amp; suffixes</h3>
 
@@ -148,7 +140,7 @@ ol { list-style-type: myanmar; }
 
 <li><p>The Internationalization Working Group expects this document to be updated from time to time as new information or corrections are added. If you wish to propose new information to be included here, please <a href="https://github.com/w3c/predefined-counter-styles/issues">raise an issue in github</a>.</p>
 
-<p>However, before submitting a counter-style template for inclusion, please gather evidence that is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here. You should also provide a counter style definition for a template you'd like to see included.</p></li>
+<p>However, before submitting a counter-style template for inclusion, please gather evidence that it is actually in use in the wild. For example, it is easy to conceive different alphabetic lists that correspond to various European languages, but we haven't yet seen good evidence that such lists are used widely, and so they are not included here. You should also provide a counter style definition for a template you'd like to see included.</p></li>
 </ol>
 </section>
 
@@ -252,36 +244,6 @@ symbols: '\01E950' '\01E951' '\01E952' '\01E953' '\01E954' '\01E955' '\01E956' '
 
 <div id="out_adlam" class="browser_output"></div>
 <script>addExamples('adlam', 'fuf', 'rtl')</script>
-</section>
-
-
-
-
-
-<section id="balinese-styles">
-<h2>Balinese</h2>
-
-<style class="cs">
-@counter-style balinese {
-system: numeric;
-symbols: \1B50  \1B51  \1B52  \1B53  \1B54  \1B55  \1B56  \1B57  \1B58  \1B59; }
-</style>
-
-<div class="copyMe" onclick="copyTemplate('balinese')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
-
-<p class="name" id="balinese"><a href="#balinese">balinese</a></p>
-
-<p class="counterstyle"><code><bdo dir="ltr">
-@counter-style balinese {
-system: numeric;
-symbols: \1B50  \1B51  \1B52  \1B53  \1B54  \1B55  \1B56  \1B57  \1B58  \1B59 ;
-/* symbols: '᭐' '᭑' '᭒' '᭓' '᭔' '᭕' '᭖' '᭗' '᭘' '᭙'; */
-}
-</bdo></code></p>
-
-<div id="out_balinese" class="browser_output"></div>
-<script>addExamples('balinese', 'ban', '')</script>
-
 </section>
 
 
@@ -859,7 +821,35 @@ additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550
 
 
 <p class="note">All styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification.       Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">armenian</a></code>, <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">lower-armenian</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">upper-armenian</a></code> styles.</p>
+</section>
 
+
+
+
+
+<section id="balinese-styles">
+<h2>Balinese</h2>
+
+<style class="cs">
+@counter-style balinese {
+system: numeric;
+symbols: \1B50  \1B51  \1B52  \1B53  \1B54  \1B55  \1B56  \1B57  \1B58  \1B59; }
+</style>
+
+<div class="copyMe" onclick="copyTemplate('balinese')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="balinese"><a href="#balinese">balinese</a></p>
+
+<p class="counterstyle"><code><bdo dir="ltr">
+@counter-style balinese {
+system: numeric;
+symbols: '\1B50'  '\1B51'  '\1B52'  '\1B53'  '\1B54'  '\1B55'  '\1B56'  '\1B57'  '\1B58'  '\1B59' ;
+/* symbols: '᭐' '᭑' '᭒' '᭓' '᭔' '᭕' '᭖' '᭗' '᭘' '᭙'; */
+}
+</bdo></code></p>
+
+<div id="out_balinese" class="browser_output"></div>
+<script>addExamples('balinese', 'ban', '')</script>
 </section>
 
 
@@ -5966,9 +5956,8 @@ suffix: ' ';
 
 <style class="cs">
 @counter-style decimal {
-system: fixed;
-symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
-suffix: ' ';
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39';
 }
 </style>
 
@@ -5978,12 +5967,10 @@ suffix: ' ';
 
 <p class="counterstyle"><code><bdo dir="ltr">
 @counter-style decimal {
-system: fixed;
-symbols: '\24B6' '\24B7' '\24B8' '\24B9' '\24BA' '\24BB' '\24BC' '\24BD' '\24BE' '\24BF' '\24C0' '\24C1' '\24C2' '\24C3' '\24C4' '\24C5' '\24C6' '\24C7' '\24C8' '\24C9' '\24CA' '\24CB' '\24CC' '\24CD' '\24CE' '\24CF';
-/* symbols: '&#9398;' '&#9399;' '&#9400;' '&#9401;' '&#9402;' '&#9403;' '&#9404;' '&#9405;' '&#9406;' '&#9407;' '&#9408;' '&#9409;' '&#9410;' '&#9411;' '&#9412;' '&#9413;' '&#9414;' '&#9415;' '&#9416;' '&#9417;' '&#9418;' '&#9419;' '&#9420;' '&#9421;' '&#9422;' '&#9423;'; */
-suffix: ' ';
-}
-</bdo></code></p>
+system: numeric;
+symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39';
+/* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9'; */
+}</bdo></code></p>
 
 <div id="out_decimal" class="browser_output"></div>
 <script>addExamples('decimal', 'en', '')</script>
@@ -6498,32 +6485,12 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
   <h2> Revision Log</h2>
   <p>The following summarises substantive changes since the previous publication.</p>
   <ol>
- <li>Add the following 12 numeric counter styles:
-[Balinese]
-<a href="#balinese"><code class="kw" translate="no">balinese</code></a>,
-[Bamum]
-<a href="#bamum"><code class="kw" translate="no">bamum</code></a>,
-[Javanese]
-<a href="#javanese"><code class="kw" translate="no">javanese</code></a>,
-[Kayah Li]
-<a href="#kayah-li"><code class="kw" translate="no">kayah-li</code></a>,
-[Lanna (Tai Tham)]
-<a href="#lanna-hora"><code class="kw" translate="no">lanna-hora</code></a>,
-<a href="#lanna-tham"><code class="kw" translate="no">lanna-tham</code></a>,
-[Limbu]
-<a href="#limbu"><code class="kw" translate="no">limbu</code></a>,
-[Mro]
-<a href="#mro"><code class="kw" translate="no">mro</code></a>,
-[Nag Mundari]
-<a href="#nag-mundari"><code class="kw" translate="no">nag-mundari</code></a>,
-[Newa]
-<a href="#newa"><code class="kw" translate="no">newa</code></a>,
-[Sundanese]
-<a href="#sundanese"><code class="kw" translate="no">sundanese</code></a>,
-[Tai Lü]
-<a href="#tai-lue"><code class="kw" translate="no">tai-lue</code></a>,
-</li>
-<li>Change cyrillic style namesor the Ol Chiki script as 'ol-chiki', and use the name 'santali' for the alphabetic style.</li>
+ <li>Add an icon that copies the template to your clipboard with one click. Another icon points to the MDN page that lists a number of styles and which browsers support them.</li>
+<li>Add examples of use for all styles.</li>
+<li>Fix <code class="kw" translate="no">tai-lue</code>, which previously had 11 digits for a numeric style.</li>
+<li>Fix <code class="kw" translate="no">warang-citi</code>, which had incorrect numbers in the template.</li>
+<li>Change suggestions for alternative affixes so that they use the <code class="kw" translate="no">extends</code> syntax, rather than suggesting changes to be used in the template.</li>
+<li>Some reordering of styles within a section. Ensure that all values in the templates are surrounded by quote marks.</li>
 </ol>
     <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
@@ -6567,7 +6534,7 @@ Klemen Kogovšek proposed changing 'serbo-croatian' to just 'serbian'.
 
 
 <script>
-var cs = document.querySelectorAll('.counterstyle').length
+var cs = document.querySelectorAll('.name').length
 document.getElementById('stats').textContent = cs
 </script>
   </body>
