@@ -196,6 +196,7 @@ h3 {
     }
 .copyMe img {
     height: 1.4em;
+    cursor: copy;
     }
 #copyNotice {
     position: fixed;
