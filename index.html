@@ -1446,7 +1446,7 @@ function addExamples (styleName, lang, dir, type) {
     }
 
 function copyTemplate (id) {
-    navigator.clipboard.writeText(document.getElementById(id).textContent)
+    navigator.clipboard.writeText(document.getElementById(id).parentNode.querySelector('.counterstyle').textContent)
     document.getElementById('copyNotice').style.display = 'block'
     setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')
     }
