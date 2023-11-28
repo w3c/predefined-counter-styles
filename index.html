@@ -79,7 +79,16 @@ symbols:  '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\
 system: fixed;
 symbols:  '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '\630' '\631' '\632' '\698' '\633' '\634' '\635' '\636' '\637' '\638' '\639' '\63A' '\641' '\642' '\6A9' '\6AF' '\644' '\645' '\646' '\648' '\647\200D' '\6CC'; 
 }
+/*@counter-style urdu-alphabetic {
+system: fixed;
+symbols:  '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC'; 
+}
 
+@counter-style urdu-abjad {
+system: fixed;
+symbols:  '\0627' '\0628' '\062C' '\062F' '\06C1' '\0648' '\0632' '\062D' '\0637' '\06CC' '\06A9' '\0644' '\0645' '\0646' '\0633' '\0639' '\0641' '\0635' '\0642' '\0631' '\0634' '\062A' '\062B' '\062E' '\0630' '\0636' '\0638'  '\063A '; 
+}
+*/
 
 
 /* ARMENIAN */
@@ -560,12 +569,14 @@ suffix: '\3001';
 system: fixed;
 symbols: '\5B50' '\4E11' '\5BC5' '\536F' '\8FB0' '\5DF3' '\5348' '\672A' '\7533' '\9149' '\620C' '\4EA5';
 suffix: '\3001';
+fallback: cjk-decimal;
 }
 
 @counter-style cjk-heavenly-stem {
 system: fixed;
 symbols: '\7532' '\4E59' '\4E19' '\4E01' '\620A' '\5DF1' '\5E9A' '\8F9B' '\58EC' '\7678';
 suffix: '\3001';
+fallback: cjk-decimal;
 }
 
 @counter-style circled-ideograph {
@@ -1849,7 +1860,73 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
   <p>This table shows the differences between the counter styles listed above for the arabic script. A blank cell uses the same letter as the nearest non-blank cell above it.</p>
   <p>Also included for comparison are two letter sequences that are not included here as counter styles, but that are mentioned in <a href="https://en.wikipedia.org/wiki/Abjad_numerals">Wikipedia</a> – an old maghrebi sequence and the hijai sequence.</p>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="csWrapper">
+<div class="copyMe" onclick="copyTemplate('urdu-alphabetic')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="urdu-alphabetic"><a href="#urdu-alphabetic">urdu-alphabetic</a></p>
+
+<p class="counterstyle"><code><bdo dir="ltr">
+@counter-style urdu-alphabetic {
+system: fixed;
+symbols: '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC';
+/* symbols: '&#x0627;' '&#x0628;' '&#x067E;' '&#x062A;' '&#x0679;' '&#x062B;' '&#x062C;' '&#x0686;' '&#x062D;' '&#x062E;' '&#x062F;' '&#x0688;' '&#x0630;' '&#x0631;' '&#x0691;' '&#x0632;' '&#x0698;' '&#x0633;' '&#x0634;' '&#x0635;' '&#x0636;' '&#x0637;' '&#x0638;' '&#x0639;' '&#x063A;' '&#x0641;' '&#x0642;' '&#x06A9;' '&#x06AF;' '&#x0644;' '&#x0645;' '&#x0646;' '&#x06BA;' '&#x0648;' '&#x06C1;' '&#x06BE;' '&#x0621;' '&#x06CC;'; */
+}
+</bdo></code></p>
+
+<div id="out_urdu-alphabetic" class="browser_output"></div>
+<script>addExamples('urdu-alphabetic', 'ur', 'rtl')</script>
+</div>
+
+
+
+
+<aside class="note">
+<p>The urdu-alphabetic style is shown here as a fixed style.  According to CDAC, it is actually an unlimited style, where characters are doubled after the initial set is exhausted, eg. <span dir="rtl" lang="ur">ا ا</span>, <span dir="rtl" lang="ur">ب ب</span>, <span dir="rtl" lang="ur">ت ت</span>, etc. This can't be achieved using the standard 'alphabetic' algorithm. Furthermore, counters in this range do not join cursively, but are separated by a space.</p>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="csWrapper">
+<div class="copyMe" onclick="copyTemplate('urdu-abjad')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="urdu-abjad"><a href="#urdu-abjad">urdu-abjad</a></p>
+
+<p class="counterstyle"><code><bdo dir="ltr">
+@counter-style urdu-abjad {
+system: fixed;
+symbols:  '\0627' '\0628' '\062C' '\062F' '\06C1' '\0648' '\0632' '\062D' '\0637' '\06CC' '\06A9' '\0644' '\0645' '\0646' '\0633' '\0639' '\0641' '\0635' '\0642' '\0631' '\0634' '\062A' '\062B' '\062E' '\0630' '\0636' '\0638'  '\063A '; 
+/* symbols: '&#x0627;' '&#x0628;' '&#x062C;' '&#x062F;' '&#x06C1;' '&#x0648;' '&#x0632;' '&#x062D;' '&#x0637;' '&#x06CC;' '&#x06A9;' '&#x0644;' '&#x0645;' '&#x0646;' '&#x0633;' '&#x0639;' '&#x0641;' '&#x0635;' '&#x0642;' '&#x0631;' '&#x0634;' '&#x062A;' '&#x062B;' '&#x062E;' '&#x0630;' '&#x0636;' '&#x0638;' '&#x063A;'; */
+}
+</bdo></code></p>
+
+<div id="out_urdu-abjad" class="browser_output"></div>
+<script>addExamples('urdu-abjad', 'ur', 'rtl')</script>
+</div>
+-->
 </section>
+
+
 
 
 
@@ -3995,8 +4072,9 @@ suffix: '\3001';
 @counter-style cjk-earthly-branch {
 system: fixed;
 symbols: '\5B50' '\4E11' '\5BC5' '\536F' '\8FB0' '\5DF3' '\5348' '\672A' '\7533' '\9149' '\620C' '\4EA5';
-/* symbols: '&#23376;' '&#19985;' '&#23493;' '&#21359;' '&#36784;' '&#24051;' '&#21320;' '&#26410;' '&#30003;' '&#37193;' '&#25100;' '&#20133;'; */
 suffix: '\3001';
+fallback: cjk-decimal;
+/* symbols: '&#23376;' '&#19985;' '&#23493;' '&#21359;' '&#36784;' '&#24051;' '&#21320;' '&#26410;' '&#30003;' '&#37193;' '&#25100;' '&#20133;'; */
 /* suffix: '&#12289;'; */
 }
 </bdo></code></p>
@@ -4020,8 +4098,9 @@ suffix: '\3001';
 @counter-style cjk-heavenly-stem {
 system: fixed;
 symbols: '\7532' '\4E59' '\4E19' '\4E01' '\620A' '\5DF1' '\5E9A' '\8F9B' '\58EC' '\7678';
-/* symbols: '&#30002;' '&#20057;' '&#19993;' '&#19969;' '&#25098;' '&#24049;' '&#24218;' '&#36763;' '&#22764;' '&#30328;'; */
 suffix: '\3001';
+fallback: cjk-decimal;
+/* symbols: '&#30002;' '&#20057;' '&#19993;' '&#19969;' '&#25098;' '&#24049;' '&#24218;' '&#36763;' '&#22764;' '&#30328;'; */
 /* suffix: '&#12289;'; */
 }
 </bdo></code></p>
@@ -6698,18 +6777,17 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 
 
 <section class="appendix" id="app-c">
-  <h2> Revision Log</h2>
-  <p>The following summarises substantive changes since the previous publication.</p>
-  <ol>
- <li>Add an icon that copies the template to your clipboard with one click. Another icon points to the MDN page that lists a number of styles and which browsers support them.</li>
-<li>Add examples of use for all styles.</li>
-<li>Fix <code class="kw" translate="no">tai-lue</code>, which previously had 11 digits for a numeric style.</li>
-<li>Fix <code class="kw" translate="no">warang-citi</code>, which had incorrect numbers in the template.</li>
-<li>Change suggestions for alternative affixes so that they use the <code class="kw" translate="no">extends</code> syntax, rather than suggesting changes to be used in the template.</li>
-<li>Some reordering of styles within a section. Ensure that all values in the templates are surrounded by quote marks.</li>
+<h2> Revision Log</h2>
+<p>The following summarises substantive changes since the previous publication.</p>
+<ol>
+<li>Add fallback:cjk-decimal to cjk-heavenly-branch and cjk-heavenly-stem styles (see <a href="https://github.com/w3c/csswg-drafts/issues/8975" target="_blank">this github issue</a>).</li>
 </ol>
-    <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
+<p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
+
+
+
+
 
 
 <section class="appendix">
