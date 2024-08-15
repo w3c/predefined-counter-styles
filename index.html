@@ -79,7 +79,14 @@ symbols:  '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\
 system: fixed;
 symbols:  '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '\630' '\631' '\632' '\698' '\633' '\634' '\635' '\636' '\637' '\638' '\639' '\63A' '\641' '\642' '\6A9' '\6AF' '\644' '\645' '\646' '\648' '\647\200D' '\6CC'; 
 }
-/*@counter-style urdu-alphabetic {
+
+@counter-style urdu {
+system: numeric;
+symbols:  '\6F0' '\6F1' '\6F2' '\6F3' '\6F4' '\6F5' '\6F6' '\6F7' '\6F8' '\6F9'; 
+suffix: '\06D4 '; 
+}
+
+@counter-style urdu-alphabetic {
 system: fixed;
 symbols:  '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC'; 
 }
@@ -88,7 +95,6 @@ symbols:  '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D
 system: fixed;
 symbols:  '\0627' '\0628' '\062C' '\062F' '\06C1' '\0648' '\0632' '\062D' '\0637' '\06CC' '\06A9' '\0644' '\0645' '\0646' '\0633' '\0639' '\0641' '\0635' '\0642' '\0631' '\0634' '\062A' '\062B' '\062E' '\0630' '\0636' '\0638'  '\063A '; 
 }
-*/
 
 
 /* ARMENIAN */
@@ -1639,8 +1645,6 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
 
 <p class="note">The <code class="kw" translate="no">arabic-indic</code>, and <code class="kw" translate="no">persian</code> styles are defined in the <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a> specification. Check browser support for  <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">arabic-indic</a></code> and <code class="kw" translate="no"><a href="https://www.w3.org/International/i18n-tests/results/predefined-counter-styles#simplenumeric" target="_blank">persian</a></code> styles.</p>
 
-<p class="note">Blink and Webkit have built-in support for an  <code class="kw" translate="no">urdu</code><code class="kw" translate="no"></code> style, which is identical to the Persian style above. It is not supported out of the box in Gecko browsers. The above <code class="kw" translate="no">persian</code> template can be renamed and used to provide support in Firefox via a declaration in the CSS file.</p>
-
 <p class="note">Note that HEH+ZWJ are used together in lists of this kind to distinguish the heh from the number 5. The symbols are listed in logical order where escapes are used and also in the underlying code when they are represented as characters (so the code should copy-paste correctly). When reading the displayed list of symbols as arabic characters, however, you should read them  RTL.  (In previous versions of the document a <code class="kw" translate="no">bdo</code> element was used to display everything LTR, but this interfered with the display of the HEH, which is followed by a ZWJ and should appear to join to the left.)</p>
 <div class="note">
   <table id="arabic_comp">
@@ -1679,7 +1683,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        </tr>
+    </tr>
       <tr>
         <th scope="row"><code class="kw" translate="no">arabic-abjad</code></th>
         <td>&nbsp;</td>
@@ -1714,7 +1718,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        </tr>
+    </tr>
       <tr>
         <th scope="row"><code class="kw" translate="no">magrebi-abjad</code></th>
         <td>&nbsp;</td>
@@ -1749,7 +1753,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        </tr>
+    </tr>
       <tr>
         <th scope="row">WP old magrebi</th>
         <td>&nbsp;</td>
@@ -1784,7 +1788,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        </tr>
+    </tr>
       <tr>
         <th scope="row">WP hijai</th>
         <td>&nbsp;</td>
@@ -1819,7 +1823,7 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        </tr>
+    </tr>
       <tr>
         <th scope="row"><code class="kw" translate="no">persian-alphabetic</code></th>
         <td>&nbsp;</td>
@@ -1854,9 +1858,9 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
         <td>و</td>
         <td>ه‍</td>
         <td>ی</td>
-        </tr>
-      </tbody>
-    </table>
+    </tr>
+  </tbody>
+</table>
   <p>This table shows the differences between the counter styles listed above for the arabic script. A blank cell uses the same letter as the nearest non-blank cell above it.</p>
   <p>Also included for comparison are two letter sequences that are not included here as counter styles, but that are mentioned in <a href="https://en.wikipedia.org/wiki/Abjad_numerals">Wikipedia</a> – an old maghrebi sequence and the hijai sequence.</p>
 </div>
@@ -1871,30 +1875,27 @@ symbols: '\627' '\628' '\67E' '\62A' '\62B' '\62C' '\686' '\62D' '\62E' '\62F' '
 
 
 
-<!--
-<div class="csWrapper">
-<div class="copyMe" onclick="copyTemplate('urdu-alphabetic')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
 
-<p class="name" id="urdu-alphabetic"><a href="#urdu-alphabetic">urdu-alphabetic</a></p>
+<div class="csWrapper">
+<div class="copyMe" onclick="copyTemplate('urdu')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="urdu"><a href="#urdu">urdu</a></p>
 
 <p class="counterstyle"><code><bdo dir="ltr">
-@counter-style urdu-alphabetic {
-system: fixed;
-symbols: '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC';
-/* symbols: '&#x0627;' '&#x0628;' '&#x067E;' '&#x062A;' '&#x0679;' '&#x062B;' '&#x062C;' '&#x0686;' '&#x062D;' '&#x062E;' '&#x062F;' '&#x0688;' '&#x0630;' '&#x0631;' '&#x0691;' '&#x0632;' '&#x0698;' '&#x0633;' '&#x0634;' '&#x0635;' '&#x0636;' '&#x0637;' '&#x0638;' '&#x0639;' '&#x063A;' '&#x0641;' '&#x0642;' '&#x06A9;' '&#x06AF;' '&#x0644;' '&#x0645;' '&#x0646;' '&#x06BA;' '&#x0648;' '&#x06C1;' '&#x06BE;' '&#x0621;' '&#x06CC;'; */
+@counter-style urdu {
+system: numeric;
+symbols: '\6F0' '\6F1' '\6F2' '\6F3' '\6F4' '\6F5' '\6F6' '\6F7' '\6F8' '\6F9';
+/* symbols: '&#1776;' '&#1777;' '&#1778;' '&#1779;' '&#1780;' '&#1781;' '&#1782;' '&#1783;' '&#1784;' '&#1785;';*/
+suffix: '۔ ';
 }
 </bdo></code></p>
 
-<div id="out_urdu-alphabetic" class="browser_output"></div>
-<script>addExamples('urdu-alphabetic', 'ur', 'rtl')</script>
+<div id="out_urdu" class="browser_output"></div>
+<script>addExamples('urdu', 'ur', 'rtl')</script>
 </div>
 
 
-
-
-<aside class="note">
-<p>The urdu-alphabetic style is shown here as a fixed style.  According to CDAC, it is actually an unlimited style, where characters are doubled after the initial set is exhausted, eg. <span dir="rtl" lang="ur">ا ا</span>, <span dir="rtl" lang="ur">ب ب</span>, <span dir="rtl" lang="ur">ت ت</span>, etc. This can't be achieved using the standard 'alphabetic' algorithm. Furthermore, counters in this range do not join cursively, but are separated by a space.</p>
-</aside>
+<p class="note">Blink and Webkit have built-in support for an  <code class="kw" translate="no">urdu</code><code class="kw" translate="no"></code> style, which is identical to the Persian style above. Here we repeat that style, but add a default Arabic full stop as the suffix (not built-in to Blink or Webkit). There is no built-in support in Gecko browsers. This<code class="kw" translate="no"></code> template can be  used to provide support in Firefox via a declaration in the CSS file.</p>
 
 
 
@@ -1923,8 +1924,45 @@ symbols:  '\0627' '\0628' '\062C' '\062F' '\06C1' '\0648' '\0632' '\062D' '\0637
 <div id="out_urdu-abjad" class="browser_output"></div>
 <script>addExamples('urdu-abjad', 'ur', 'rtl')</script>
 </div>
--->
 </section>
+
+
+<p class="note">We have reports of an alternative abjad style for Urdu that replaces  <span lang="ur" dir="rtl">ک</span>, <span lang="ur" dir="rtl">ل</span>, and <span lang="ur" dir="rtl">م</span> for 11, 12, 13 with <span lang="ur" dir="rtl">یا</span>, <span lang="ur" dir="rtl">یب</span>, and <span lang="ur" dir="rtl">یج</span>, respectively. These two styles may be used in the same publication, such as one in the front matter, the other in the preface.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="csWrapper">
+<div class="copyMe" onclick="copyTemplate('urdu-alphabetic')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="urdu-alphabetic"><a href="#urdu-alphabetic">urdu-alphabetic</a></p>
+
+<p class="counterstyle"><code><bdo dir="ltr">
+@counter-style urdu-alphabetic {
+system: fixed;
+symbols: '\0627' '\0628' '\067E' '\062A' '\0679' '\062B' '\062C' '\0686' '\062D' '\062E' '\062F' '\0688' '\0630' '\0631' '\0691' '\0632' '\0698' '\0633' '\0634' '\0635' '\0636' '\0637' '\0638' '\0639' '\063A' '\0641' '\0642' '\06A9' '\06AF' '\0644' '\0645' '\0646' '\06BA' '\0648' '\06C1' '\06BE' '\0621' '\06CC';
+/* symbols: '&#x0627;' '&#x0628;' '&#x067E;' '&#x062A;' '&#x0679;' '&#x062B;' '&#x062C;' '&#x0686;' '&#x062D;' '&#x062E;' '&#x062F;' '&#x0688;' '&#x0630;' '&#x0631;' '&#x0691;' '&#x0632;' '&#x0698;' '&#x0633;' '&#x0634;' '&#x0635;' '&#x0636;' '&#x0637;' '&#x0638;' '&#x0639;' '&#x063A;' '&#x0641;' '&#x0642;' '&#x06A9;' '&#x06AF;' '&#x0644;' '&#x0645;' '&#x0646;' '&#x06BA;' '&#x0648;' '&#x06C1;' '&#x06BE;' '&#x0621;' '&#x06CC;'; */
+}
+</bdo></code></p>
+
+<div id="out_urdu-alphabetic" class="browser_output"></div>
+<script>addExamples('urdu-alphabetic', 'ur', 'rtl')</script>
+</div>
+
+
+
+
+<aside class="note">
+<p>The urdu-alphabetic style is shown here as a fixed style.  According to CDAC, it is actually an unlimited style, where characters are doubled after the initial set is exhausted, eg. <span dir="rtl" lang="ur">ا ا</span>, <span dir="rtl" lang="ur">ب ب</span>, <span dir="rtl" lang="ur">ت ت</span>, etc. This can't be achieved using the standard 'alphabetic' algorithm. Furthermore, counters in this range do not join cursively, but are separated by a space. Until we have clearer evidence about how this works we list the style as fixed in length.</p>
+</aside>
 
 
 
@@ -6822,7 +6860,8 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <a href="#odia"><code class="kw" translate="no">odia</code></a>,
 [Telugu]
 <a href="#telugu"><code class="kw" translate="no">telugu</code></a>;  
-Klemen Kogovšek proposed changing 'serbo-croatian' to just 'serbian'.
+Klemen Kogovšek proposed changing 'serbo-croatian' to just 'serbian';
+Saadat Mateen for help with Urdu.
 </p>
 </section>
 
