@@ -148,6 +148,16 @@ suffix: ') ';
 
 
 
+/* BOPOMOFO */
+@counter-style zhuyin {
+system: alphabetic;
+symbols: "\3105" "\3106" "\3107" "\3108" "\3109" "\310A" "\310B" "\310C" "\310D" "\310E" "\310F" "\3110" "\3111" "\3112" "\3113" "\3114" "\3115" "\3116" "\3117" "\3118" "\3119" "\311A" "\311B" "\311C" "\311D" "\311E" "\311F" "\3120" "\3121" "\3122" "\3123" "\3124" "\3125" "\3126" "\3127" "\3128" "\3129";
+/* ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ */
+suffix: "、";
+}
+
+
+
 
 /* CYRILLIC */
 @counter-style lower-belorussian {
@@ -2189,6 +2199,42 @@ suffix: ") ";
 </bdo></code></li>
 </ol>
 </aside>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="bopomofo-styles">
+<h2>Bopomofo</h2>
+
+<div class="csWrapper">
+<div class="copyMe" onclick="copyTemplate('zhuyin')"><img src="copy.svg" alt="Copy the style template." title="Copy the style template."></div>
+
+<p class="name" id="zhuyin"><a href="#zhuyin">zhuyin</a></p>
+
+<p class="counterstyle"><code><bdo dir="ltr">
+@counter-style zhuyin {
+  system: alphabetic;
+  symbols: "\3105" "\3106" "\3107" "\3108" "\3109" "\310A" "\310B" "\310C" "\310D" "\310E" "\310F" "\3110" "\3111" "\3112" "\3113" "\3114" "\3115" "\3116" "\3117" "\3118" "\3119" "\311A" "\311B" "\311C" "\311D" "\311E" "\311F" "\3120" "\3121" "\3122" "\3123" "\3124" "\3125" "\3126" "\3127" "\3128" "\3129";
+  /* ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ */
+  suffix: "、";
+}
+</bdo></code></p>
+
+<div id="out_zhuyin" class="browser_output"></div>
+<script>addExamples('zhuyin', 'zh', '')</script>
+</div>
+
+
+
+
+<p class="note">The term "zhuyin" is used instead of "bopomofo" as the ordering follows the <a href="https://language.moe.gov.tw/001/Upload/files/site_content/M0001/juyin/html_ch/index.html">modern Taiwanese Mandarin order</a> rather than one of the other possible bopomofo styles. Other bopomofo styles may be introduced at a later time.</p>
 </section>
 
 
@@ -6818,7 +6864,8 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 <h2> Revision Log</h2>
 <p>The following summarises substantive changes since the previous publication.</p>
 <ol>
-<li>Add fallback:cjk-decimal to cjk-heavenly-branch and cjk-heavenly-stem styles (see <a href="https://github.com/w3c/csswg-drafts/issues/8975" target="_blank">this github issue</a>).</li>
+<li>Add zhuyin style.</li>
+<li>Add Urdu styles.</li>
 </ol>
 <p>See the <a href="https://github.com/w3c/predefined-counter-styles/commits/gh-pages">github commit log</a> for more details.</p>
 </section>
@@ -6861,7 +6908,8 @@ additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 
 [Telugu]
 <a href="#telugu"><code class="kw" translate="no">telugu</code></a>;  
 Klemen Kogovšek proposed changing 'serbo-croatian' to just 'serbian';
-Saadat Mateen for help with Urdu.
+Saadat Mateen for help with Urdu;
+@NFSL2001 for proposing 'zhuyin'.
 </p>
 </section>
 
